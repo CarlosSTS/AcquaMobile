@@ -5,7 +5,6 @@ import HomeReports from '../pages/HomeReports';
 import ReportsRoutes from '../pages/ReportsRoutes';
 import ReportsProfit from '../pages/ReportsProfit';
 
-
 const ReportStack = createStackNavigator();
 
 const ReportStackRoutes: React.FC = () => (
@@ -15,25 +14,28 @@ const ReportStackRoutes: React.FC = () => (
       headerTintColor: '#fff',
 
       headerStyle: {
-        backgroundColor: "#3d9be9",
-
+        backgroundColor: '#3d9be9',
       },
     }}
   >
     <ReportStack.Screen name="Relatórios" component={HomeReports} />
-    <ReportStack.Screen options={{
-      title: "Relatório de Rotas 🚀",
-      headerBackTitleVisible: false,
-    }}
-      name="ReportsRoutes" component={ReportsRoutes} />
+    <ReportStack.Screen
+      options={{
+        title: 'Relatório de Rotas 🚀',
+        headerBackTitleVisible: false,
+      }}
+      name="ReportsRoutes"
+      component={ReportsRoutes}
+    />
 
-    <ReportStack.Screen options={{
-      title: "Relatório de Lucros 📶",
-      headerBackTitleVisible: false,
-    }}
-      name="ReportsProfit" component={ReportsProfit} />
-
-
+    <ReportStack.Screen
+      options={{
+        title: 'Relatório de Lucros 📶',
+        headerBackTitleVisible: false,
+      }}
+      name="ReportsProfit"
+      component={ReportsProfit}
+    />
   </ReportStack.Navigator>
 );
 

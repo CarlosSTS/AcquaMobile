@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/Feather";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { Linking, ScrollView, Alert, Button } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
+import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { Linking, ScrollView, Alert, Button } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 import {
   Container,
   Header,
@@ -17,18 +19,15 @@ import {
   ContactBox,
   Input,
   Description,
-
-} from "./styles";
-import api from "../../services";
-import { Formik } from "formik";
-import * as Yup from "yup";
+} from './styles';
+import api from '../../services';
 
 interface loansRouteParams {
   id: number;
 }
 interface loansDetail {
- // accept_date
- //status
+  // accept_date
+  // status
   client: number;
   quantity: number;
   user: number;
@@ -39,11 +38,11 @@ const initialValues: loansDetail = {
   client: 0,
   quantity: 0,
   user: 0,
-  obs: "",
+  obs: '',
 };
 
 const schema = Yup.object().shape({
-  obs: Yup.string().required("Campo obrigatório"),
+  obs: Yup.string().required('Campo obrigatório'),
 });
 
 export default function CarboyLoanDetail() {
@@ -61,11 +60,10 @@ export default function CarboyLoanDetail() {
 
   const updateloans = (values: object) => {
     try {
-      api
-        .patch(`/loans/${params.id}/`, values)
-      Alert.alert("sucesso!", "empréstimo atualizado")
+      api.patch(`/loans/${params.id}/`, values);
+      Alert.alert('sucesso!', 'empréstimo atualizado');
     } catch {
-      Alert.alert("fracasso!", "contate o administrador do sistema")
+      Alert.alert('fracasso!', 'contate o administrador do sistema');
     }
   };
 
@@ -73,18 +71,16 @@ export default function CarboyLoanDetail() {
     navigation.goBack();
   }
 
-
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>
         <Header>
-
           <RectButton onPress={navigateBack}>
             <Icon name="arrow-left" size={28} color="#E82041" />
           </RectButton>
           <Title>Toque Para editar Empréstimo</Title>
 
-          <RectButton onPress={() => { }}>
+          <RectButton onPress={() => {}}>
             <Icon name="edit" size={28} color="#e82041" />
           </RectButton>
         </Header>
@@ -93,22 +89,20 @@ export default function CarboyLoanDetail() {
           <Loans>
             <Formik
               initialValues={loans}
-              enableReinitialize={true}
+              enableReinitialize
               onSubmit={updateloans}
               validationSchema={schema}
             >
               {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
                 return (
                   <>
-
-
                     <Description>Cliente: </Description>
                     <Input
                       autoCorrect={false}
                       placeholder="Cliente"
                       keyboardType="numeric"
-                      onChangeText={handleChange("client")}
-                      onBlur={handleBlur("client")}
+                      onChangeText={handleChange('client')}
+                      onBlur={handleBlur('client')}
                       value={String(values.client)}
                       returnKeyType="next"
                     />
@@ -118,8 +112,8 @@ export default function CarboyLoanDetail() {
                       autoCorrect={false}
                       placeholder="Quantidade"
                       keyboardType="numeric"
-                      onChangeText={handleChange("quantity")}
-                      onBlur={handleBlur("quantity")}
+                      onChangeText={handleChange('quantity')}
+                      onBlur={handleBlur('quantity')}
                       value={String(values.quantity)}
                       returnKeyType="next"
                     />
@@ -129,8 +123,8 @@ export default function CarboyLoanDetail() {
                       autoCorrect={false}
                       autoCapitalize="characters"
                       placeholder="Usuário"
-                      onChangeText={handleChange("user")}
-                      onBlur={handleBlur("user")}
+                      onChangeText={handleChange('user')}
+                      onBlur={handleBlur('user')}
                       value={String(values.user)}
                       keyboardType="numeric"
                       returnKeyType="next"
@@ -142,14 +136,17 @@ export default function CarboyLoanDetail() {
                       autoCorrect={false}
                       autoCapitalize="words"
                       placeholder="Observação"
-                      onChangeText={handleChange("obs")}
-                      onBlur={handleBlur("obs")}
+                      onChangeText={handleChange('obs')}
+                      onBlur={handleBlur('obs')}
                       value={values.obs}
                       returnKeyType="next"
                     />
 
-
-                    <Button onPress={handleSubmit} title="Salvar Edições" color="#000" />
+                    <Button
+                      onPress={handleSubmit}
+                      title="Salvar Edições"
+                      color="#000"
+                    />
                   </>
                 );
               }}
@@ -163,7 +160,7 @@ export default function CarboyLoanDetail() {
             <LoansDescription>Entrar em contato via:</LoansDescription>
 
             <Actions>
-              <Action onPress={() => { }}>
+              <Action onPress={() => {}}>
                 <ActionText>WhatsApp</ActionText>
               </Action>
             </Actions>

@@ -1,46 +1,45 @@
-import React from "react";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import Icon from "react-native-vector-icons/Feather";
+import React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/Feather';
 
-import { Text } from "react-native";
+import { Text } from 'react-native';
 
-import ReportStackRoutes from './report.stack.routes'
-import ClientStackRoutes from "./client.stack.routes";
-import PurchaseStackRoutes from "./purchase.stack.routes";
-import SaleStackRoutes from "./sale.stack.routes";
-import CarboyLoanStackRoutes from "./carboyLoan.stack.routes";
-import MoveStackRoutes from "./move.stack.routes";
-import ClientRouteStackRoutes from "./routes.client.stack.routes";
+import ReportStackRoutes from './report.stack.routes';
+import ClientStackRoutes from './client.stack.routes';
+import PurchaseStackRoutes from './purchase.stack.routes';
+import SaleStackRoutes from './sale.stack.routes';
+import CarboyLoanStackRoutes from './carboyLoan.stack.routes';
+import MoveStackRoutes from './move.stack.routes';
+import ClientRouteStackRoutes from './routes.client.stack.routes';
 
-import SignOut from "../pages/SignOut";
+import SignOut from '../pages/SignOut';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavgation: React.FC = () => (
   <Drawer.Navigator
-  initialRouteName="ClientStackRoutes"
+    initialRouteName="ClientStackRoutes"
     drawerStyle={{
-      backgroundColor: "#313131",
+      backgroundColor: '#313131',
       paddingVertical: 20,
     }}
     drawerContentOptions={{
-      activeBackgroundColor: "#fff",
-      inactiveTintColor: "#FFF",
+      activeBackgroundColor: '#fff',
+      inactiveTintColor: '#FFF',
     }}
   >
-
-<Drawer.Screen
+    <Drawer.Screen
       name="ReportStackRoutes"
       component={ReportStackRoutes}
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>
             Relatórios
           </Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="folder" />
+          <Icon color={focused ? '#313131' : '#fff'} name="folder" />
         ),
       }}
     />
@@ -51,12 +50,10 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
-            Clientes
-          </Text>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>Clientes</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="users" />
+          <Icon color={focused ? '#313131' : '#fff'} name="users" />
         ),
       }}
     />
@@ -67,12 +64,10 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
-            Compras
-            </Text>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>Compras</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="shopping-cart"/>
+          <Icon color={focused ? '#313131' : '#fff'} name="shopping-cart" />
         ),
       }}
     />
@@ -83,12 +78,10 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
-            Vendas
-            </Text>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>Vendas</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="shopping-bag" />
+          <Icon color={focused ? '#313131' : '#fff'} name="shopping-bag" />
         ),
       }}
     />
@@ -99,12 +92,12 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>
             Empréstimos
           </Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="share-2" />
+          <Icon color={focused ? '#313131' : '#fff'} name="share-2" />
         ),
       }}
     />
@@ -115,12 +108,12 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>
             Movimentos
           </Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="repeat" />
+          <Icon color={focused ? '#313131' : '#fff'} name="repeat" />
         ),
       }}
     />
@@ -131,12 +124,10 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>
-            Rotas
-          </Text>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>Rotas</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="truck" />
+          <Icon color={focused ? '#313131' : '#fff'} name="truck" />
         ),
       }}
     />
@@ -147,10 +138,10 @@ const DrawerNavgation: React.FC = () => (
       options={{
         unmountOnBlur: true,
         drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? "#313131" : "#fff" }}>Sair</Text>
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>Sair</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? "#313131" : "#fff"} name="log-out" />
+          <Icon color={focused ? '#313131' : '#fff'} name="log-out" />
         ),
       }}
     />

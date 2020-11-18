@@ -14,11 +14,11 @@ const ClientStackRoutes: React.FC = () => (
       headerShown: true,
       headerTintColor: '#fff',
       headerStyle: {
-        backgroundColor: "#3d9be9",
+        backgroundColor: '#3d9be9',
       },
     }}
   >
-    <ClientStack.Screen  name="Clientes" component={HomeClient} />
+    <ClientStack.Screen name="Clientes" component={HomeClient} />
 
     <ClientStack.Screen
       name="ClientCreate"
@@ -26,7 +26,6 @@ const ClientStackRoutes: React.FC = () => (
       options={{
         headerShown: false,
         headerBackTitleVisible: false,
-
       }}
     />
 
@@ -34,7 +33,7 @@ const ClientStackRoutes: React.FC = () => (
       name="ClientCreated"
       component={ClientCreated}
       options={{
-        title: "Clientes Registrados",
+        title: 'Clientes Registrados',
         headerBackTitleVisible: false,
       }}
     />
@@ -46,7 +45,6 @@ const ClientStackRoutes: React.FC = () => (
         headerShown: false,
       }}
     />
-
   </ClientStack.Navigator>
 );
 

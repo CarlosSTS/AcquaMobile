@@ -1,11 +1,15 @@
-import React from "react";
-import { View, Button } from "react-native";
+import React from 'react';
+import { SafeAreaView, Button } from 'react-native';
 
-import { useAuth } from "../../hooks/auth";
+import { useAuth } from '../../hooks/auth';
 
 const SignOut: React.FC = () => {
   const { signOut } = useAuth();
 
-  return <Button  title="Sair" onPress={signOut} />
+  return (
+    <SafeAreaView>
+      <Button title="Sair" onPress={signOut} />
+    </SafeAreaView>
+  );
 };
 export default SignOut;

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/Feather";
-import { useNavigation } from "@react-navigation/native";
-import api from "../../services/index";
+import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation } from '@react-navigation/native';
+import moment from 'moment';
+import { Alert } from 'react-native';
+import uniqBy from 'lodash/uniqBy';
+import api from '../../services/index';
 import {
   LoanValue,
   Container,
@@ -11,11 +14,8 @@ import {
   LoanProperty,
   DetailsButton,
   DetailsButtonText,
-} from "./styles";
-import RemoteSelect from "../../components/RemoteSelect";
-import moment from "moment";
-import { Alert } from "react-native";
-import uniqBy from "lodash/uniqBy";
+} from './styles';
+import RemoteSelect from '../../components/RemoteSelect';
 
 interface ClientData {
   id: number;
@@ -37,7 +37,7 @@ interface DateProps {
 }
 
 const humanDate = (date: any) => {
-  return date.format("DD/MM/YYYY");
+  return date.format('DD/MM/YYYY');
 };
 
 const makeResponseData = (data: Array<object>) =>
@@ -52,23 +52,23 @@ export default function CarboyLoanCreated() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [filterParams, setFilterParams] = useState({});
-  const [client, setClient] = useState("");
+  const [client, setClient] = useState('');
   const [clients, setClients] = useState([]);
 
   const navigation = useNavigation();
 
   function navigateToDetail(id: number) {
-    navigation.navigate("CarboyLoanDetail", { id });
+    navigation.navigate('CarboyLoanDetail', { id });
   }
 
   function loadLoans() {
     api
-      .get("/loans/", {
+      .get('/loans/', {
         params: { page },
       })
       .then((response) => {
         setLoans(makeResponseData(response.data));
-        setTotal(response.headers["x-total-count"]);
+        setTotal(response.headers['x-total-count']);
         setPage(page + 1);
         setLoading(false);
       });
@@ -80,9 +80,9 @@ export default function CarboyLoanCreated() {
 
   const getClientData = () => {
     api
-      .get("/clients/", { params: { limit: 1000 } })
+      .get('/clients/', { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch((error) => Alert.alert("Fracasso"));
+      .catch((error) => Alert.alert('Fracasso'));
   };
 
   const onSubmitFilter = (dates: DateProps) => {
@@ -91,7 +91,7 @@ export default function CarboyLoanCreated() {
     setFilterParams({
       start_date: dates.startDate,
       end_date: dates.endDate,
-      client: client,
+      client,
     });
   };
 
@@ -109,14 +109,14 @@ export default function CarboyLoanCreated() {
     setLoading(true);
 
     api
-      .get("/loans/", {
+      .get('/loans/', {
         params: { page, ...filterParams },
       })
       .then((response) => {
         const resData = makeResponseData(response.data);
-        const data = uniqBy([...loans, ...resData], "id");
+        const data = uniqBy([...loans, ...resData], 'id');
         setLoans(data);
-        setTotal(response.headers["x-total-count"]);
+        setTotal(response.headers['x-total-count']);
         setLoading(false);
       });
   }, [page, filterParams]);
@@ -131,7 +131,7 @@ export default function CarboyLoanCreated() {
 
   return (
     <Container>
-      <Header></Header>
+      <Header />
       <RemoteSelect
         onSelectChange={onClientChange}
         data={clients}

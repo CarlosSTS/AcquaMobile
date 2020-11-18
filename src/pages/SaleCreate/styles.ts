@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import {Platform} from 'react-native';
-//15c3d6 ,41aef4,3d9be9,15B6D6
+import { Platform } from 'react-native';
+// 15c3d6 ,41aef4,3d9be9,15B6D6
 export const Container = styled.View`
   flex: 1;
   align-items: center;
@@ -17,11 +17,10 @@ export const Title = styled.Text`
 `;
 
 export const ErrorValue = styled.Text`
-background-color: #f00;
-color: #fff;
-font-size: 16px;
-width: 100%;
-
+  background-color: #f00;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
 `;
 
 export const ContainerRemoteButtonText = styled.View`
@@ -36,5 +35,4 @@ export const ContainerRemoteButtonText = styled.View`
 
   flex-direction: row;
   align-items: center;
-
 `;

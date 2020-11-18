@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect,useState,useRef} from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import {
   TextInput,
   ScrollView,
@@ -7,13 +7,14 @@ import {
   Platform,
   Alert,
   Animated,
-  Keyboard
+  Keyboard,
 } from 'react-native';
 
-import {Form} from '@unform/mobile';
-import {FormHandles} from '@unform/core';
+import { Form } from '@unform/mobile';
+import { FormHandles } from '@unform/core';
 
-import {useAuth} from '../../hooks/auth';
+import * as Yup from 'yup';
+import { useAuth } from '../../hooks/auth';
 
 import logoImg from '../../assets/logo.png';
 
@@ -22,9 +23,7 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import * as Yup from 'yup';
-
-import {Container, Title, ForgotPassword, ForgotPasswordText} from './styles';
+import { Container, Title, ForgotPassword, ForgotPasswordText } from './styles';
 
 interface SignInFormaData {
   username: string;
@@ -35,45 +34,50 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  const [logo] = useState(new Animated.ValueXY({x:120, y:206}))
+  const [logo] = useState(new Animated.ValueXY({ x: 120, y: 206 }));
 
   useEffect(() => {
-
- const  keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', KeyboardDidShow)
- const  keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', KeyboardDidHide)
-  },[]);
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      KeyboardDidShow,
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      KeyboardDidHide,
+    );
+  }, []);
 
   function KeyboardDidShow() {
     Animated.parallel([
-      Animated.timing(logo.x,{
-        toValue:60,
+      Animated.timing(logo.x, {
+        toValue: 60,
         duration: 500,
         useNativeDriver: false,
       }),
-      Animated.timing(logo.y,{
-        toValue:103,
-        duration:500,
+      Animated.timing(logo.y, {
+        toValue: 103,
+        duration: 500,
         useNativeDriver: false,
-      })
+      }),
     ]).start();
   }
 
   function KeyboardDidHide() {
     Animated.parallel([
-      Animated.timing(logo.x,{
-        toValue:120,
+      Animated.timing(logo.x, {
+        toValue: 120,
         duration: 500,
         useNativeDriver: false,
       }),
-      Animated.timing(logo.y,{
-        toValue:206,
-        duration:500,
-        useNativeDriver:false,
-      })
+      Animated.timing(logo.y, {
+        toValue: 206,
+        duration: 500,
+        useNativeDriver: false,
+      }),
     ]).start();
   }
 
-  const {signIn} = useAuth();
+  const { signIn } = useAuth();
 
   const handleSignIn = useCallback(
     async (data: SignInFormaData) => {
@@ -115,17 +119,22 @@ const SignIn: React.FC = () => {
   return (
     <>
       <KeyboardAvoidingView
-        style={{flex: 1}}
+        style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled>
+        enabled
+      >
         <ScrollView
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{flex: 1}}>
+          contentContainerStyle={{ flex: 1 }}
+        >
           <Container>
-            <Animated.Image style={{
-              width: logo.x,
-               height: logo.y
-               }} source={logoImg} />
+            <Animated.Image
+              style={{
+                width: logo.x,
+                height: logo.y,
+              }}
+              source={logoImg}
+            />
 
             <View>
               <Title>Faça seu login no Aqua</Title>
@@ -160,7 +169,8 @@ const SignIn: React.FC = () => {
                 <Button
                   onPress={() => {
                     formRef.current?.submitForm();
-                  }}>
+                  }}
+                >
                   Entrar
                 </Button>
               </View>

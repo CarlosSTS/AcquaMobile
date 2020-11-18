@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import {Platform,Animated} from 'react-native';
-import {getBottomSpace} from 'react-native-iphone-x-helper';
+import { Platform, Animated } from 'react-native';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   flex: 1;
@@ -8,10 +8,10 @@ export const Container = styled.View`
   justify-content: center;
   padding: 0 30px ${Platform.OS === 'android' ? 120 : 40}px;
 `;
-export const ImageLogo=styled(Animated.Image)`
+export const ImageLogo = styled(Animated.Image)`
   width: 120px;
-   height: 106px;
-   `;
+  height: 106px;
+`;
 
 export const Title = styled.Text`
   font-size: 24px;
