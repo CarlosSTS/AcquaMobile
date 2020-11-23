@@ -53,7 +53,7 @@ const CarboyLoanCreate: React.FC = () => {
     try {
       api.post('/loans/', values);
       Alert.alert('Sucesso!', 'empréstimo registrado!');
-      navigation.navigate('CarboyLoanStackRoutes');
+      navigation.navigate('CarboyLoanCreated');
     } catch {
       Alert.alert('Fracasso!', 'contate o administrador do sistema');
     }

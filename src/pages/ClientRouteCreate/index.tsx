@@ -55,7 +55,7 @@ const navigation = useNavigation();
    try {
     api.post("/paths/", values)
        Alert.alert("Sucesso!", "rota de cliente cadastrada!")
-       navigation.navigate('ClientRouteStackCreatedClientRoutes')
+       navigation.navigate('CreatedRouteClient')
    }catch {
         Alert.alert("Fracasso!", "contate o administrador do sistema")
    }

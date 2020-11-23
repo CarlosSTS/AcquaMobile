@@ -49,7 +49,7 @@ const navigation = useNavigation();
     try {
     api.post("/moves/", values)
       Alert.alert("Sucesso!", "movimento registrado!")
-      navigation.navigate('MoveStackRoutes')
+      navigation.navigate('MoveCreated')
     } catch { Alert.alert("Fracasso!", "contate o administrador do sistema")
   }
   };

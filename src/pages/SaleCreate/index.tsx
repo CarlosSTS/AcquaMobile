@@ -59,7 +59,7 @@ const SaleCreate: React.FC = () => {
     try {
       api.post('/sales/', values);
       Alert.alert('Sucesso!', 'venda registrada!');
-      navigation.navigate('SaleStackRoutes');
+      navigation.navigate('SaleCreated');
     } catch {
       Alert.alert('Fracasso!', 'contate o administrador do sistema');
     }

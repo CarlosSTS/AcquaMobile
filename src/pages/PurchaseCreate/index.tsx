@@ -28,7 +28,7 @@ const PurchaseCreate: React.FC = () => {
     api.post("/purchases/", values)
 
       Alert.alert("Sucesso!", "compra registrada!")
-      navigation.navigate('ShoppingStackRoutes')
+      navigation.navigate('PurchaseCreated')
 
     }catch {
         Alert.alert("Fracasso!", "contate o administrador do sistema")

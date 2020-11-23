@@ -55,7 +55,7 @@ const ClientCreate: React.FC = () => {
           'Cadastro realizado com sucesso!',
           'Veja agora seus clientes cadastrados',
         );
-        navigation.navigate('ClientStackRoutes');
+        navigation.navigate('ClientCreated');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
