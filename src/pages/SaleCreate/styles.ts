@@ -5,15 +5,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: #3d9be9;
-  padding: 30px 30px ${Platform.OS === 'android' ? 120 : 40}px;
-`;
-
-export const Title = styled.Text`
-  font-size: 24px;
-  color: #fff;
-  font-family: 'RobotoSlab-Medium';
-  margin: 64px 0 24px;
+  padding: 0px 30px ${Platform.OS === 'android' ? 120 : 40}px;
 `;
 
 export const ErrorValue = styled.Text`

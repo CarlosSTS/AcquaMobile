@@ -53,24 +53,3 @@ export const SaleDescription = styled.Text`
   margin-top: 16px;
   font-family: 'RobotoSlab-Medium';
 `;
-
-export const Actions = styled.View`
-  margin-top: 16px;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const Action = styled.TouchableOpacity`
-  background-color: #e02041;
-  border-radius: 8px;
-  height: 50px;
-  width: 50%;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ActionText = styled.Text`
-  color: #fff;
-  font-size: 15px;
-  font-family: 'RobotoSlab-Medium';
-`;

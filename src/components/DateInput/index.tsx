@@ -20,9 +20,9 @@ const DateInput: React.FC<DateInputProps> = (props) => {
   return (
     <Container>
       {props.icon === "clock" ? (
-        <Icon name={props.icon} size={20} color="#6b3e3e" />
+        <Icon name={props.icon} size={20} color="#666360" />
       ): (
-      <FontAwesomeIcon name={props.icon} size={20} color="#6b3e3e" />
+      <FontAwesomeIcon name={props.icon} size={20} color="#666360" />
         )}
 
       <TextInputMask

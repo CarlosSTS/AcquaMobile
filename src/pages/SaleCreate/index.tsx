@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View,
+  ScrollView,
   KeyboardAvoidingView,
   Platform,
   Alert,
@@ -15,7 +15,6 @@ import api from '../../services/index';
 import InputText from '../../components/InputText';
 import {
   Container,
-  Title,
   ContainerRemoteButtonText,
   ErrorValue,
 } from './styles';
@@ -81,6 +80,9 @@ const SaleCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
+           <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
         <Container>
 
           <Formik
@@ -145,6 +147,7 @@ const SaleCreate: React.FC = () => {
             )}
           </Formik>
         </Container>
+        </ScrollView>
       </KeyboardAvoidingView>
     </>
   );

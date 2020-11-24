@@ -81,8 +81,11 @@ const navigation = useNavigation();
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-        <ScrollView>
-        <Container>
+   <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
+
+                      <Container>
 
           <Formik
             initialValues={initialValues}
@@ -173,15 +176,12 @@ const navigation = useNavigation();
                   <ErrorValue>{errors.last_ship_date}</ErrorValue>
                 )}
 
-                <View>
                   <Button onPress={handleSubmit}>Registrar</Button>
-                </View>
               </>
             )}
           </Formik>
         </Container>
         </ScrollView>
-
       </KeyboardAvoidingView>
     </>
   );

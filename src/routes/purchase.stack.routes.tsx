@@ -13,7 +13,7 @@ const PurchaseStackRoutes: React.FC = () => (
     screenOptions={{
       headerShown: true,
       headerTintColor: '#fff',
-
+      headerBackTitleVisible: false,
       headerStyle: {
         backgroundColor: "#3d9be9",
 

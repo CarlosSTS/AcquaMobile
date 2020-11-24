@@ -13,7 +13,7 @@ const MoveStackRoutes: React.FC = () => (
     screenOptions={{
       headerShown: true,
       headerTintColor: '#fff',
-
+      headerBackTitleVisible: false,
       headerStyle: {
         backgroundColor: '#3d9be9',
       },
@@ -22,7 +22,8 @@ const MoveStackRoutes: React.FC = () => (
     <MoveStack.Screen name="Movimentos" component={HomeMove} />
     <MoveStack.Screen name="MoveCreate"
       component={MoveCreate}
-      options={{ headerShown: true,
+      options={{
+        cardStyle:{ backgroundColor: '#3d9be9' },
       title: "Cadastrar movimento"
      }}
 

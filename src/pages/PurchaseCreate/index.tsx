@@ -5,6 +5,7 @@ import {
   Platform,
   Alert,
 } from "react-native";
+import Input from '../../components/Input'
 import * as Yup from "yup";
 import { Formik } from "formik";
 import api from "../../services/index";
@@ -14,6 +15,7 @@ import DateInput from "../../components/DateInput";
 import moment from "moment";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Button from '../../components/Button'
+import { ScrollView } from "react-native-gesture-handler";
 const initialValues: any = {
   submit_date: moment().format("YYYY-MM-DD"),
   quantity: "",
@@ -49,6 +51,8 @@ const PurchaseCreate: React.FC = () => {
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
+        <ScrollView keyboardShouldPersistTaps="handled"
+         contentContainerStyle={{flex: 1}}>
         <Container>
 
           <Formik
@@ -59,6 +63,7 @@ const PurchaseCreate: React.FC = () => {
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
               <>
                 <InputText
+
                   keyboardType="numeric"
                   icon="shopping-cart"
                   onChangeText={handleChange("quantity")}
@@ -107,6 +112,7 @@ const PurchaseCreate: React.FC = () => {
             )}
           </Formik>
         </Container>
+        </ScrollView>
       </KeyboardAvoidingView>
     </>
   );

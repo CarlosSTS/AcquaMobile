@@ -13,6 +13,7 @@ const ClientStackRoutes: React.FC = () => (
     screenOptions={{
       headerShown: true,
       headerTintColor: '#fff',
+      headerBackTitleVisible: false,
       headerStyle: {
         backgroundColor: '#3d9be9',
 
@@ -25,6 +26,8 @@ const ClientStackRoutes: React.FC = () => (
       name="ClientCreate"
       component={ClientCreate}
       options={{
+        cardStyle:{ backgroundColor: '#3d9be9' },
+
         title: 'Cadastrar cliente',
         headerBackTitleVisible: false,
       }}

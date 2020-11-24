@@ -21,6 +21,7 @@ import {
 import DateInput from '../../components/DateInput';
 import RemoteSelect from '../../components/RemoteSelect';
 import Button from '../../components/Button'
+import { ScrollView } from 'react-native-gesture-handler';
 /*
 interface CarboyLoanFormData {
   order_date: string;
@@ -75,7 +76,10 @@ const CarboyLoanCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <Container>
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
+            <Container>
 
 
           <Formik
@@ -128,6 +132,7 @@ const CarboyLoanCreate: React.FC = () => {
             )}
           </Formik>
         </Container>
+        </ScrollView>
       </KeyboardAvoidingView>
     </>
   );

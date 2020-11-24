@@ -5,7 +5,7 @@ import {
   Platform,
   Alert,
   StyleSheet,
-
+  ScrollView
 } from "react-native";
 import * as Yup from "yup";
 import { Formik } from "formik";
@@ -74,7 +74,9 @@ const navigation = useNavigation();
       >
         <Container>
 
-
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
           <Formik
             initialValues={initialValues}
             onSubmit={onSubmit}
@@ -132,6 +134,8 @@ const navigation = useNavigation();
               </>
             )}
           </Formik>
+          </ScrollView>
+
         </Container>
       </KeyboardAvoidingView>
     </>

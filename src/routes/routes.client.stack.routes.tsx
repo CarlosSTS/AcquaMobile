@@ -13,7 +13,8 @@ const ClientRouteStackRoutes: React.FC = () => (
     screenOptions={{
       headerShown: true,
       headerTintColor: '#fff',
-      cardStyle: { backgroundColor: '#3d9be9' },
+      headerBackTitleVisible: false,
+
       headerStyle: {
         backgroundColor: '#3d9be9',
       },
@@ -25,7 +26,10 @@ const ClientRouteStackRoutes: React.FC = () => (
       component={HomeClientRoute}
     />
     <ClientRouteStack.Screen
-      options={{ title: 'Registrar rota de cliente' }}
+      options={{
+         title: 'Registrar rota de cliente',
+          cardStyle:{ backgroundColor: '#3d9be9' },
+ }}
       name="CreateRouteClient"
       component={CreateRouteClient}
     />
@@ -35,7 +39,7 @@ const ClientRouteStackRoutes: React.FC = () => (
       component={CreatedRouteClient}
     />
     <ClientRouteStack.Screen
-      options={{ headerShown: false }}
+      options={{ title: 'Editar rota de cliente' }}
       name="ClientRouteDetail"
       component={ClientRouteDetail}
     />

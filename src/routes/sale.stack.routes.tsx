@@ -13,6 +13,7 @@ const SaleStackRoutes: React.FC = () => (
   screenOptions={{
     headerShown: true,
     headerTintColor:'#fff',
+    headerBackTitleVisible: false,
 
     headerStyle : {
       backgroundColor: "#3d9be9",
@@ -21,7 +22,13 @@ const SaleStackRoutes: React.FC = () => (
   }}
   >
     <SaleStack.Screen name="Vendas" component={HomeSale} />
-    <SaleStack.Screen options={{headerShown: true, title: "Registar venda"}} name="SaleCreate" component={SaleCreate} />
+    <SaleStack.Screen
+    options={{
+      cardStyle: { backgroundColor: '#3d9be9' },
+
+      headerShown: true,
+       title: "Registar venda"
+       }} name="SaleCreate" component={SaleCreate} />
     <SaleStack.Screen options={{title:"Vendas Registradas"}} name="SaleCreated" component={SaleCreated} />
     <SaleStack.Screen options={{headerShown: false}} name="SaleDetail" component={SaleDetail} />
 

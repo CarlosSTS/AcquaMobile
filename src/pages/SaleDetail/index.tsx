@@ -7,15 +7,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Container,
-  Header,
-  Action,
-  ActionText,
-  Actions,
-  SaleDescription,
-  SaleTitle,
+
   Sales,
-  Title,
-  ContactBox,
   Input,
   Description,
 } from './styles';
@@ -77,16 +70,7 @@ export default function SaleDetail() {
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>
-        <Header>
-          <RectButton onPress={navigateBack}>
-            <Icon name="arrow-left" size={28} color="#E82041" />
-          </RectButton>
-          <Title>Toque Para editar Venda</Title>
 
-          <RectButton onPress={() => {}}>
-            <Icon name="edit" size={28} color="#e82041" />
-          </RectButton>
-        </Header>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Sales>
@@ -189,18 +173,6 @@ export default function SaleDetail() {
             </Formik>
           </Sales>
 
-          <ContactBox>
-            <SaleTitle>Entre em contato e</SaleTitle>
-            <SaleTitle>converse com o dono dessa compra</SaleTitle>
-
-            <SaleDescription>Entrar em contato via:</SaleDescription>
-
-            <Actions>
-              <Action onPress={() => {}}>
-                <ActionText>WhatsApp</ActionText>
-              </Action>
-            </Actions>
-          </ContactBox>
         </ScrollView>
       </Container>
     </>

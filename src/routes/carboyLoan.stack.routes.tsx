@@ -13,7 +13,7 @@ const CarboyLoanStackRoutes: React.FC = () => (
     screenOptions={{
       headerShown: true,
       headerTintColor: '#fff',
-
+      headerBackTitleVisible: false,
       headerStyle: {
         backgroundColor: '#3d9be9',
       },
@@ -23,11 +23,14 @@ const CarboyLoanStackRoutes: React.FC = () => (
     <CarboyLoanStack.Screen name="CarboyLoanCreate" component={CarboyLoanCreate}
 
       options={{
-        headerShown: true,
-      title: "Cadastrar empréstimo" }}
+        cardStyle: { backgroundColor: '#3d9be9' },
+        title: "Cadastrar empréstimo"
+      }}
     />
     <CarboyLoanStack.Screen
-      options={{ title: 'Empréstimos Registrados' }}
+      options={{
+        title: 'Empréstimos Registrados'
+      }}
       name="CarboyLoanCreated"
       component={CarboyLoanCreated}
     />

@@ -39,6 +39,8 @@ export const AtrasadoList = styled.View`
         height: 42px;
         border-radius: 5px;
         border-width: 2px;
+        border-color: #ff9000;
+
         background-color: #ff9000;
         justify-content: center;
         align-items: center;
