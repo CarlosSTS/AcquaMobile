@@ -51,12 +51,12 @@ const SignIn: React.FC = () => {
     Animated.parallel([
       Animated.timing(logo.x, {
         toValue: 60,
-        duration: 500,
+        duration: 200,
         useNativeDriver: false,
       }),
       Animated.timing(logo.y, {
         toValue: 103,
-        duration: 500,
+        duration: 200,
         useNativeDriver: false,
       }),
     ]).start();

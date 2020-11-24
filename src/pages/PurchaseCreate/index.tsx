@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
-  Button,
 } from "react-native";
 import * as Yup from "yup";
 import { Formik } from "formik";
@@ -14,6 +13,7 @@ import { Container, Title,ErrorValue } from "./styles";
 import DateInput from "../../components/DateInput";
 import moment from "moment";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import Button from '../../components/Button'
 const initialValues: any = {
   submit_date: moment().format("YYYY-MM-DD"),
   quantity: "",
@@ -104,7 +104,7 @@ const PurchaseCreate: React.FC = () => {
                 />
 
                 <View style={{width:330}}>
-                  <Button  disabled={false} onPress={handleSubmit} title="Registrar" color="#000" />
+                  <Button onPress={handleSubmit}>Acessar</Button>
                 </View>
               </>
             )}

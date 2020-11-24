@@ -117,8 +117,8 @@ export default function ClientDetail() {
                       value={values.full_name}
                       returnKeyType="next"
                     />
-                    <Description>Telefone: </Description>
 
+                    <Description>Telefone: </Description>
                     <Input
                       autoCorrect={false}
                       autoCapitalize="characters"
@@ -143,11 +143,12 @@ export default function ClientDetail() {
                     <Description>Preço Padrão: </Description>
 
                     <Input
+
                       keyboardType="numeric"
                       placeholder="Preço padrão"
                       onChangeText={handleChange("preferred_price")}
                       onBlur={handleBlur("preferred_price")}
-                      value={String(values.preferred_price)}
+                      value={String('R$ '+values.preferred_price +',00' )}
                       returnKeyType="send"
                     />
                     <Button onPress={handleSubmit} title="Salvar Edições"  color="#000" />

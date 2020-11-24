@@ -1,6 +1,7 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Icon from 'react-native-vector-icons/Feather';
+import Feather from 'react-native-vector-icons/Feather';
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 import { Text } from 'react-native';
 
@@ -39,7 +40,7 @@ const DrawerNavgation: React.FC = () => (
           </Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="folder" />
+         <Feather color={focused ? '#313131' : '#fff'} name="folder" />
         ),
       }}
     />
@@ -53,7 +54,7 @@ const DrawerNavgation: React.FC = () => (
           <Text style={{ color: focused ? '#313131' : '#fff' }}>Clientes</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="users" />
+         <Feather color={focused ? '#313131' : '#fff'} name="users" />
         ),
       }}
     />
@@ -67,7 +68,7 @@ const DrawerNavgation: React.FC = () => (
           <Text style={{ color: focused ? '#313131' : '#fff' }}>Compras</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="shopping-cart" />
+         <Feather color={focused ? '#313131' : '#fff'} name="shopping-cart" />
         ),
       }}
     />
@@ -81,7 +82,7 @@ const DrawerNavgation: React.FC = () => (
           <Text style={{ color: focused ? '#313131' : '#fff' }}>Vendas</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="shopping-bag" />
+         <Feather color={focused ? '#313131' : '#fff'} name="shopping-bag" />
         ),
       }}
     />
@@ -97,7 +98,7 @@ const DrawerNavgation: React.FC = () => (
           </Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="share-2" />
+         <FontAwesome color={focused ? '#313131' : '#fff'} name="handshake-o" />
         ),
       }}
     />
@@ -113,7 +114,7 @@ const DrawerNavgation: React.FC = () => (
           </Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="repeat" />
+         <Feather color={focused ? '#313131' : '#fff'} name="repeat" />
         ),
       }}
     />
@@ -127,7 +128,7 @@ const DrawerNavgation: React.FC = () => (
           <Text style={{ color: focused ? '#313131' : '#fff' }}>Rotas</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="truck" />
+         <Feather color={focused ? '#313131' : '#fff'} name="truck" />
         ),
       }}
     />
@@ -141,7 +142,7 @@ const DrawerNavgation: React.FC = () => (
           <Text style={{ color: focused ? '#313131' : '#fff' }}>Sair</Text>
         ),
         drawerIcon: ({ focused }) => (
-          <Icon color={focused ? '#313131' : '#fff'} name="log-out" />
+         <Feather color={focused ? '#313131' : '#fff'} name="log-out" />
         ),
       }}
     />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/index";
+import InputText from '../../components/InputText';
 import {
   ClientValue,
   Container,
@@ -86,11 +87,12 @@ export default function ClientCreated() {
   return (
     <Container>
       <Header></Header>
-      <Description
+      <InputText
+      keyboardType="default"
+      icon="user-plus"
         placeholder="Buscar clientes por nome..."
         onChangeText={onFilterChange}
         value={filterValue}
-        autoCorrect={false}
       />
       <ClientList
         data={clients}

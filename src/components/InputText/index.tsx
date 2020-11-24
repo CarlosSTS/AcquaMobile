@@ -8,6 +8,7 @@ interface InputProps {
  placeholder: string;
  value?: string;
  keyboardType: any;
+ autoCorrect?:boolean;
 }
 
 const InputText : React.FC<InputProps> =({ icon, ...rest}) =>(
