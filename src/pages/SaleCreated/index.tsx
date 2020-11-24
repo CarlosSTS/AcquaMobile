@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
-import { Alert } from 'react-native';
+import { Alert,StyleSheet } from 'react-native';
 import uniqBy from 'lodash/uniqBy';
 import api from '../../services/index';
 import {
@@ -131,8 +131,8 @@ export default function SaleCreated() {
 
   return (
     <Container>
-      <Header />
       <RemoteSelect
+
         onSelectChange={onClientChange}
         data={clients}
         labelField="full_name"

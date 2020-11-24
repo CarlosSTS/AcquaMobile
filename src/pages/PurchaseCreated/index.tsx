@@ -6,16 +6,14 @@ import {
   ShoppingValue,
   Container,
   Shopping,
-  Header,
   ShoppingList,
-  SearchData,
   ShoppingProperty,
   DetailsButton,
   DetailsButtonText,
 } from "./styles";
 import uniqBy from "lodash/uniqBy";
 import moment from "moment";
-
+import InputText from '../../components/InputText'
 interface PurchaseFormData {
   id: number;
   quantity: number;
@@ -107,14 +105,14 @@ export default function PurchaseCreated() {
   return (
     <Container>
 
-<SearchData
+<InputText
+        icon="search"
+        keyboardType="default"
         placeholder="Buscar compras por data..."
         //onChangeText={onFilterChange}
         //value={filterValue}
         autoCorrect={false}
       />
-      <Header></Header>
-
 
       <ShoppingList
         data={purchases}

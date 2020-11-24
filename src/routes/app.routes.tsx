@@ -19,7 +19,7 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavgation: React.FC = () => (
   <Drawer.Navigator
-    initialRouteName="ClientStackRoutes"
+    initialRouteName="SaleCreated"
     drawerStyle={{
       backgroundColor: '#313131',
       paddingVertical: 20,

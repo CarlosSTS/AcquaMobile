@@ -9,7 +9,6 @@ import {
   LoanValue,
   Container,
   Loan,
-  Header,
   LoanList,
   LoanProperty,
   DetailsButton,
@@ -131,7 +130,6 @@ export default function CarboyLoanCreated() {
 
   return (
     <Container>
-      <Header />
       <RemoteSelect
         onSelectChange={onClientChange}
         data={clients}

@@ -79,3 +79,4 @@ export const DetailsButtonText = styled.Text`
   font-size: 15px;
   font-weight: bold;
 `;
+

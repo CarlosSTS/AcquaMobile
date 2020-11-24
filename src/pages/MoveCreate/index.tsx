@@ -72,11 +72,12 @@ const navigation = useNavigation();
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-        <Container>
-
         <ScrollView
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ flex: 1 }}>
+        <Container>
+
+
           <Formik
             initialValues={initialValues}
             onSubmit={onSubmit}
@@ -84,9 +85,7 @@ const navigation = useNavigation();
           >
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
               <>
-              <ContainerRemoteButtonText>
                 <RemoteSelect
-                style={styles.input}
                   onSelectChange={handleChange("status")}
                   data={[
                     { value: 0, label: "ENTRADA" },
@@ -96,7 +95,6 @@ const navigation = useNavigation();
                   valueField="value"
                   initialLabel="Selecione um tipo de movimento"
                 />
-              </ContainerRemoteButtonText>
 
 
                 {errors.status && (
@@ -134,21 +132,13 @@ const navigation = useNavigation();
               </>
             )}
           </Formik>
+          </Container>
           </ScrollView>
-
-        </Container>
       </KeyboardAvoidingView>
     </>
   );
 };
 
-const styles = StyleSheet.create({
-  input: {
-    flex:1,
-    color: "#000",
-    fontSize: 16,
-    fontFamily: "RobotoSlab-Regular",
-},
-});
+
 
 export default MoveCreate;

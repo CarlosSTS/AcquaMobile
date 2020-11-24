@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
-  StyleSheet,
 } from 'react-native';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -15,7 +14,6 @@ import api from '../../services/index';
 import InputText from '../../components/InputText';
 import {
   Container,
-  ContainerRemoteButtonText,
   ErrorValue,
 } from './styles';
 import DateInput from '../../components/DateInput';
@@ -92,16 +90,15 @@ const SaleCreate: React.FC = () => {
           >
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
               <>
-                <ContainerRemoteButtonText>
+
                   <RemoteSelect
-                    style={styles.input}
                     initialLabel="Selecione um cliente"
                     onSelectChange={handleChange('client')}
                     data={clients}
                     labelField="full_name"
                     valueField="id"
                   />
-                </ContainerRemoteButtonText>
+
 
                 {errors.client && <ErrorValue>{errors.client}</ErrorValue>}
                 <InputText
@@ -153,13 +150,5 @@ const SaleCreate: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  input: {
-    flex: 1,
-    color: '#000',
-    fontSize: 16,
-    fontFamily: 'RobotoSlab-Regular',
-  },
-});
 
 export default SaleCreate;

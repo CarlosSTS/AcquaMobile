@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {
-  View,
   KeyboardAvoidingView,
   Platform,
   Alert,
-  StyleSheet,
   ScrollView,
 
 } from "react-native";
@@ -94,16 +92,13 @@ const navigation = useNavigation();
           >
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
               <>
-                <ContainerRemoteButtonText>
                   <RemoteSelect
-                    style={styles.input}
                     onSelectChange={handleChange("client")}
                     data={clients}
                     labelField="full_name"
                     valueField="id"
                     initialLabel="Selecione um cliente"
                   />
-                </ContainerRemoteButtonText>
 
 
                 {errors.client && (
@@ -187,14 +182,5 @@ const navigation = useNavigation();
   );
 };
 
-
-const styles = StyleSheet.create({
-  input: {
-    flex: 1,
-    color: "#000",
-    fontSize: 16,
-    fontFamily: "RobotoSlab-Regular",
-  }
-});
 
 export default ClientRouteCreate;
