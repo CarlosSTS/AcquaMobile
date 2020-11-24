@@ -13,6 +13,7 @@ import {
 import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import ItemContainer from '../../components/ItemContainer'
 
 interface pathsRouteParams {
   id: number;
@@ -177,6 +178,7 @@ export default function ClientRouteDetail() {
 
         </ScrollView>
       </Container>
+      <ItemContainer />
     </>
   );
 }

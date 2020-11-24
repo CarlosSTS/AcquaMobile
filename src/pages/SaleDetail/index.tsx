@@ -7,13 +7,12 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Container,
-
   Sales,
   Input,
   Description,
 } from './styles';
 import api from '../../services';
-
+import ItemContainer from '../../components/ItemContainer'
 interface saleRouteParams {
   id: number;
 }
@@ -62,10 +61,6 @@ export default function SaleDetail() {
       Alert.alert('fracasso!', 'contate o administrador do sistema');
     }
   };
-
-  function navigateBack() {
-    navigation.goBack();
-  }
 
   return (
     <>
@@ -175,6 +170,8 @@ export default function SaleDetail() {
 
         </ScrollView>
       </Container>
+      <ItemContainer />
+
     </>
   );
 }

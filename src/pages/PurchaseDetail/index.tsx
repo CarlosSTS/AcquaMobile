@@ -12,6 +12,7 @@ import {
   Description,
 } from './styles';
 import api from '../../services';
+import ItemContainer from '../../components/ItemContainer'
 
 interface shoppingRouteParams {
   id: number;
@@ -136,6 +137,7 @@ export default function PurchaseDetail() {
 
           </ScrollView>
       </Container>
+      <ItemContainer />
     </>
   );
 }

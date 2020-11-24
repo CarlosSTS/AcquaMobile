@@ -12,6 +12,7 @@ import {
   Description,
 } from './styles';
 import api from '../../services';
+import ItemContainer from '../../components/ItemContainer'
 
 interface loansRouteParams {
   id: number;
@@ -137,6 +138,7 @@ export default function CarboyLoanDetail() {
 
         </ScrollView>
       </Container>
+      <ItemContainer />
     </>
   );
 }

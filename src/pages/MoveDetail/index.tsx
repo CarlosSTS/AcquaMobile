@@ -13,6 +13,7 @@ import {
 import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import ItemContainer from '../../components/ItemContainer'
 
 interface moveRouteParams {
   id: number;
@@ -137,6 +138,7 @@ export default function MoveDetail() {
 
         </ScrollView>
       </Container>
+      <ItemContainer />
     </>
   );
 }
