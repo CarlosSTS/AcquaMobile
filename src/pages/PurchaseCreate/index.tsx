@@ -50,9 +50,6 @@ const PurchaseCreate: React.FC = () => {
         enabled
       >
         <Container>
-          <View>
-            <Title>Registrar compra</Title>
-          </View>
 
           <Formik
             initialValues={initialValues}
@@ -98,7 +95,7 @@ const PurchaseCreate: React.FC = () => {
 
                 <DateInput
 
-                  icon="bell"
+                  icon="clock"
                   value={values.submit_date}
                   handleChange={handleChange("submit_date")}
                 />

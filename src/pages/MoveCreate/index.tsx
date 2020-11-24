@@ -73,9 +73,7 @@ const navigation = useNavigation();
         enabled
       >
         <Container>
-          <View>
-            <Title>Registrar  movimento</Title>
-          </View>
+
 
           <Formik
             initialValues={initialValues}
@@ -125,7 +123,7 @@ const navigation = useNavigation();
                 />
 
                 <DateInput
-                icon="bell"
+                icon="clock"
                   value={values.order_date}
                   handleChange={handleChange("order_date")}
                 />

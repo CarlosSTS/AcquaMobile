@@ -164,7 +164,7 @@ const navigation = useNavigation();
                 )}
 
                 <DateInput
-                  icon="bell"
+                  icon="clock"
                   handleChange={handleChange("last_ship_date")}
                   value={values.step_days}
                 />

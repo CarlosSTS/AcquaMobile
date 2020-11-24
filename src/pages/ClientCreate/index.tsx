@@ -2,6 +2,7 @@ import React, { useRef, useCallback } from 'react';
 import {
   TextInput,
   View,
+  ScrollView,
   KeyboardAvoidingView,
   Platform,
   Alert,
@@ -77,10 +78,11 @@ const ClientCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
+         <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
         <Container>
-          <View>
-            <Title>Cadastrar Cliente</Title>
-          </View>
+
 
           <Form ref={formRef} onSubmit={handleSignUp}>
             <Input
@@ -125,7 +127,7 @@ const ClientCreate: React.FC = () => {
               ref={passswordInputRef}
               keyboardType="numeric"
               name="preferred_price"
-              icon="bell"
+              icon="clock"
               placeholder="preço padrão"
               returnKeyType="send"
               onSubmitEditing={() => formRef.current?.submitForm()}
@@ -137,7 +139,9 @@ const ClientCreate: React.FC = () => {
               </Button>
             </View>
           </Form>
+
         </Container>
+        </ScrollView>
       </KeyboardAvoidingView>
     </>
   );

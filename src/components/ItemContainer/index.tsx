@@ -13,6 +13,22 @@ export default function ItemContainer() {
 
       <View style={styles.itemsContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+
+          <RectButton style={styles.item} onPress={() => { }}>
+            <Feather color="#e82041" name="shopping-cart" size={42} />
+            <Text style={styles.itemTitle}>Ir para Compras</Text>
+          </RectButton>
+
+          <RectButton style={styles.item} onPress={() => { }}>
+            <Feather color="orange" name="shopping-bag" size={42} />
+            <Text style={styles.itemTitle}>Ir para vendas</Text>
+          </RectButton>
+
+          <RectButton style={styles.item} onPress={() => { }}>
+            <FontAwesome color="#000" name="handshake-o" size={42} />
+            <Text style={styles.itemTitle}>Ir para Empréstimos</Text>
+          </RectButton>
+
           <RectButton style={styles.item} onPress={() => { }}>
             <FontAwesome color="brown" name="folder" size={42} />
             <Text style={styles.itemTitle}>Ir para Relatórios</Text>
@@ -32,28 +48,6 @@ export default function ItemContainer() {
             <FontAwesome color="#34CB79" name="whatsapp" size={42} />
             <Text style={styles.itemTitle}>Ir para whatsapp</Text>
           </RectButton>
-
-        </ScrollView>
-      </View>
-
-      <View style={styles.itemsContainer}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-
-          <RectButton style={styles.item} onPress={() => { }}>
-            <Feather color="#e82041" name="shopping-cart" size={42} />
-            <Text style={styles.itemTitle}>Ir para Compras</Text>
-          </RectButton>
-
-          <RectButton style={styles.item} onPress={() => { }}>
-            <Feather color="orange" name="shopping-bag" size={42} />
-            <Text style={styles.itemTitle}>Ir para vendas</Text>
-          </RectButton>
-
-          <RectButton style={styles.item} onPress={() => { }}>
-            <FontAwesome color="#000" name="handshake-o" size={42} />
-            <Text style={styles.itemTitle}>Ir para Empréstimos</Text>
-          </RectButton>
-
         </ScrollView>
       </View>
 

@@ -16,7 +16,6 @@ import api from '../../services/index';
 import InputText from '../../components/InputText';
 import {
   Container,
-  Title,
   ErrorValue,
   ContainerRemoteButtonText,
 } from './styles';
@@ -78,9 +77,7 @@ const CarboyLoanCreate: React.FC = () => {
         enabled
       >
         <Container>
-          <View>
-            <Title>Cadastrar empréstimo</Title>
-          </View>
+
 
           <Formik
             initialValues={initialValues}
@@ -122,7 +119,7 @@ const CarboyLoanCreate: React.FC = () => {
                 />
 
                 <DateInput
-                  icon="bell"
+                  icon="clock"
                   value={values.order_date}
                   handleChange={handleChange('order_date')}
                 />

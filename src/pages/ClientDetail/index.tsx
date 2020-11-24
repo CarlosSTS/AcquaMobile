@@ -5,9 +5,7 @@ import { Linking, ScrollView, Alert,Platform, KeyboardAvoidingView,Button, View,
 import { RectButton } from "react-native-gesture-handler";
 import {
   Container,
-  Header,
   Clients,
-  Title,
   Input,
   Description,
 } from "./styles";
@@ -15,7 +13,7 @@ import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ItemContainer from '../../components/ItemContainer'
-
+import InputText from '../../components/InputText'
 interface clientDetailRouteParams {
   id: number;
 }
@@ -83,19 +81,10 @@ export default function ClientDetail() {
     <>
 
       <Container style={{ paddingHorizontal: 24 }}>
-        <Header>
-          <RectButton onPress={navigateBack}>
-            <Icon name="arrow-left" size={28} color="#E82041" />
-          </RectButton>
-          <Title>Toque Para editar Cliente</Title>
 
-          <RectButton onPress={() => {}}>
-            <Icon name="edit" size={28} color="#e82041" />
-          </RectButton>
-        </Header>
 
         <ScrollView
-        showsHorizontalScrollIndicator={false}>
+        showsVerticalScrollIndicator={false}>
           <Clients>
             <Formik
               initialValues={client}
@@ -161,7 +150,6 @@ export default function ClientDetail() {
         </ScrollView>
 
       </Container>
-
 <ItemContainer />
     </>
   );

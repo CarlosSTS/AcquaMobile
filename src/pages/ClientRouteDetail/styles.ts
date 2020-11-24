@@ -28,11 +28,6 @@ color: #4169b3;
 font-weight: bold;
 `;
 
-export const Title = styled.Text`
-font-size: 20px;
-color: #41414d;
-font-family: 'RobotoSlab-Medium';
-`;
 
 export const Paths = styled.View`
 padding: 24px;

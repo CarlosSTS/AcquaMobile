@@ -50,7 +50,6 @@ export const ClientProperty = styled.Text`
 font-family: 'RobotoSlab-Medium';
 font-size: 14px;
 color: #4169b3;
-font-weight: bold;
 `;
 
 export const ClientValue = styled.Text`

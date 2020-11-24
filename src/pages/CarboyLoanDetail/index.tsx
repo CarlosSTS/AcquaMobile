@@ -7,15 +7,12 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Container,
-  Header,
   Action,
   ActionText,
   Actions,
-  SeachData,
   LoansDescription,
   LoansTitle,
   Loans,
-  Title,
   ContactBox,
   Input,
   Description,
@@ -74,16 +71,7 @@ export default function CarboyLoanDetail() {
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>
-        <Header>
-          <RectButton onPress={navigateBack}>
-            <Icon name="arrow-left" size={28} color="#E82041" />
-          </RectButton>
-          <Title>Toque Para editar Empréstimo</Title>
 
-          <RectButton onPress={() => {}}>
-            <Icon name="edit" size={28} color="#e82041" />
-          </RectButton>
-        </Header>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Loans>

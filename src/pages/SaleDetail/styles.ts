@@ -28,11 +28,7 @@ export const Description = styled.Text`
   font-weight: bold;
 `;
 
-export const Title = styled.Text`
-  font-size: 20px;
-  color: #41414d;
-  font-family: 'RobotoSlab-Medium';
-`;
+
 
 export const Sales = styled.View`
   padding: 24px;
@@ -49,12 +45,7 @@ export const ContactBox = styled.View`
   margin-bottom: 16px;
 `;
 
-export const SaleTitle = styled.Text`
-  font-family: 'RobotoSlab-Medium';
-  font-size: 20px;
-  color: #13131a;
-  line-height: 30px;
-`;
+
 
 export const SaleDescription = styled.Text`
   font-size: 15px;

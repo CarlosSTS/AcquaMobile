@@ -12,7 +12,6 @@ import {
   PathsDescription,
   PathsTitle,
   Paths,
-  Title,
   ContactBox,
   Input,
   Description,
@@ -80,17 +79,7 @@ export default function ClientRouteDetail() {
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>
-        <Header>
 
-          <RectButton onPress={navigateBack}>
-            <Icon name="arrow-left" size={28} color="#E82041" />
-          </RectButton>
-          <Title>Toque Para editar Rota</Title>
-
-          <RectButton onPress={() => { }}>
-            <Icon name="edit" size={28} color="#e82041" />
-          </RectButton>
-        </Header>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Paths>

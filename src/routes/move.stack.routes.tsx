@@ -20,10 +20,12 @@ const MoveStackRoutes: React.FC = () => (
     }}
   >
     <MoveStack.Screen name="Movimentos" component={HomeMove} />
-    <MoveStack.Screen
-      options={{ headerShown: false }}
-      name="MoveCreate"
+    <MoveStack.Screen name="MoveCreate"
       component={MoveCreate}
+      options={{ headerShown: true,
+      title: "Cadastrar movimento"
+     }}
+
     />
     <MoveStack.Screen
       options={{ title: 'Movimentos Registrados' }}

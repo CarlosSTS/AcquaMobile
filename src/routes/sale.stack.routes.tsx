@@ -21,7 +21,7 @@ const SaleStackRoutes: React.FC = () => (
   }}
   >
     <SaleStack.Screen name="Vendas" component={HomeSale} />
-    <SaleStack.Screen options={{headerShown: false}} name="SaleCreate" component={SaleCreate} />
+    <SaleStack.Screen options={{headerShown: true, title: "Registar venda"}} name="SaleCreate" component={SaleCreate} />
     <SaleStack.Screen options={{title:"Vendas Registradas"}} name="SaleCreated" component={SaleCreated} />
     <SaleStack.Screen options={{headerShown: false}} name="SaleDetail" component={SaleDetail} />
 

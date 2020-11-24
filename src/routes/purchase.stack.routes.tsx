@@ -26,7 +26,8 @@ const PurchaseStackRoutes: React.FC = () => (
       name="PurchaseCreate"
       component={PurchaseCreate}
       options={{
-        headerShown: false,
+        title: "Registrar compra",
+        headerShown: true ,
       }}
     />
     <PurchaseStack.Screen
