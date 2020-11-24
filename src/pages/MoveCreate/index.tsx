@@ -5,7 +5,6 @@ import {
   Platform,
   Alert,
   StyleSheet,
-  Button,
 
 } from "react-native";
 import * as Yup from "yup";
@@ -18,6 +17,7 @@ import { Container, Title, ContainerRemoteButtonText,ErrorValue } from "./styles
 import DateInput from "../../components/DateInput";
 import RemoteSelect from "../../components/RemoteSelect";
 import moment from "moment";
+import Button from '../../components/Button'
 
 /*
 interface CreateMoveFormData {
@@ -128,9 +128,7 @@ const navigation = useNavigation();
                   handleChange={handleChange("order_date")}
                 />
 
-                <View>
-                  <Button  disabled={false}  onPress={handleSubmit} title="Registrar" color='#000'/>
-                </View>
+                  <Button   onPress={handleSubmit}>Registrar</Button>
               </>
             )}
           </Formik>

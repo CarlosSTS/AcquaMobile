@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
-  Button,
   StyleSheet,
 } from 'react-native';
 import * as Yup from 'yup';
@@ -21,7 +20,7 @@ import {
 } from './styles';
 import DateInput from '../../components/DateInput';
 import RemoteSelect from '../../components/RemoteSelect';
-
+import Button from '../../components/Button'
 /*
 interface CarboyLoanFormData {
   order_date: string;
@@ -124,14 +123,7 @@ const CarboyLoanCreate: React.FC = () => {
                   handleChange={handleChange('order_date')}
                 />
 
-                <View>
-                  <Button
-                    disabled={false}
-                    onPress={handleSubmit}
-                    title="Registrar"
-                    color="#000"
-                  />
-                </View>
+                  <Button  onPress={handleSubmit}>Registrar</Button>
               </>
             )}
           </Formik>
