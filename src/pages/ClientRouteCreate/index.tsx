@@ -5,7 +5,8 @@ import {
   Platform,
   Alert,
   StyleSheet,
-  Button,
+  ScrollView,
+
 } from "react-native";
 import * as Yup from "yup";
 import { Formik } from "formik";
@@ -13,9 +14,10 @@ import { useNavigation } from '@react-navigation/native';
 
 import api from "../../services/index";
 import InputText from '../../components/InputText'
-import { Container, Title, ContainerRemoteButtonText, ErrorValue } from "./styles";
+import { Container, ContainerRemoteButtonText, ErrorValue } from "./styles";
 import DateInput from "../../components/DateInput";
 import RemoteSelect from "../../components/RemoteSelect";
+import Button from '../../components/Button'
 import moment from "moment";
 
 /*
@@ -79,10 +81,8 @@ const navigation = useNavigation();
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
+        <ScrollView>
         <Container>
-          <View>
-            <Title>Cadastrar rota de cliente</Title>
-          </View>
 
           <Formik
             initialValues={initialValues}
@@ -174,12 +174,14 @@ const navigation = useNavigation();
                 )}
 
                 <View>
-                  <Button disabled={false}  onPress={handleSubmit} title="Registrar" color="#000" />
+                  <Button onPress={handleSubmit}>Registrar</Button>
                 </View>
               </>
             )}
           </Formik>
         </Container>
+        </ScrollView>
+
       </KeyboardAvoidingView>
     </>
   );

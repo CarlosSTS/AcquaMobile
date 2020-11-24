@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import api from '../../services/index';
 import Button from '../../components/Button';
 import DateInput from '../../components/DateInput';
@@ -34,11 +34,11 @@ export default function ReportsProfit() {
     <>
       <Container>
         <DateInput
-          icon="bell"
+          icon="clock"
           value={initial_date}
           handleChange={setInitial_date}
         />
-        <DateInput icon="bell" value={end_date} handleChange={setEnd_date} />
+        <DateInput icon="clock-o" value={end_date} handleChange={setEnd_date} />
         <Button onPress={loadProfit}>Acessar</Button>
         <View style={{ paddingTop: 16 }} />
         <ContainerList>

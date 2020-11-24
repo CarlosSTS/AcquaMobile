@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
-  TextInput,
   View,
   KeyboardAvoidingView,
   Platform,
   Alert,
   StyleSheet,
-  Button,
-  Text,
 } from 'react-native';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -23,6 +20,7 @@ import {
   ErrorValue,
 } from './styles';
 import DateInput from '../../components/DateInput';
+import Button from '../../components/Button'
 import RemoteSelect from '../../components/RemoteSelect';
 
 /*
@@ -144,14 +142,8 @@ const SaleCreate: React.FC = () => {
                   handleChange={handleChange('submit_date')}
                 />
 
-                <View>
-                  <Button
-                    disabled={false}
-                    onPress={handleSubmit}
-                    title="Registrar"
-                    color="#000"
-                  />
-                </View>
+                  <Button onPress={handleSubmit}>Rigistrar</Button>
+
               </>
             )}
           </Formik>

@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
 
 
 export const Container = styled.View`
@@ -20,6 +22,10 @@ export const Container = styled.View`
 export const Icon = styled(FeatherIcon)`
   margin-right: 16px;
 `;
+export const FontAwesomeIcon = styled(FontAwesome)`
+  margin-right: 16px;
+`;
+
 export const TextInput = styled.TextInput`
   flex: 1;
   color: #000;

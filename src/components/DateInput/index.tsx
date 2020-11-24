@@ -1,7 +1,7 @@
 ﻿import React, { useState } from "react";
 import TextInputMask from "react-native-text-input-mask";
 import moment from "moment";
-import { Container, Icon } from "./styles";
+import { Container, Icon, FontAwesomeIcon } from "./styles";
 
 interface DateInputProps {
   handleChange: Function;
@@ -19,7 +19,11 @@ const DateInput: React.FC<DateInputProps> = (props) => {
 
   return (
     <Container>
-       <Icon name={props.icon} size={20} color="#000" />
+      {props.icon === "clock" ? (
+        <Icon name={props.icon} size={20} color="#6b3e3e" />
+      ): (
+      <FontAwesomeIcon name={props.icon} size={20} color="#6b3e3e" />
+        )}
 
       <TextInputMask
         onChangeText={onChange}
