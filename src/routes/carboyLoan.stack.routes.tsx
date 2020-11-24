@@ -11,7 +11,6 @@ const CarboyLoanStack = createStackNavigator();
 const CarboyLoanStackRoutes: React.FC = () => (
   <CarboyLoanStack.Navigator
     screenOptions={{
-      headerShown: true,
       headerTintColor: '#fff',
       headerBackTitleVisible: false,
       headerStyle: {
@@ -27,17 +26,13 @@ const CarboyLoanStackRoutes: React.FC = () => (
         title: "Cadastrar empréstimo"
       }}
     />
-    <CarboyLoanStack.Screen
-      options={{
-        title: 'Empréstimos Registrados'
-      }}
-      name="CarboyLoanCreated"
-      component={CarboyLoanCreated}
+    <CarboyLoanStack.Screen name="CarboyLoanCreated" component={CarboyLoanCreated}
+      options={{  title: 'Empréstimos Registrados'}}
+
     />
-    <CarboyLoanStack.Screen
-      options={{ headerShown: false }}
-      name="CarboyLoanDetail"
+    <CarboyLoanStack.Screen name="CarboyLoanDetail"
       component={CarboyLoanDetail}
+      options={{ title: "Editar empréstimo" }}
     />
   </CarboyLoanStack.Navigator>
 );

@@ -34,7 +34,7 @@ const MoveStackRoutes: React.FC = () => (
       component={MoveCreated}
     />
     <MoveStack.Screen
-      options={{ headerShown: false }}
+      options={{ title: "Editar movimento"}}
       name="MoveDetail"
       component={MoveDetail}
     />
