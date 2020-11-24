@@ -6,7 +6,6 @@ import {
   PathValue,
   Container,
   Path,
-  Header,
   PathList,
   PathProperty,
   DetailsButton,
@@ -131,7 +130,6 @@ export default function ClientRouteCreated() {
 
   return (
     <Container>
-      <Header></Header>
       <RemoteSelect
         onSelectChange={onClientChange}
         data={clients}

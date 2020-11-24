@@ -16,7 +16,6 @@ export const Container = styled.SafeAreaView`
   padding: 0 24px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
 
-
 export const HeaderText = styled.Text`
 font-family: 'RobotoSlab-Medium';
 font-size: 15px;

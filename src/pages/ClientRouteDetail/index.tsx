@@ -5,14 +5,7 @@ import { Linking, ScrollView, Alert, Button } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import {
   Container,
-  Header,
-  Action,
-  ActionText,
-  Actions,
-  PathsDescription,
-  PathsTitle,
   Paths,
-  ContactBox,
   Input,
   Description,
 
@@ -182,18 +175,6 @@ export default function ClientRouteDetail() {
             </Formik>
           </Paths>
 
-          <ContactBox>
-            <PathsTitle>Entre em contato e</PathsTitle>
-            <PathsTitle>converse com o dono dessa compra</PathsTitle>
-
-            <PathsDescription>Entrar em contato via:</PathsDescription>
-
-            <Actions>
-              <Action onPress={() => { }}>
-                <ActionText>WhatsApp</ActionText>
-              </Action>
-            </Actions>
-          </ContactBox>
         </ScrollView>
       </Container>
     </>

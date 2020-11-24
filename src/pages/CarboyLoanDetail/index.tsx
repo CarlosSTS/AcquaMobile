@@ -7,13 +7,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Container,
-  Action,
-  ActionText,
-  Actions,
-  LoansDescription,
-  LoansTitle,
   Loans,
-  ContactBox,
   Input,
   Description,
 } from './styles';
@@ -141,18 +135,6 @@ export default function CarboyLoanDetail() {
             </Formik>
           </Loans>
 
-          <ContactBox>
-            <LoansTitle>Entre em contato e</LoansTitle>
-            <LoansTitle>converse com o dono dessa compra</LoansTitle>
-
-            <LoansDescription>Entrar em contato via:</LoansDescription>
-
-            <Actions>
-              <Action onPress={() => {}}>
-                <ActionText>WhatsApp</ActionText>
-              </Action>
-            </Actions>
-          </ContactBox>
         </ScrollView>
       </Container>
     </>

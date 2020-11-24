@@ -21,12 +21,6 @@ export const Container = styled.SafeAreaView`
   padding: 0 24px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
 
-export const HeaderText = styled.Text`
-  font-family: 'RobotoSlab-Medium';
-  font-size: 15px;
-  color: #737373;
-`;
-
 export const Description = styled.TextInput`
   font-size: 16px;
   line-height: 24px;

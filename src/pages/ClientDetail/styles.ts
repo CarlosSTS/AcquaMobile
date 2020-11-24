@@ -9,12 +9,6 @@ export const Container = styled.SafeAreaView`
   padding: 0 8px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
 
-export const Header = styled.View`
-  margin-top: 8px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  `;
 export const Input = styled.TextInput`
 margin-top: 8px;
 font-size: 15px;

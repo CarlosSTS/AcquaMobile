@@ -7,15 +7,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Container,
-  Header,
-  Action,
-  ActionText,
-  Actions,
-  ShoppingDescription,
-  ShoppingTitle,
   Shoppings,
-  Title,
-  ContactBox,
   Input,
   Description,
 } from './styles';
@@ -73,16 +65,7 @@ export default function PurchaseDetail() {
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>
-        <Header>
-          <RectButton onPress={navigateBack}>
-            <Icon name="arrow-left" size={28} color="#E82041" />
-          </RectButton>
-          <Title>Toque Para editar Compra</Title>
 
-          <RectButton onPress={() => {}}>
-            <Icon name="edit" size={28} color="#e82041" />
-          </RectButton>
-        </Header>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Shoppings>
@@ -151,19 +134,7 @@ export default function PurchaseDetail() {
             </Formik>
           </Shoppings>
 
-          <ContactBox>
-            <ShoppingTitle>Entre em contato e</ShoppingTitle>
-            <ShoppingTitle>converse com o dono dessa compra</ShoppingTitle>
-
-            <ShoppingDescription>Entrar em contato via:</ShoppingDescription>
-
-            <Actions>
-              <Action onPress={() => {}}>
-                <ActionText>WhatsApp</ActionText>
-              </Action>
-            </Actions>
-          </ContactBox>
-        </ScrollView>
+          </ScrollView>
       </Container>
     </>
   );

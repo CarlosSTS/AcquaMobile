@@ -5,16 +5,7 @@ import { Linking, ScrollView, Alert, Button } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import {
   Container,
-  Header,
-  Action,
-  ActionText,
-  Actions,
   Moves,
-  MovesDescription,
-  MovesTitle,
-  SeachData,
-  Title,
-  ContactBox,
   Input,
   Description,
 
@@ -76,17 +67,6 @@ export default function MoveDetail() {
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>
-        <Header>
-
-          <RectButton onPress={navigateBack}>
-            <Icon name="arrow-left" size={28} color="#E82041" />
-          </RectButton>
-          <Title>Toque Para editar Movimento</Title>
-
-          <RectButton onPress={() => { }}>
-            <Icon name="edit" size={28} color="#e82041" />
-          </RectButton>
-        </Header>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <Moves>
@@ -155,18 +135,6 @@ export default function MoveDetail() {
             </Formik>
           </Moves>
 
-          <ContactBox>
-            <MovesTitle>Entre em contato e</MovesTitle>
-            <MovesTitle>converse com o dono dessa compra</MovesTitle>
-
-            <MovesDescription>Entrar em contato via:</MovesDescription>
-
-            <Actions>
-              <Action onPress={() => { }}>
-                <ActionText>WhatsApp</ActionText>
-              </Action>
-            </Actions>
-          </ContactBox>
         </ScrollView>
       </Container>
     </>

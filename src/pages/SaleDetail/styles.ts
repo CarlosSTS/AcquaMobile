@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
-// 15c3d6 ,41aef4,3d9be9,15B6D6
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
@@ -9,12 +8,6 @@ export const Container = styled.SafeAreaView`
   padding: 0 8px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
 
-export const Header = styled.View`
-  margin-top: 8px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-`;
 export const Input = styled.TextInput`
   flex: 1;
   color: #000;
@@ -28,8 +21,6 @@ export const Description = styled.Text`
   font-weight: bold;
 `;
 
-
-
 export const Sales = styled.View`
   padding: 24px;
   border-radius: 8px;
@@ -37,15 +28,6 @@ export const Sales = styled.View`
   margin-bottom: 16px;
   margin-top: 48px;
 `;
-
-export const ContactBox = styled.View`
-  padding: 24px;
-  border-radius: 8px;
-  background-color: #fff;
-  margin-bottom: 16px;
-`;
-
-
 
 export const SaleDescription = styled.Text`
   font-size: 15px;

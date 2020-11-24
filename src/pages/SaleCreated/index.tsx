@@ -9,7 +9,6 @@ import {
   SaleValue,
   Container,
   Sales,
-  Header,
   SaleList,
   SaleProperty,
   DetailsButton,

@@ -6,7 +6,6 @@ import {
   MoveValue,
   Container,
   Move,
-  Header,
   MoveList,
   MoveProperty,
   DetailsButton,
@@ -107,7 +106,6 @@ export default function MoveCreated() {
 
   return (
     <Container>
-      <Header></Header>
       <MoveList
         data={moves}
         keyExtractor={(move: MoveFormData) => String(move.id)}
