@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1px;
@@ -34,7 +35,7 @@ export const ProfitDescription = styled.Text`
   margin-top: 5px;
   line-height: 24px;
 `;
-export const ProfitButton = styled.TouchableOpacity`
+export const ProfitButton = styled(RectButton)`
   height: 42px;
   border-radius: 5px;
   border-width: 2px;

@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
-// 15c3d6 ,41aef4,3d9be9,15B6D6
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
@@ -75,7 +74,7 @@ export const Actions = styled.View`
   justify-content: space-between;
 `;
 
-export const Action = styled.TouchableOpacity`
+export const Action = styled(RectButton)`
   background-color: #e02041;
   border-radius: 8px;
   height: 50px;

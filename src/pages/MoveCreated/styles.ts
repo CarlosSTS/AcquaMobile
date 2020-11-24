@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList,RectButton } from 'react-native-gesture-handler';
 
 interface MoveFormData {
   id: number;
@@ -61,7 +61,7 @@ margin-bottom: 24px;
 color: #737373;
 `;
 
-export const DetailsButton = styled.TouchableOpacity`
+export const DetailsButton = styled(RectButton)`
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
