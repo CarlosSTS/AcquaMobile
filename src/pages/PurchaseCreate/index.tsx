@@ -1,17 +1,15 @@
 import React from "react";
 import {
-  View,
   KeyboardAvoidingView,
   Platform,
   Alert,
   ScrollView,
 } from "react-native";
-import Input from '../../components/Input'
 import * as Yup from "yup";
 import { Formik } from "formik";
 import api from "../../services/index";
 import InputText from '../../components/InputText';
-import { Container, Title,ErrorValue } from "./styles";
+import { Container,ErrorValue } from "./styles";
 import DateInput from "../../components/DateInput";
 import moment from "moment";
 import { useNavigation, useRoute } from "@react-navigation/native";

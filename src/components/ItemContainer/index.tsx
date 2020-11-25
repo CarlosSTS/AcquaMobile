@@ -55,7 +55,7 @@ export default function ItemContainer() {
       screen :'MoveDetail',
     params: {id: id}
   })
-  }
+  }//trazer ID
   function NavigationToClientRouteDetail(id: number) {
     navigation.navigate('ClientRouteStackRoutes',{
       screen :'ClientRouteDetail',
@@ -65,7 +65,6 @@ export default function ItemContainer() {
   function sendWhatsapp() {
     Linking.openURL(`whatsapp://send?phone=+55${params.phone}&text=${message}`)
       }
-
 
   return (
     <>
