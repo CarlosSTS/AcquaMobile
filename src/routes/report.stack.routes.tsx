@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeReports from '../pages/HomeReports';
 import ReportsRoutes from '../pages/ReportsRoutes';
 import ReportsProfit from '../pages/ReportsProfit';
+import ItemContainer from '../components/ItemContainer';
 
 const ReportStack = createStackNavigator();
 
@@ -36,6 +37,15 @@ const ReportStackRoutes: React.FC = () => (
       name="ReportsProfit"
       component={ReportsProfit}
     />
+
+<ReportStack.Screen name="ItemContainer" component={ItemContainer}
+     options={{
+      headerBackTitleVisible: false,
+      title: "Container de detalhes",
+      headerShown: true
+    }}
+    />
+
   </ReportStack.Navigator>
 );
 

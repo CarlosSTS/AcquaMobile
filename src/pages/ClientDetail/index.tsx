@@ -13,7 +13,6 @@ import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ItemContainer from '../../components/ItemContainer'
-import InputText from '../../components/InputText'
 interface clientDetailRouteParams {
   id: number;
 }

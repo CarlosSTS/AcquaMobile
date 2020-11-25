@@ -5,6 +5,7 @@ import HomeClientRoute from '../pages/HomeClientRoute';
 import CreateRouteClient from '../pages/ClientRouteCreate';
 import CreatedRouteClient from '../pages/ClientRouteCreated';
 import ClientRouteDetail from '../pages/ClientRouteDetail';
+import ItemContainer from '../components/ItemContainer';
 
 const ClientRouteStack = createStackNavigator();
 
@@ -42,6 +43,14 @@ const ClientRouteStackRoutes: React.FC = () => (
       options={{ title: 'Editar rota de cliente' }}
       name="ClientRouteDetail"
       component={ClientRouteDetail}
+    />
+
+     <ClientRouteStack.Screen name="ItemContainer" component={ItemContainer}
+     options={{
+      headerBackTitleVisible: false,
+      title: "Container de detalhes",
+      headerShown: true
+    }}
     />
   </ClientRouteStack.Navigator>
 );

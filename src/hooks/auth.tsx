@@ -38,6 +38,8 @@ const AuthProvider: React.FC = ({ children }) => {
         "@WaterPlus:user",
       ]);
       if (token[1] && user[1]) {
+        api.defaults.headers.authorization = `Token ${token[1]}`;
+
         setData({ token: token[1], user: JSON.parse(user[1]) });
       }
       setLoading(false);
@@ -58,7 +60,6 @@ const AuthProvider: React.FC = ({ children }) => {
       ["@WaterPlus:user", JSON.stringify(user)],
     ]);
 
-    api.defaults.headers.authorization = `Token ${token}`;
     setData({ token, user });
   }, []);
 
@@ -68,7 +69,9 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: data.user, loading, signIn, signOut }}>
+    <AuthContext.Provider
+    value={{ user: data.user, loading, signIn, signOut }}
+    >
       {children}
     </AuthContext.Provider>
   );

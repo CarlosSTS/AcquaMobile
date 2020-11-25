@@ -5,6 +5,7 @@ import HomeMove from '../pages/HomeMove';
 import MoveCreate from '../pages/MoveCreate';
 import MoveCreated from '../pages/MoveCreated';
 import MoveDetail from '../pages/MoveDetail';
+import ItemContainer from '../components/ItemContainer';
 
 const MoveStack = createStackNavigator();
 
@@ -38,6 +39,15 @@ const MoveStackRoutes: React.FC = () => (
       name="MoveDetail"
       component={MoveDetail}
     />
+<MoveStack.Screen name="ItemContainer" component={ItemContainer}
+     options={{
+      headerBackTitleVisible: false,
+      title: "Container de detalhes",
+      headerShown: true
+    }}
+    />
+
+
   </MoveStack.Navigator>
 );
 

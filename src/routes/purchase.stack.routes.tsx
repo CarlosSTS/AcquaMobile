@@ -5,6 +5,7 @@ import HomePurchase from '../pages/HomePurchase'
 import PurchaseCreate from "../pages/PurchaseCreate";
 import PurchaseCreated from '../pages/PurchaseCreated';
 import PurchaseDetail from '../pages/PurchaseDetail';
+import ItemContainer from '../components/ItemContainer';
 
 const PurchaseStack = createStackNavigator();
 
@@ -45,6 +46,15 @@ const PurchaseStackRoutes: React.FC = () => (
         headerShown: true ,
       }}
       />
+<PurchaseStack.Screen name="ItemContainer" component={ItemContainer}
+     options={{
+      headerBackTitleVisible: false,
+      title: "Container de detalhes",
+      headerShown: true
+    }}
+    />
+
+
 
   </PurchaseStack.Navigator>
 );
