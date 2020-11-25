@@ -28,7 +28,7 @@ function navigationClientCreated() {
       <ContainerList>
           <RoutesTitle>Cadastrar Cliente.</RoutesTitle>
           <RoutesDescription>Acesse para registrar clientes.</RoutesDescription>
-      <RoutesButton onPress={navigationClientCreate}>
+          <RoutesButton onPress={navigationClientCreate}>
        <RoutesButtonText>Acessar</RoutesButtonText>
         </RoutesButton>
         </ContainerList>

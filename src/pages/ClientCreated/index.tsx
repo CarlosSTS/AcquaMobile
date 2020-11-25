@@ -7,7 +7,6 @@ import {
   ClientValue,
   Container,
   Client,
-
   ClientList,
   ClientProperty,
   DetailsButton,

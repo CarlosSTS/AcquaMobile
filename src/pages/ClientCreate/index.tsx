@@ -1,6 +1,5 @@
 import React, { useRef, useCallback } from 'react';
 import {
-  TextInput,
   View,
   ScrollView,
   KeyboardAvoidingView,
@@ -8,38 +7,43 @@ import {
   Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Form } from '@unform/mobile';
-import { FormHandles } from '@unform/core';
+import { Formik } from "formik";
 import * as Yup from 'yup';
 
 import api from '../../services/index';
 
-import getValidationErrors from '../../utils/getValidationErrors';
-
-import Input from '../../components/Input';
+import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
 import { Container, Title } from './styles';
 
-interface ClientFormData {
+/*interface ClientFormData {
   full_name: string;
   phone: string;
   preferred_price: number;
   city: string;
+}*/
+const initialValues : any = {
+  full_name: '',
+  phone: '',
+  city: '',
+  preferred_price: '',
 }
-
 const ClientCreate: React.FC = () => {
-  const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
 
-  const phoneInputRef = useRef<TextInput>(null);
-  const passswordInputRef = useRef<TextInput>(null);
-  const cityInputRef = useRef<TextInput>(null);
-
-  const handleSignUp = useCallback(
-    async (data: ClientFormData) => {
+  const onSubmit = (values: any) => {
       try {
-        formRef.current?.setErrors({});
+         api.post('/clients/', values);
+        Alert.alert(
+          'Cadastro realizado com sucesso!',
+          'Veja agora seus clientes cadastrados',
+        );
+        navigation.navigate('ClientCreated');
+      } catch (err) {
+        Alert.alert("Fracasso!", "contate o administrador do sistema")
+        }
+      };
 
         const schema = Yup.object().shape({
           full_name: Yup.string().required('Nome obrigatório'),
@@ -47,29 +51,6 @@ const ClientCreate: React.FC = () => {
           city: Yup.string().required('Cidade obrigatório'),
           preferred_price: Yup.number().min(1, 'digite um número'),
         });
-        await schema.validate(data, {
-          abortEarly: false,
-        });
-
-        await api.post('/clients/', data);
-        Alert.alert(
-          'Cadastro realizado com sucesso!',
-          'Veja agora seus clientes cadastrados',
-        );
-        navigation.navigate('ClientCreated');
-      } catch (err) {
-        if (err instanceof Yup.ValidationError) {
-          const errors = getValidationErrors(err);
-
-          formRef.current?.setErrors(errors);
-
-          return;
-        }
-        Alert.alert('Erro no cadastro', 'Ocorreu um erro ao fazer cadastro');
-      }
-    },
-    [navigation],
-  );
 
   return (
     <>
@@ -83,66 +64,68 @@ const ClientCreate: React.FC = () => {
           contentContainerStyle={{ flex: 1 }}>
         <Container>
 
+        <Formik
+            initialValues={initialValues}
+            onSubmit={onSubmit}
+            validationSchema={schema}
+          >
+            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+              <>
 
-          <Form ref={formRef} onSubmit={handleSignUp}>
-            <Input
+            <InputText
+              keyboardType="default"
               autoCapitalize="words"
               autoCorrect={false}
-              name="full_name"
               icon="user"
               placeholder="Nome"
               returnKeyType="next"
-              onSubmitEditing={() => {
-                phoneInputRef.current?.focus();
-              }}
+              onChangeText={handleChange("full_name")}
+              onBlur={handleBlur("full_name")}
+              value={String(values.full_name)}
             />
-            <Input
-              ref={phoneInputRef}
+            <InputText
               autoCorrect={false}
               autoCapitalize="characters"
-              name="phone"
               icon="phone"
               placeholder="telefone"
               keyboardType="phone-pad"
               returnKeyType="next"
-              onSubmitEditing={() => {
-                cityInputRef.current?.focus();
-              }}
+              onChangeText={handleChange("phone")}
+              onBlur={handleBlur("phone")}
+              value={String(values.phone)}
             />
 
-            <Input
-              ref={cityInputRef}
+            <InputText
+              keyboardType="default"
               autoCorrect={false}
               autoCapitalize="words"
-              name="city"
               icon="map-pin"
               placeholder="cidade"
               returnKeyType="next"
-              onSubmitEditing={() => {
-                passswordInputRef.current?.focus();
-              }}
+              onChangeText={handleChange("city")}
+              onBlur={handleBlur("city")}
+              value={String(values.city)}
             />
 
-            <Input
-              ref={passswordInputRef}
+            <InputText
               keyboardType="numeric"
-              name="preferred_price"
-              icon="clock"
+              icon="dollar-sign"
               placeholder="preço padrão"
               returnKeyType="send"
-              onSubmitEditing={() => formRef.current?.submitForm()}
+              onChangeText={handleChange("preferred_price")}
+              onBlur={handleBlur("preferred_price")}
+              value={String(values.preferred_price)}
             />
 
-            <View>
-              <Button onPress={() => formRef.current?.submitForm()}>
+              <Button onPress={handleSubmit}>
                 Cadastrar
               </Button>
-            </View>
-          </Form>
-
-        </Container>
-        </ScrollView>
-      </KeyboardAvoidingView>
+            </>
+            )}
+            </Formik>
+            </Container>
+            </ScrollView>
+            </KeyboardAvoidingView>
     </>
   );
 };

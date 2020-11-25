@@ -81,7 +81,6 @@ const CarboyLoanCreate: React.FC = () => {
           contentContainerStyle={{ flex: 1 }}>
             <Container>
 
-
           <Formik
             initialValues={initialValues}
             onSubmit={onSubmit}

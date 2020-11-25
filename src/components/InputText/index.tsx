@@ -9,6 +9,8 @@ interface InputProps {
  value?: string;
  keyboardType: any;
  autoCorrect?:boolean;
+ autoCapitalize?:any;
+ returnKeyType?: any;
 }
 
 const InputText : React.FC<InputProps> =({ icon, ...rest}) =>(
