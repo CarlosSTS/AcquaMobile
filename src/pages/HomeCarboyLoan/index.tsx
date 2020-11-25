@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import ButtonDetail from '../../components/ButtonDetail'
 
 import {
   ContainerList,
-  RoutesButton,
-  RoutesButtonText,
   RoutesDescription,
   RoutesTitle,
   Container,
@@ -28,17 +27,14 @@ function navigationCarboyLoanCreated() {
       <ContainerList>
           <RoutesTitle>Cadastrar Empréstimos.</RoutesTitle>
           <RoutesDescription>Acesse para registrar empréstimos. </RoutesDescription>
-      <RoutesButton onPress={navigationCarboyLoanCreate}>
-       <RoutesButtonText>Acessar</RoutesButtonText>
-        </RoutesButton>
+          <ButtonDetail onPress={navigationCarboyLoanCreate}>Acessar</ButtonDetail>
         </ContainerList>
 
         <ContainerList>
           <RoutesTitle>Empréstimos Registrados.</RoutesTitle>
           <RoutesDescription>Acesse para ver empréstimos registrados.</RoutesDescription>
-      <RoutesButton onPress={navigationCarboyLoanCreated}>
-       <RoutesButtonText>Acessar</RoutesButtonText>
-        </RoutesButton>
+          <ButtonDetail onPress={navigationCarboyLoanCreated}>Acessar</ButtonDetail>
+
         </ContainerList>
 
       </Container>

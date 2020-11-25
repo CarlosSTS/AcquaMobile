@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import api from "../../services/index";
 import InputText from '../../components/InputText'
-import { Container, ContainerRemoteButtonText, ErrorValue } from "./styles";
+import { Container, ErrorValue } from "./styles";
 import DateInput from "../../components/DateInput";
 import RemoteSelect from "../../components/RemoteSelect";
 import Button from '../../components/Button'

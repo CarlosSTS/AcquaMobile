@@ -13,7 +13,7 @@ import {
 } from './styles';
 import api from '../../services';
 import ItemContainer from '../../components/ItemContainer'
-
+import ButtonDetail from '../../components/ButtonDetail'
 interface loansRouteParams {
   id: number;
 }
@@ -124,12 +124,8 @@ export default function CarboyLoanDetail() {
                       value={values.obs}
                       returnKeyType="next"
                     />
+          <ButtonDetail onPress={handleSubmit}>Salvar Edições</ButtonDetail>
 
-                    <Button
-                      onPress={handleSubmit}
-                      title="Salvar Edições"
-                      color="#000"
-                    />
                   </>
                 );
               }}

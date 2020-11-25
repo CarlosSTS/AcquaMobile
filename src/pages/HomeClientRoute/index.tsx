@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import ButtonDetail from '../../components/ButtonDetail'
 
 import {
   ContainerList,
-  RoutesButton,
-  RoutesButtonText,
   RoutesDescription,
   RoutesTitle,
   Container,
@@ -28,17 +27,15 @@ function navigationCreatedRouteClient() {
       <ContainerList>
           <RoutesTitle>Cadastrar Rota de Clientes.</RoutesTitle>
           <RoutesDescription>Acesse para registrar Rota de clientes. </RoutesDescription>
-      <RoutesButton onPress={navigationCreateRouteClient}>
-       <RoutesButtonText>Acessar</RoutesButtonText>
-        </RoutesButton>
+          <ButtonDetail onPress={navigationCreateRouteClient}>Acessar</ButtonDetail>
+
         </ContainerList>
 
         <ContainerList>
           <RoutesTitle>Rota de Clientes Registradas.</RoutesTitle>
           <RoutesDescription>Acesse para ver rota de clientes registradas.</RoutesDescription>
-      <RoutesButton onPress={navigationCreatedRouteClient}>
-       <RoutesButtonText>Acessar</RoutesButtonText>
-        </RoutesButton>
+          <ButtonDetail onPress={navigationCreatedRouteClient}>Acessar</ButtonDetail>
+
         </ContainerList>
 
       </Container>

@@ -12,7 +12,8 @@ import {
 import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import ItemContainer from '../../components/ItemContainer'
+import ItemContainer from '../../components/ItemContainer';
+import ButtonDetail from '../../components/ButtonDetail'
 interface clientDetailRouteParams {
   id: number;
 }
@@ -139,7 +140,7 @@ export default function ClientDetail() {
                       value={String('R$ '+values.preferred_price +',00' )}
                       returnKeyType="send"
                     />
-                    <Button onPress={handleSubmit} title="Salvar Edições"  color="#000" />
+          <ButtonDetail onPress={handleSubmit}>Salvar Edições</ButtonDetail>
                   </>
                 );
               }}

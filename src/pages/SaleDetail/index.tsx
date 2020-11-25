@@ -12,7 +12,9 @@ import {
   Description,
 } from './styles';
 import api from '../../services';
-import ItemContainer from '../../components/ItemContainer'
+import ItemContainer from '../../components/ItemContainer';
+import ButtonDetail from '../../components/ButtonDetail'
+
 interface saleRouteParams {
   id: number;
 }
@@ -157,11 +159,8 @@ export default function SaleDetail() {
                       keyboardType="numeric"
                       returnKeyType="next"
                     />
-                    <Button
-                      onPress={handleSubmit}
-                      title="Salvar Edições"
-                      color="#000"
-                    />
+                    <ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
+
                   </>
                 );
               }}

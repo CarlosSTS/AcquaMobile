@@ -3,12 +3,11 @@ import { useNavigation } from "@react-navigation/native";
 
 import {
   ContainerList,
-  RoutesButton,
-  RoutesButtonText,
   RoutesDescription,
   RoutesTitle,
   Container,
 } from './styles';
+import ButtonDetail from '../../components/ButtonDetail'
 
 const HomeSale : React.FC = () => {
 const navigation = useNavigation();
@@ -28,17 +27,15 @@ function navigationSaleCreated() {
       <ContainerList>
           <RoutesTitle>Cadastrar Vendas.</RoutesTitle>
           <RoutesDescription>Acesse para registrar vendas.</RoutesDescription>
-      <RoutesButton onPress={navigationSaleCreate}>
-       <RoutesButtonText>Acessar</RoutesButtonText>
-        </RoutesButton>
+          <ButtonDetail onPress={navigationSaleCreate}>Acessar</ButtonDetail>
+
         </ContainerList>
 
         <ContainerList>
           <RoutesTitle>Vendas Registradas.</RoutesTitle>
           <RoutesDescription>Acesse para ver vendas registradas.</RoutesDescription>
-      <RoutesButton onPress={navigationSaleCreated}>
-       <RoutesButtonText>Acessar</RoutesButtonText>
-        </RoutesButton>
+          <ButtonDetail onPress={navigationSaleCreated}>Acessar</ButtonDetail>
+
         </ContainerList>
 
       </Container>

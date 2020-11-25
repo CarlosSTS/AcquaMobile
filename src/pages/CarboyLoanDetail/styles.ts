@@ -28,11 +28,6 @@ line-height:24px;
 font-family: 'RobotoSlab-Medium';
 color: #4169b3;
 ;`
-export const Title = styled.Text`
-font-size: 20px;
-color: #41414d;
-font-family: 'RobotoSlab-Medium';
-`;
 
 export const Loans = styled.View`
 padding: 24px;

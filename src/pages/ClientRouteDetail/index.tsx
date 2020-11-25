@@ -14,7 +14,7 @@ import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ItemContainer from '../../components/ItemContainer'
-
+import ButtonDetail from '../../components/ButtonDetail'
 interface pathsRouteParams {
   id: number;
 }
@@ -168,8 +168,8 @@ export default function ClientRouteDetail() {
                       returnKeyType="next"
                     />
 
+<ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
 
-                    <Button onPress={handleSubmit} title="Salvar Edições" color="#000" />
                   </>
                 );
               }}

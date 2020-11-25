@@ -3,12 +3,11 @@ import { useNavigation } from "@react-navigation/native";
 import {View} from 'react-native';
 import {
   ContainerList,
-  RoutesButton,
-  RoutesButtonText,
   RoutesDescription,
   RoutesTitle,
   Container,
 } from './styles';
+import ButtonDetail from '../../components/ButtonDetail'
 
 const HomeReports: React.FC = () => {
   const navigation = useNavigation();
@@ -28,17 +27,15 @@ const HomeReports: React.FC = () => {
         <ContainerList>
           <RoutesTitle>Relatório de Rotas.</RoutesTitle>
           <RoutesDescription>Acesse para mais detalhes.</RoutesDescription>
-          <RoutesButton onPress={navigationReportsStackRoutes}>
-            <RoutesButtonText>Acessar</RoutesButtonText>
-          </RoutesButton>
+          <ButtonDetail onPress={navigationReportsStackRoutes}>Acessar</ButtonDetail>
+
         </ContainerList>
 
         <ContainerList>
           <RoutesTitle>Relatório de Lucro.</RoutesTitle>
           <RoutesDescription>Acesse para mais detalhes.</RoutesDescription>
-          <RoutesButton onPress={navigationReportsProfit}>
-            <RoutesButtonText>Acessar</RoutesButtonText>
-          </RoutesButton>
+          <ButtonDetail onPress={navigationReportsProfit}>Acessar</ButtonDetail>
+
         </ContainerList>
 
       </Container>

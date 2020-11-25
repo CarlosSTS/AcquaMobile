@@ -14,6 +14,7 @@ import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ItemContainer from '../../components/ItemContainer'
+import ButtonDetail from '../../components/ButtonDetail'
 
 interface moveRouteParams {
   id: number;
@@ -129,7 +130,7 @@ export default function MoveDetail() {
                       keyboardType="numeric"
                       returnKeyType="next"
                     />
-                    <Button onPress={handleSubmit} title="Salvar Edições" color="#000" />
+                    <ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
                   </>
                 );
               }}

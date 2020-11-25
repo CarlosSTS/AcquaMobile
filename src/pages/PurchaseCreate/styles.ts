@@ -8,12 +8,6 @@ export const Container = styled.View`
   background-color: #3d9be9;
   padding: 0px 30px ${Platform.OS === 'android' ? 120 : 40}px;
 `;
-export const Title = styled.Text`
-  font-size: 24px;
-  color: #fff;
-  font-family: 'RobotoSlab-Medium';
-  margin: 64px 0 24px;
-`;
 
 export const ErrorValue = styled.Text`
 background-color: #f00;

@@ -4,7 +4,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
-  StyleSheet,
+  ScrollView,
 } from 'react-native';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -16,12 +16,10 @@ import InputText from '../../components/InputText';
 import {
   Container,
   ErrorValue,
-  ContainerRemoteButtonText,
 } from './styles';
 import DateInput from '../../components/DateInput';
 import RemoteSelect from '../../components/RemoteSelect';
 import Button from '../../components/Button'
-import { ScrollView } from 'react-native-gesture-handler';
 /*
 interface CarboyLoanFormData {
   order_date: string;
