@@ -5,7 +5,6 @@ import HomeSale from '../pages/HomeSale'
 import SaleCreate from '../pages/SaleCreate'
 import SaleCreated from '../pages/SaleCreated';
 import SaleDetail from '../pages/SaleDetail';
-import ItemContainer from '../components/ItemContainer';
 const SaleStack = createStackNavigator();
 
 const SaleStackRoutes: React.FC = () => (
@@ -41,14 +40,6 @@ const SaleStackRoutes: React.FC = () => (
       headerShown: true
     }}
     />
- <SaleStack.Screen name="ItemContainer" component={ItemContainer}
-     options={{
-      headerBackTitleVisible: false,
-      title: "Container de detalhes",
-      headerShown: true
-    }}
-    />
-
 
   </SaleStack.Navigator>
 );

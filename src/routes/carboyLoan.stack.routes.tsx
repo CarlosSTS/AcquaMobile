@@ -5,7 +5,6 @@ import HomeCarboyLoan from '../pages/HomeCarboyLoan';
 import CarboyLoanCreate from '../pages/CarboyLoanCreate';
 import CarboyLoanCreated from '../pages/CarboyLoanCreated';
 import CarboyLoanDetail from '../pages/CarboyLoanDetail';
-import ItemContainer from '../components/ItemContainer';
 
 const CarboyLoanStack = createStackNavigator();
 
@@ -36,13 +35,6 @@ const CarboyLoanStackRoutes: React.FC = () => (
       options={{ title: "Editar empréstimo" }}
     />
 
-<CarboyLoanStack.Screen name="ItemContainer" component={ItemContainer}
-     options={{
-      headerBackTitleVisible: false,
-      title: "Container de detalhes",
-      headerShown: true
-    }}
-    />
   </CarboyLoanStack.Navigator>
 );
 

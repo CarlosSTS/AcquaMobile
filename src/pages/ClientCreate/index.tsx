@@ -14,7 +14,7 @@ import api from '../../services/index';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
-import { Container, Title } from './styles';
+import { Container} from './styles';
 
 /*interface ClientFormData {
   full_name: string;

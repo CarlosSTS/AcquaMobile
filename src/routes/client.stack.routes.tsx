@@ -5,7 +5,6 @@ import HomeClient from '../pages/HomeClient';
 import ClientCreate from '../pages/ClientCreate';
 import ClientCreated from '../pages/ClientCreated';
 import ClientDetail from '../pages/ClientDetail';
-import ItemContainer from '../components/ItemContainer';
 
 const ClientStack = createStackNavigator();
 
@@ -50,13 +49,6 @@ const ClientStackRoutes: React.FC = () => (
         title: 'Editar cliente',
         headerBackTitleVisible: false,
       }}
-    />
-<ClientStack.Screen name="ItemContainer" component={ItemContainer}
-     options={{
-      headerBackTitleVisible: false,
-      title: "Container de detalhes",
-      headerShown: true
-    }}
     />
 
   </ClientStack.Navigator>
