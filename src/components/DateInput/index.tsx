@@ -26,6 +26,7 @@ const DateInput: React.FC<DateInputProps> = (props) => {
         )}
 
       <TextInputMask
+      keyboardType="numeric"
         onChangeText={onChange}
         mask={"[00]/[00]/[0000]"}
         value={value}
