@@ -63,11 +63,6 @@ export default function ClientRouteDetail() {
     }
   };
 
-  function navigateBack() {
-    navigation.goBack();
-  }
-
-
   return (
     <>
       <Container style={{ paddingHorizontal: 24 }}>

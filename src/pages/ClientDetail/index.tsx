@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { Linking, ScrollView, Alert,Platform, KeyboardAvoidingView,Button, View, Text } from "react-native";
+import {  useRoute } from "@react-navigation/native";
+import { ScrollView, Alert} from "react-native";
 import {
   Container,
   Input,
@@ -40,7 +40,6 @@ const schema = Yup.object().shape({
 
 export default function ClientDetail() {
   const route = useRoute();
-  const navigation = useNavigation();
 
   const params = route.params as clientDetailRouteParams;
   const [client, setClient] = useState<clientDetail>(initialValues);
@@ -61,26 +60,10 @@ export default function ClientDetail() {
       }
   };
 
-  const message = `Olá ${client?.full_name}, estou entrando em contato pois gostaria de saber se o senhor
-   vai fazer pedido de garrafões.`;
-
-  function navigateBack() {
-    navigation.navigate("ClientCreated");
-  }
-
-  function sendWhatsapp() {
-    if (!client.phone) return;
-    Linking.openURL(
-      `whatsapp://send?phone=+55${client?.phone}&text=${message}`,
-    );
-  }
-
-
   return (
     <>
 
       <Container style={{ paddingHorizontal: 24 }}>
-
 
         <ScrollView
         showsVerticalScrollIndicator={false}>

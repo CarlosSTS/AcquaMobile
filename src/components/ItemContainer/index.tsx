@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
@@ -18,7 +18,7 @@ export default function ItemContainer() {
   const navigation = useNavigation();
 
   const params = route.params as clientDetailRouteParams;
-  const message = `olá ${params.full_name} estou estrando em contato pois gostaria de saber mais informações sobre seu pedido `
+  const message = `olá ${params.full_name}, estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`
 
   function NavigationToClientDetail(id: number) {
     navigation.navigate('ClientStackRoutes',{

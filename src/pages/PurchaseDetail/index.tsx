@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { ScrollView, Alert } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -40,7 +40,6 @@ const schema = Yup.object().shape({
 
 export default function PurchaseDetail() {
   const route = useRoute();
-  const navigation = useNavigation();
 
   const params = route.params as shoppingRouteParams;
   const [shopping, setShopping] = useState<ShoppingDetail>(initialValues);
@@ -59,10 +58,6 @@ export default function PurchaseDetail() {
       Alert.alert('fracasso!', 'contate o administrador do sistema');
     }
   };
-
-  function navigateBack() {
-    navigation.goBack();
-  }
 
   return (
     <>

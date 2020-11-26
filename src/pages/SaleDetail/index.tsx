@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { ScrollView, Alert } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -43,7 +43,6 @@ const schema = Yup.object().shape({
 
 export default function SaleDetail() {
   const route = useRoute();
-  const navigation = useNavigation();
 
   const params = route.params as saleRouteParams;
   const [sale, setSale] = useState<SaleDetail>(initialValues);

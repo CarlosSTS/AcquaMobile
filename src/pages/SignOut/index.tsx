@@ -10,9 +10,7 @@ const SignOut: React.FC = () => {
     signOut()
  }
 
-
 return <AuthRoutes />
-
 
 };
 export default SignOut;

@@ -48,7 +48,7 @@ export default function ReportsRoutes() {
         <ContainerList>
           <RoutesTitle>Veja suas rotas:</RoutesTitle>
           <RoutesDescription style={{ color: "#0f0" }}>No prazo: {routes?.qtd_no_prazo ? routes.qtd_no_prazo : 0}.</RoutesDescription>
-          <RoutesDescription style={{ color: "#eead2d" }}>atenção: {routes?.qtd_atencao ? routes.qtd_atencao : 0}.</RoutesDescription>
+          <RoutesDescription style={{ color: "#eead2d" }}>Atenção: {routes?.qtd_atencao ? routes.qtd_atencao : 0}.</RoutesDescription>
           <RoutesDescription style={{ color: "#f00" }}>Atrasadas: {routes?.qtd_atrasado ? routes.qtd_atrasado : 0}.</RoutesDescription>
         </ContainerList>
 
@@ -74,7 +74,7 @@ export default function ReportsRoutes() {
               {results.status === "atenção" && (
                 <RouterValue style={{ color: "#eead2d" }}>{results.status}</RouterValue>
               )}
-              {results.status === "atradada" && (
+              {results.status === "atradadas" && (
                 <RouterValue style={{ color: "#f00" }}>{results.status}</RouterValue>
               )}
 
