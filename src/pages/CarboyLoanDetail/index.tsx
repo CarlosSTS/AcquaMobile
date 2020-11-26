@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { ScrollView, Alert } from 'react-native';
+import { ScrollView, Alert,Platform,KeyboardAvoidingView } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -63,8 +63,15 @@ export default function CarboyLoanDetail() {
       <Container>
 
 
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Loans>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
+                <Loans>
             <Formik
               initialValues={loans}
               enableReinitialize
@@ -128,6 +135,7 @@ export default function CarboyLoanDetail() {
           </Loans>
 
         </ScrollView>
+        </KeyboardAvoidingView>
       </Container>
       <ItemContainer />
     </>

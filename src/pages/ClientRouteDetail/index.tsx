@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { ScrollView, Alert } from "react-native";
+import { ScrollView, Alert,KeyboardAvoidingView,Platform } from "react-native";
 import {
   Container,
   Input,
@@ -65,11 +65,18 @@ export default function ClientRouteDetail() {
 
   return (
     <>
-      <Container style={{ paddingHorizontal: 24 }}>
+      <Container>
 
 
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Paths>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
+               <Paths>
             <Formik
               initialValues={paths}
               enableReinitialize={true}
@@ -170,6 +177,7 @@ export default function ClientRouteDetail() {
           </Paths>
 
         </ScrollView>
+        </KeyboardAvoidingView>
       </Container>
       <ItemContainer />
     </>

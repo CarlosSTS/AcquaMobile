@@ -30,7 +30,7 @@ RODANDO O PROJETO
 ## Feito por
 Carlos Ferreira
 * [github](https://www.github.com/CarlosSTS)
-* [email](mailto://carlossts826@gmail.com)
+* [email](https://carlossts826@gmail.com)
 
 Flávio Vitoriano
 * [github](https://www.github.com/flavioVitoriano)

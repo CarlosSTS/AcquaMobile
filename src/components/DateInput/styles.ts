@@ -2,8 +2,6 @@ import styled from 'styled-components/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-
-
 export const Container = styled.View`
   width: 100%;
   height: 60px;

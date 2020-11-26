@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
-import { ScrollView, Alert } from 'react-native';
+import { ScrollView, Alert,Platform,KeyboardAvoidingView } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import api from '../../services';
@@ -64,11 +64,18 @@ export default function SaleDetail() {
 
   return (
     <>
-      <Container style={{ paddingHorizontal: 24 }}>
+      <Container>
 
 
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Sales>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}>
+                 <Sales>
             <Formik
               initialValues={sale}
               enableReinitialize
@@ -166,6 +173,7 @@ export default function SaleDetail() {
           </Sales>
 
         </ScrollView>
+        </KeyboardAvoidingView>
       </Container>
       <ItemContainer />
 
