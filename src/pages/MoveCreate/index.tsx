@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
-  StyleSheet,
   ScrollView
 } from "react-native";
 import * as Yup from "yup";

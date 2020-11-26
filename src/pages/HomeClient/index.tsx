@@ -3,10 +3,10 @@ import { useNavigation } from "@react-navigation/native";
 import ButtonDetail from '../../components/ButtonDetail'
 
 import {
+  Container,
   ContainerList,
   RoutesDescription,
   RoutesTitle,
-  Container,
 } from './styles';
 
 const ClientHome : React.FC = () => {

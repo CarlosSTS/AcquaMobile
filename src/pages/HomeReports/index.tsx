@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import {View} from 'react-native';
 import {
   ContainerList,
   RoutesDescription,
