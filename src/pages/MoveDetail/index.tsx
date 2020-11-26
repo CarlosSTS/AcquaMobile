@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 import { ScrollView, Alert } from "react-native";
 import {
   Container,
@@ -37,7 +37,6 @@ const schema = Yup.object().shape({
 
 export default function MoveDetail() {
   const route = useRoute();
-  const navigation = useNavigation();
 
   const params = route.params as moveRouteParams;
   const [move, setMove] = useState<moveDetail>(initialValues);
@@ -57,11 +56,6 @@ export default function MoveDetail() {
       Alert.alert("fracasso!", "contate o administrador do sistema")
     }
   };
-
-  function navigateBack() {
-    navigation.goBack();
-  }
-
 
   return (
     <>
