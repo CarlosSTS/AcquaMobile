@@ -58,13 +58,9 @@ export default function CarboyLoanDetail() {
     }
   };
 
-  function navigateBack() {
-    navigation.goBack();
-  }
-
   return (
     <>
-      <Container style={{ paddingHorizontal: 24 }}>
+      <Container>
 
 
         <ScrollView showsVerticalScrollIndicator={false}>

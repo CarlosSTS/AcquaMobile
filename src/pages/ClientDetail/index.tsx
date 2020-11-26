@@ -63,7 +63,7 @@ export default function ClientDetail() {
   return (
     <>
 
-      <Container style={{ paddingHorizontal: 24 }}>
+      <Container>
 
         <ScrollView
         showsVerticalScrollIndicator={false}>
