@@ -13,7 +13,7 @@ import CarboyLoanStackRoutes from './carboyLoan.stack.routes';
 import MoveStackRoutes from './move.stack.routes';
 import ClientRouteStackRoutes from './routes.client.stack.routes';
 
-import Home from '../pages/Home';
+import SignOut from '../pages/SignOut';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,19 +28,6 @@ const DrawerNavgation: React.FC = () => (
       inactiveTintColor: '#FFF',
     }}
   >
- <Drawer.Screen
-      name="Home"
-      component={Home}
-      options={{
-        unmountOnBlur: true,
-        drawerLabel: ({ focused }) => (
-          <Text style={{ color: focused ? '#313131' : '#fff' }}>Home</Text>
-        ),
-        drawerIcon: ({ focused }) => (
-         <Feather color={focused ? '#313131' : '#fff'} name="home" />
-        ),
-      }}
-    />
 
     <Drawer.Screen
       name="ReportStackRoutes"
@@ -142,6 +129,19 @@ const DrawerNavgation: React.FC = () => (
         ),
         drawerIcon: ({ focused }) => (
          <Feather color={focused ? '#313131' : '#fff'} name="truck" />
+        ),
+      }}
+    />
+     <Drawer.Screen
+      name="SignOut"
+      component={SignOut}
+      options={{
+        unmountOnBlur: true,
+        drawerLabel: ({ focused }) => (
+          <Text style={{ color: focused ? '#313131' : '#fff' }}>Sair</Text>
+        ),
+        drawerIcon: ({ focused }) => (
+         <Feather color={focused ? '#313131' : '#fff'} name="log-in" />
         ),
       }}
     />
