@@ -5,15 +5,18 @@ import {
   Alert,
   ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import * as Yup from "yup";
 import { Formik } from "formik";
-import api from "../../services/index";
-import InputText from '../../components/InputText';
-import { Container,ErrorValue } from "./styles";
-import DateInput from "../../components/DateInput";
 import moment from "moment";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import api from "../../services/index";
+
+import InputText from '../../components/InputText';
+import DateInput from "../../components/DateInput";
 import Button from '../../components/Button'
+import { Container, ErrorValue } from "./styles";
+
+
 const initialValues: any = {
   submit_date: moment().format("YYYY-MM-DD"),
   quantity: "",
@@ -22,16 +25,16 @@ const initialValues: any = {
 };
 
 const PurchaseCreate: React.FC = () => {
-  const navigation= useNavigation();
+  const navigation = useNavigation();
   const onSubmit = (values: any) => {
     try {
-    api.post("/purchases/", values)
+      api.post("/purchases/", values)
 
       Alert.alert("Sucesso!", "compra registrada!")
       navigation.navigate('PurchaseCreated')
 
-    }catch {
-        Alert.alert("Fracasso!", "contate o administrador do sistema")
+    } catch {
+      Alert.alert("Fracasso!", "contate o administrador do sistema")
     }
   };
 
@@ -50,63 +53,63 @@ const PurchaseCreate: React.FC = () => {
         enabled
       >
         <ScrollView keyboardShouldPersistTaps="handled"
-         contentContainerStyle={{flex: 1}}>
-        <Container>
+          contentContainerStyle={{ flex: 1 }}>
+          <Container>
 
-          <Formik
-            initialValues={initialValues}
-            onSubmit={onSubmit}
-            validationSchema={schema}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-              <>
-                <InputText
+            <Formik
+              initialValues={initialValues}
+              onSubmit={onSubmit}
+              validationSchema={schema}
+            >
+              {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+                <>
+                  <InputText
 
-                  keyboardType="numeric"
-                  icon="shopping-cart"
-                  onChangeText={handleChange("quantity")}
-                  onBlur={handleBlur("quantity")}
-                  placeholder="quantidade"
-                  value={String(values.quantity)}
-                />
+                    keyboardType="numeric"
+                    icon="shopping-cart"
+                    onChangeText={handleChange("quantity")}
+                    onBlur={handleBlur("quantity")}
+                    placeholder="quantidade"
+                    value={String(values.quantity)}
+                  />
 
-                {errors.quantity && (
-                  <ErrorValue>{errors.quantity}</ErrorValue>
-                )}
+                  {errors.quantity && (
+                    <ErrorValue>{errors.quantity}</ErrorValue>
+                  )}
 
-                <InputText
-                  keyboardType="numeric"
-                  icon="dollar-sign"
-                  onChangeText={handleChange("value")}
-                  onBlur={handleBlur("value")}
-                  placeholder="valor unitário"
-                  value={String(values.value)}
-                />
+                  <InputText
+                    keyboardType="numeric"
+                    icon="dollar-sign"
+                    onChangeText={handleChange("value")}
+                    onBlur={handleBlur("value")}
+                    placeholder="valor unitário"
+                    value={String(values.value)}
+                  />
 
-                {errors.value && (
-                  <ErrorValue>{errors.value}</ErrorValue>
-                )}
+                  {errors.value && (
+                    <ErrorValue>{errors.value}</ErrorValue>
+                  )}
 
-                <InputText
-                  keyboardType="default"
-                  icon="alert-circle"
-                  onChangeText={handleChange("obs")}
-                  onBlur={handleBlur("obs")}
-                  placeholder="Observação"
-                  value={values.obs}
-                />
+                  <InputText
+                    keyboardType="default"
+                    icon="alert-circle"
+                    onChangeText={handleChange("obs")}
+                    onBlur={handleBlur("obs")}
+                    placeholder="Observação"
+                    value={values.obs}
+                  />
 
-                <DateInput
-                  icon="clock"
-                  value={values.submit_date}
-                  handleChange={handleChange("submit_date")}
-                />
+                  <DateInput
+                    icon="clock"
+                    value={values.submit_date}
+                    handleChange={handleChange("submit_date")}
+                  />
 
                   <Button onPress={handleSubmit}>Acessar</Button>
-              </>
-            )}
-          </Formik>
-        </Container>
+                </>
+              )}
+            </Formik>
+          </Container>
         </ScrollView>
       </KeyboardAvoidingView>
     </>

@@ -3,28 +3,28 @@ import { useNavigation } from "@react-navigation/native";
 import ButtonDetail from '../../components/ButtonDetail'
 
 import {
-  ContainerList,
-  RoutesDescription,
-  RoutesTitle,
   Container,
+  ContainerList,
+  RoutesTitle,
+  RoutesDescription,
 } from './styles';
 
-const HomeClientRoute : React.FC = () => {
-const navigation = useNavigation();
+const HomeClientRoute: React.FC = () => {
+  const navigation = useNavigation();
 
-function navigationCreateRouteClient() {
-  navigation.navigate('CreateRouteClient')
-}
+  function navigationCreateRouteClient() {
+    navigation.navigate('CreateRouteClient')
+  }
 
-function navigationCreatedRouteClient() {
-  navigation.navigate('CreatedRouteClient')
-}
+  function navigationCreatedRouteClient() {
+    navigation.navigate('CreatedRouteClient')
+  }
 
   return (
     <>
 
       <Container>
-      <ContainerList>
+        <ContainerList>
           <RoutesTitle>Cadastrar Rota de Clientes.</RoutesTitle>
           <RoutesDescription>Acesse para registrar Rota de clientes. </RoutesDescription>
           <ButtonDetail onPress={navigationCreateRouteClient}>Acessar</ButtonDetail>
@@ -41,5 +41,6 @@ function navigationCreatedRouteClient() {
       </Container>
 
     </>
-  )}
+  )
+}
 export default HomeClientRoute;

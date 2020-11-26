@@ -13,8 +13,4 @@ background-color: #f00;
 color: #fff;
 font-size: 16px;
 width: 100%;
-
 `;
-
-
-

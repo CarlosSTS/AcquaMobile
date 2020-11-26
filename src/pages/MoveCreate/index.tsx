@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import {
-  View,
   KeyboardAvoidingView,
   Platform,
   Alert,
   ScrollView
 } from "react-native";
+
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { useNavigation } from "@react-navigation/native";
-
 import api from "../../services/index";
+import moment from "moment";
+
 import InputText from '../../components/InputText'
-import { Container,ErrorValue } from "./styles";
 import DateInput from "../../components/DateInput";
 import RemoteSelect from "../../components/RemoteSelect";
-import moment from "moment";
 import Button from '../../components/Button'
+import { Container,ErrorValue } from "./styles";
 
 /*
 interface CreateMoveFormData {

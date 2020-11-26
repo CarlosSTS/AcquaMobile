@@ -3,28 +3,28 @@ import { useNavigation } from "@react-navigation/native";
 import ButtonDetail from '../../components/ButtonDetail'
 
 import {
-  ContainerList,
-  RoutesDescription,
-  RoutesTitle,
   Container,
+  ContainerList,
+  RoutesTitle,
+  RoutesDescription,
 } from './styles';
 
-const HomeMove : React.FC = () => {
-const navigation = useNavigation();
+const HomeMove: React.FC = () => {
+  const navigation = useNavigation();
 
-function navigationMoveCreate() {
-  navigation.navigate('MoveCreate')
-}
+  function navigationMoveCreate() {
+    navigation.navigate('MoveCreate')
+  }
 
-function navigationMoveCreated() {
-  navigation.navigate('MoveCreated')
-}
+  function navigationMoveCreated() {
+    navigation.navigate('MoveCreated')
+  }
 
   return (
     <>
 
       <Container>
-      <ContainerList>
+        <ContainerList>
           <RoutesTitle>Cadastrar Movimentos.</RoutesTitle>
           <RoutesDescription>Acesse para registrar movimento. </RoutesDescription>
           <ButtonDetail onPress={navigationMoveCreate}>Acessar</ButtonDetail>
@@ -41,5 +41,6 @@ function navigationMoveCreated() {
       </Container>
 
     </>
-  )}
+  )
+}
 export default HomeMove;

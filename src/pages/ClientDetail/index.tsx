@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/Feather";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Linking, ScrollView, Alert,Platform, KeyboardAvoidingView,Button, View, Text } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
 import {
   Container,
-  Clients,
   Input,
   Description,
+  Clients,
 } from "./styles";
 import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ItemContainer from '../../components/ItemContainer';
 import ButtonDetail from '../../components/ButtonDetail'
+
 interface clientDetailRouteParams {
   id: number;
 }

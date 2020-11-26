@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Icon from "react-native-vector-icons/Feather";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { Linking, ScrollView, Alert, Button } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
+import { ScrollView, Alert } from "react-native";
 import {
   Container,
-  Moves,
   Input,
   Description,
-
+  Moves,
 } from "./styles";
 import api from "../../services";
 import { Formik } from "formik";
@@ -28,7 +25,7 @@ interface moveDetail {
 }
 
 const initialValues: moveDetail = {
-  type:0,
+  type: 0,
   user: 0,
   value: 0,
   obs: "",
@@ -95,7 +92,7 @@ export default function MoveDetail() {
                     />
 
 
-<Description>Tipo: </Description>
+                    <Description>Tipo: </Description>
                     <Input
                       autoCorrect={false}
                       autoCapitalize="none"

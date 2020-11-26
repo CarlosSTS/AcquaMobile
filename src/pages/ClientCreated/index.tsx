@@ -4,13 +4,14 @@ import { useNavigation } from "@react-navigation/native";
 import api from "../../services/index";
 import InputText from '../../components/InputText';
 import {
-  ClientValue,
   Container,
-  Client,
   ClientList,
+  Client,
   ClientProperty,
+  ClientValue,
   DetailsButton,
   DetailsButtonText,
+
 } from "./styles";
 
 interface ClientFormData {

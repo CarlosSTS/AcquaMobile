@@ -5,21 +5,16 @@ import {
   Platform,
   Alert,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useNavigation, useRoute } from '@react-navigation/native';
-
 import moment from 'moment';
 import api from '../../services/index';
 import InputText from '../../components/InputText';
-import {
-  Container,
-  ErrorValue,
-} from './styles';
 import DateInput from '../../components/DateInput';
-import Button from '../../components/Button'
 import RemoteSelect from '../../components/RemoteSelect';
-
+import Button from '../../components/Button'
+import { Container, ErrorValue } from './styles';
 /*
 interface SaleFormData {
   submit_date: string;
@@ -78,18 +73,18 @@ const SaleCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-           <ScrollView
+        <ScrollView
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ flex: 1 }}>
-        <Container>
+          <Container>
 
-          <Formik
-            initialValues={initialValues}
-            onSubmit={onSubmit}
-            validationSchema={schema}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-              <>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={onSubmit}
+              validationSchema={schema}
+            >
+              {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+                <>
 
                   <RemoteSelect
                     initialLabel="Selecione um cliente"
@@ -100,50 +95,50 @@ const SaleCreate: React.FC = () => {
                   />
 
 
-                {errors.client && <ErrorValue>{errors.client}</ErrorValue>}
-                <InputText
-                  icon="shopping-cart"
-                  onChangeText={handleChange('quantity')}
-                  keyboardType="numeric"
-                  onBlur={handleBlur('quantity')}
-                  placeholder="quantidade"
-                  value={String(values.quantity)}
-                />
+                  {errors.client && <ErrorValue>{errors.client}</ErrorValue>}
+                  <InputText
+                    icon="shopping-cart"
+                    onChangeText={handleChange('quantity')}
+                    keyboardType="numeric"
+                    onBlur={handleBlur('quantity')}
+                    placeholder="quantidade"
+                    value={String(values.quantity)}
+                  />
 
-                {errors.quantity && <ErrorValue>{errors.quantity}</ErrorValue>}
+                  {errors.quantity && <ErrorValue>{errors.quantity}</ErrorValue>}
 
-                <InputText
-                  icon="dollar-sign"
-                  onChangeText={handleChange('value')}
-                  keyboardType="numeric"
-                  onBlur={handleBlur('value')}
-                  placeholder="valor unitário"
-                  value={String(values.value)}
-                />
+                  <InputText
+                    icon="dollar-sign"
+                    onChangeText={handleChange('value')}
+                    keyboardType="numeric"
+                    onBlur={handleBlur('value')}
+                    placeholder="valor unitário"
+                    value={String(values.value)}
+                  />
 
-                {errors.value && <ErrorValue>{errors.value}</ErrorValue>}
+                  {errors.value && <ErrorValue>{errors.value}</ErrorValue>}
 
-                <InputText
-                  keyboardType="default"
-                  icon="alert-circle"
-                  onChangeText={handleChange('obs')}
-                  onBlur={handleBlur('obs')}
-                  placeholder="Observação"
-                  value={values.obs}
-                />
+                  <InputText
+                    keyboardType="default"
+                    icon="alert-circle"
+                    onChangeText={handleChange('obs')}
+                    onBlur={handleBlur('obs')}
+                    placeholder="Observação"
+                    value={values.obs}
+                  />
 
-                <DateInput
-                  icon="clock"
-                  value={values.submit_date}
-                  handleChange={handleChange('submit_date')}
-                />
+                  <DateInput
+                    icon="clock"
+                    value={values.submit_date}
+                    handleChange={handleChange('submit_date')}
+                  />
 
                   <Button onPress={handleSubmit}>Rigistrar</Button>
 
-              </>
-            )}
-          </Formik>
-        </Container>
+                </>
+              )}
+            </Formik>
+          </Container>
         </ScrollView>
       </KeyboardAvoidingView>
     </>

@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
   margin: 20px;
@@ -28,5 +27,3 @@ export const Shoppings = styled.View`
   margin-bottom: 16px;
   margin-top: 48px;
 `;
-
-

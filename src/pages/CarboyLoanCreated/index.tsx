@@ -6,11 +6,11 @@ import { Alert } from 'react-native';
 import uniqBy from 'lodash/uniqBy';
 import api from '../../services/index';
 import {
-  LoanValue,
   Container,
-  Loan,
   LoanList,
+  Loan,
   LoanProperty,
+  LoanValue,
   DetailsButton,
   DetailsButtonText,
 } from './styles';

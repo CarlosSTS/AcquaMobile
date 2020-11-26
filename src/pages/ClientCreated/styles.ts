@@ -16,12 +16,6 @@ export const Container = styled.SafeAreaView`
   padding: 0 24px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
 
-export const Description = styled.TextInput`
-font-size: 16px;
-line-height:24px;
-font-family: 'RobotoSlab-Medium';
-color: #4169b3;
-;`
 
 export const ClientList = styled(FlatList as new () => FlatList<ClientData>)`
 margin-top:32px;

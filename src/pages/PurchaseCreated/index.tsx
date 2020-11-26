@@ -3,11 +3,11 @@ import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/index";
 import {
-  ShoppingValue,
   Container,
-  Shopping,
   ShoppingList,
   ShoppingProperty,
+  Shopping,
+  ShoppingValue,
   DetailsButton,
   DetailsButtonText,
 } from "./styles";
@@ -105,7 +105,7 @@ export default function PurchaseCreated() {
   return (
     <Container>
 
-<InputText
+      <InputText
         icon="search"
         keyboardType="default"
         placeholder="Buscar compras por data..."

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Linking, ScrollView, Alert, Button, Text } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { ScrollView, Alert } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import {
-  Container,
-  Shoppings,
-  Input,
-  Description,
-} from './styles';
 import api from '../../services';
+
 import ItemContainer from '../../components/ItemContainer'
 import ButtonDetail from '../../components/ButtonDetail'
+
+import {
+  Container,
+  Input,
+  Description,
+  Shoppings,
+} from './styles';
+
 interface shoppingRouteParams {
   id: number;
 }
@@ -124,7 +125,7 @@ export default function PurchaseDetail() {
                       returnKeyType="next"
                     />
 
-<ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
+                    <ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
 
                   </>
                 );
@@ -132,7 +133,7 @@ export default function PurchaseDetail() {
             </Formik>
           </Shoppings>
 
-          </ScrollView>
+        </ScrollView>
       </Container>
       <ItemContainer />
     </>

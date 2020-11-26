@@ -9,22 +9,22 @@ import {
   Container,
 } from './styles';
 
-const HomeCarboyLoan : React.FC = () => {
-const navigation = useNavigation();
+const HomeCarboyLoan: React.FC = () => {
+  const navigation = useNavigation();
 
-function navigationCarboyLoanCreate() {
-  navigation.navigate('CarboyLoanCreate')
-}
+  function navigationCarboyLoanCreate() {
+    navigation.navigate('CarboyLoanCreate')
+  }
 
-function navigationCarboyLoanCreated() {
-  navigation.navigate('CarboyLoanCreated')
-}
+  function navigationCarboyLoanCreated() {
+    navigation.navigate('CarboyLoanCreated')
+  }
 
   return (
     <>
 
       <Container>
-      <ContainerList>
+        <ContainerList>
           <RoutesTitle>Cadastrar Empréstimos.</RoutesTitle>
           <RoutesDescription>Acesse para registrar empréstimos. </RoutesDescription>
           <ButtonDetail onPress={navigationCarboyLoanCreate}>Acessar</ButtonDetail>
@@ -40,5 +40,6 @@ function navigationCarboyLoanCreated() {
       </Container>
 
     </>
-  )}
+  )
+}
 export default HomeCarboyLoan;

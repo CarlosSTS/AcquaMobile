@@ -15,15 +15,14 @@ interface RoutesFormData {
 
 import api from '../../services/index';
 import {
-
+  Container,
+  RouterList,
+  ContainerList,
+  RoutesTitle,
+  RoutesDescription,
   RouterContainer,
   RouteProperty,
   RouterValue,
-  ContainerList,
-  RouterList,
-  RoutesDescription,
-  RoutesTitle,
-  Container,
 
 } from './styles';
 

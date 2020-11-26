@@ -5,8 +5,8 @@ import ButtonDetail from '../../components/ButtonDetail'
 import {
   Container,
   ContainerList,
-  RoutesDescription,
   RoutesTitle,
+  RoutesDescription,
 } from './styles';
 
 const ClientHome : React.FC = () => {

@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import {
-  ContainerList,
-  RoutesDescription,
-  RoutesTitle,
-  Container,
-} from './styles';
 import ButtonDetail from '../../components/ButtonDetail'
+
+import {
+  Container,
+  ContainerList,
+  RoutesTitle,
+  RoutesDescription,
+} from './styles';
 
 const HomeReports: React.FC = () => {
   const navigation = useNavigation();

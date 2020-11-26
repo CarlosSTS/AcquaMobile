@@ -21,13 +21,6 @@ export const Container = styled.SafeAreaView`
   padding: 0 24px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
 
-export const Description = styled.TextInput`
-  font-size: 16px;
-  line-height: 24px;
-  font-family: 'RobotoSlab-Medium';
-  color: #737373; ;
-`;
-
 export const LoanList = styled(FlatList as new () => FlatList<LoanFormData>)`
   margin-top: 32px;
 `;

@@ -1,13 +1,13 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
-import { FlatList,RectButton } from 'react-native-gesture-handler';
+import { FlatList, RectButton } from 'react-native-gesture-handler';
 
 interface PurchaseData {
   id: number;
   quantity: number;
   value: number;
   obs: string;
-  submit_date:any;
+  submit_date: any;
 }
 
 export const Container = styled.SafeAreaView`
@@ -15,19 +15,6 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   padding: 0 24px ${Platform.OS === 'android' ? 8 : 40}px;
 `;
-
-export const HeaderText = styled.Text`
-font-family: 'RobotoSlab-Medium';
-font-size: 15px;
-color: #737373;
-`
-
-export const Description = styled.TextInput`
-font-size: 16px;
-line-height:24px;
-font-family: 'RobotoSlab-Medium';
-color: #737373;
-;`
 
 export const ShoppingList = styled(FlatList as new () => FlatList<PurchaseData>)`
 margin-top:32px;

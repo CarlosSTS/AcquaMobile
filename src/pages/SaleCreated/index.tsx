@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
-import { Alert,StyleSheet } from 'react-native';
+import { Alert } from 'react-native';
 import uniqBy from 'lodash/uniqBy';
 import api from '../../services/index';
+
+import RemoteSelect from '../../components/RemoteSelect';
 import {
-  SaleValue,
   Container,
-  Sales,
   SaleList,
+  Sales,
   SaleProperty,
+  SaleValue,
   DetailsButton,
   DetailsButtonText,
 } from './styles';
-import RemoteSelect from '../../components/RemoteSelect';
 
 interface ClientData {
   id: number;

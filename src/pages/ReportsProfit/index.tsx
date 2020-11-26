@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import React, { useState } from 'react';
+import { View } from 'react-native';
 import api from '../../services/index';
 import Button from '../../components/Button';
 import DateInput from '../../components/DateInput';
 
 import {
-  ContainerList,
-  ProfitDescription,
-  ProfitTitle,
   Container,
+  ContainerList,
+  ProfitTitle,
+  ProfitDescription,
 } from './styles';
 
 interface ProfitFormData {

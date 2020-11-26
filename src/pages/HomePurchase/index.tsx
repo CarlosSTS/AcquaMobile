@@ -1,30 +1,30 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-
-import {
-  ContainerList,
-  RoutesDescription,
-  RoutesTitle,
-  Container,
-} from './styles';
 import ButtonDetail from '../../components/ButtonDetail'
 
-const HomePurchase : React.FC = () => {
-const navigation = useNavigation();
+import {
+  Container,
+  ContainerList,
+  RoutesTitle,
+  RoutesDescription,
+} from './styles';
 
-function navigationPurchaseCreate() {
-  navigation.navigate('PurchaseCreate')
-}
+const HomePurchase: React.FC = () => {
+  const navigation = useNavigation();
 
-function navigationPurchaseCreated() {
-  navigation.navigate('PurchaseCreated')
-}
+  function navigationPurchaseCreate() {
+    navigation.navigate('PurchaseCreate')
+  }
+
+  function navigationPurchaseCreated() {
+    navigation.navigate('PurchaseCreated')
+  }
 
   return (
     <>
 
       <Container>
-      <ContainerList>
+        <ContainerList>
           <RoutesTitle>Cadastrar Compras.</RoutesTitle>
           <RoutesDescription>Acesse para registrar compras.</RoutesDescription>
           <ButtonDetail onPress={navigationPurchaseCreate}>Acessar</ButtonDetail>
@@ -41,5 +41,6 @@ function navigationPurchaseCreated() {
       </Container>
 
     </>
-  )}
+  )
+}
 export default HomePurchase;

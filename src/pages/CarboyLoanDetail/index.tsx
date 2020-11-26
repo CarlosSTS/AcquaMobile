@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Linking, ScrollView, Alert, Button } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { ScrollView, Alert } from 'react-native';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Container,
-  Loans,
   Input,
   Description,
+  Loans,
 } from './styles';
 import api from '../../services';
 import ItemContainer from '../../components/ItemContainer'
 import ButtonDetail from '../../components/ButtonDetail'
+
 interface loansRouteParams {
   id: number;
 }

@@ -3,11 +3,11 @@ import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/index";
 import {
-  MoveValue,
   Container,
-  Move,
   MoveList,
+  Move,
   MoveProperty,
+  MoveValue,
   DetailsButton,
   DetailsButtonText,
 } from "./styles";

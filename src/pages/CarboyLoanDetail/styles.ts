@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import {Platform} from 'react-native';
-//15c3d6 ,41aef4,3d9be9,15B6D6
 import {RectButton} from 'react-native-gesture-handler';
 
 export const Container= styled.SafeAreaView`
@@ -22,13 +21,6 @@ color: #4169b3;
 font-weight: bold;
 `;
 
-export const SeachData = styled.TextInput`
-font-size: 16px;
-line-height:24px;
-font-family: 'RobotoSlab-Medium';
-color: #4169b3;
-;`
-
 export const Loans = styled.View`
 padding: 24px;
 border-radius: 8px;
@@ -37,20 +29,6 @@ margin-bottom: 16px;
 margin-top: 48px;
 `;
 
-export const LoansTitle= styled.Text`
-  font-family: 'RobotoSlab-Medium';
-  font-size: 20px;
-  color: #13131a;
-  line-height: 30px;
-`;
-
-export const LoansDescription= styled.Text`
-  font-size: 15px;
-  color: #737380;
-  margin-top: 16px;
-  font-family: 'RobotoSlab-Medium';
-
-`;
 
 
 

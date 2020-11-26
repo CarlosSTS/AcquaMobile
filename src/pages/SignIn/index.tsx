@@ -23,7 +23,12 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { Container, Title, ForgotPassword, ForgotPasswordText } from './styles';
+import {
+  Container,
+  Title,
+  ForgotPassword,
+  ForgotPasswordText
+} from './styles';
 
 interface SignInFormaData {
   username: string;
@@ -176,7 +181,7 @@ const SignIn: React.FC = () => {
               </View>
             </Form>
 
-            <ForgotPassword onPress={() => {}}>
+            <ForgotPassword onPress={() => { }}>
               <ForgotPasswordText>Esqueci minha Senha</ForgotPasswordText>
             </ForgotPassword>
           </Container>

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import {Platform} from 'react-native';
-//15c3d6 ,41aef4,3d9be9,15B6D6
+import { Platform } from 'react-native';
+
 export const Container = styled.View`
   flex: 1;
   align-items: center;
