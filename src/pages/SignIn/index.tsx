@@ -128,10 +128,8 @@ const SignIn: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}
-        >
+        <ScrollView showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled">
           <Container>
             <Animated.Image
               style={{
