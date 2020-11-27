@@ -52,9 +52,9 @@ const PurchaseCreate: React.FC = () => {
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-        <ScrollView keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-          <Container>
+        <ScrollView showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled">
+                    <Container>
 
             <Formik
               initialValues={initialValues}

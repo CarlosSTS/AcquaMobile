@@ -66,7 +66,7 @@ export default function MoveDetail() {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
+        <ScrollView showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
                                <Moves>
             <Formik

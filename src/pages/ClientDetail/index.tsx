@@ -70,10 +70,9 @@ export default function ClientDetail() {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-          <Clients>
+        <ScrollView showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled">
+                      <Clients>
             <Formik
               initialValues={client}
               enableReinitialize={true}

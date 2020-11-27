@@ -26,6 +26,7 @@ const PurchaseStackRoutes: React.FC = () => (
       name="PurchaseCreate"
       component={PurchaseCreate}
       options={{
+        cardStyle:{ backgroundColor: '#3d9be9' },
         title: "Registrar compra",
         headerShown: true ,
       }}

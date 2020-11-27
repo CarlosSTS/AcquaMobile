@@ -67,7 +67,7 @@ export default function CarboyLoanDetail() {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
+        <ScrollView showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
                             <Loans>
             <Formik
