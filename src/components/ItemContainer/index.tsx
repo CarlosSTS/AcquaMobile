@@ -5,11 +5,18 @@ import Feather from "react-native-vector-icons/Feather";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import {ScrollView , StyleSheet, View, Text,Linking,Keyboard } from "react-native";
 import {  RectButton } from "react-native-gesture-handler";
+import api from '../../services'
 
 interface clientDetailRouteParams {
   id: number;
-  phone: string;
+}
+interface clientDetail {
+  address: string;
+  city: string;
   full_name: string;
+  number_address: string;
+  phone: string;
+  preferred_price: string;
 }
 
 export default function ItemContainer() {
@@ -18,7 +25,15 @@ export default function ItemContainer() {
   const navigation = useNavigation();
 
   const params = route.params as clientDetailRouteParams;
-  const message = `olá ${params.full_name}, estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`;
+  const [client, setClient] = useState<clientDetail>();
+
+  useEffect(() => {
+    api.get(`/clients/${params.id}/`).then((response) => {
+      setClient({ ...client, ...response.data });
+    });
+  }, [params.id]);
+
+  const message = `olá ${client?.full_name}, estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`;
 
   const [isKeyBoardVisible, setBoardVisible] =useState(false);
   function NavigationToClientDetail(id: number) {
@@ -64,7 +79,7 @@ export default function ItemContainer() {
   })
   }
   function sendWhatsapp() {
-    Linking.openURL(`whatsapp://send?phone=+55${params.phone}&text=${message}`)
+    Linking.openURL(`whatsapp://send?phone=+55${client?.phone}&text=${message}`)
       }
 useEffect (()=> {
   const KeyboardDidShowListener = Keyboard.addListener(

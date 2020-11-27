@@ -6,7 +6,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   background-color: #3d9be9;
-  padding: 0px 30px ${Platform.OS === 'android' ? 120 : 40}px;
+  padding: 0px 30px ${Platform.OS === 'android' ? 0 : 40}px;
 `;
 
 export const ErrorValue = styled.Text`

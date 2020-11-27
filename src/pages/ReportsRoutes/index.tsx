@@ -71,7 +71,7 @@ export default function ReportsRoutes() {
               {results.status === "no prazo" && (
                 <RouterValue style={{ color: "#0f0" }}>{results.status}</RouterValue>
               )}
-              {results.status === "atenção" && (
+              {results.status === "atencao" && (
                 <RouterValue style={{ color: "#eead2d" }}>{results.status}</RouterValue>
               )}
               {results.status === "atradadas" && (
