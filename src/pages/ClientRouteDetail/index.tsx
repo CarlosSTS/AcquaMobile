@@ -73,10 +73,9 @@ export default function ClientRouteDetail() {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-               <Paths>
+        <ScrollView showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled">
+                           <Paths>
             <Formik
               initialValues={paths}
               enableReinitialize={true}
@@ -86,7 +85,6 @@ export default function ClientRouteDetail() {
               {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
                 return (
                   <>
-
 
                     <Description>Cliente: </Description>
                     <Input

@@ -72,7 +72,7 @@ export default function SaleDetail() {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView
+        <ScrollView showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
                              <Sales>
             <Formik
