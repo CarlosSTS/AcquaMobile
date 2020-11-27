@@ -67,9 +67,8 @@ export default function MoveDetail() {
         enabled
       >
         <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-                   <Moves>
+          keyboardShouldPersistTaps="handled">
+                               <Moves>
             <Formik
               initialValues={move}
               enableReinitialize={true}

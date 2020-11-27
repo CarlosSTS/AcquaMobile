@@ -73,9 +73,8 @@ export default function SaleDetail() {
         enabled
       >
         <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-                 <Sales>
+          keyboardShouldPersistTaps="handled">
+                             <Sales>
             <Formik
               initialValues={sale}
               enableReinitialize

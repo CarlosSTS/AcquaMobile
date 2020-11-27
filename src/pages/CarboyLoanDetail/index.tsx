@@ -68,9 +68,8 @@ export default function CarboyLoanDetail() {
         enabled
       >
         <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-                <Loans>
+          keyboardShouldPersistTaps="handled">
+                            <Loans>
             <Formik
               initialValues={loans}
               enableReinitialize

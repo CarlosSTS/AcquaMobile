@@ -70,9 +70,8 @@ export default function PurchaseDetail() {
         enabled
       >
         <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}>
-                  <Shoppings>
+          keyboardShouldPersistTaps="handled">
+                              <Shoppings>
             <Formik
               initialValues={shopping}
               enableReinitialize
