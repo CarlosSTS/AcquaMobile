@@ -22,7 +22,7 @@ export const Container = styled.View<ContainerProps>`
   ${(props) =>
     props.isErrored &&
     css`
-      border-color: #f00;
+      border-color: #e02040;
     `}
 
   ${(props) =>

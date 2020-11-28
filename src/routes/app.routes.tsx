@@ -20,6 +20,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavgation: React.FC = () => (
 
   <Drawer.Navigator
+  initialRouteName="ClientStackRoutes"
     drawerStyle={{
       backgroundColor: '#313131',
       paddingVertical: 20,

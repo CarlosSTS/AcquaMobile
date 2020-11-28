@@ -49,7 +49,7 @@ export default function ReportsRoutes() {
           <RoutesTitle>Veja suas rotas:</RoutesTitle>
           <RoutesDescription style={{ color: "#0f0" }}>No prazo: {routes?.qtd_no_prazo ? routes.qtd_no_prazo : 0}.</RoutesDescription>
           <RoutesDescription style={{ color: "#eead2d" }}>Atenção: {routes?.qtd_atencao ? routes.qtd_atencao : 0}.</RoutesDescription>
-          <RoutesDescription style={{ color: "#f00" }}>Atrasadas: {routes?.qtd_atrasado ? routes.qtd_atrasado : 0}.</RoutesDescription>
+          <RoutesDescription style={{ color: "#e02040" }}>Atrasadas: {routes?.qtd_atrasado ? routes.qtd_atrasado : 0}.</RoutesDescription>
         </ContainerList>
 
         <RouterList
@@ -72,10 +72,10 @@ export default function ReportsRoutes() {
                 <RouterValue style={{ color: "#0f0" }}>{results.status}</RouterValue>
               )}
               {results.status === "atencao" && (
-                <RouterValue style={{ color: "#eead2d" }}>{results.status}</RouterValue>
+                <RouterValue style={{ color: "#eead2d" }}>Atenção</RouterValue>
               )}
               {results.status === "atradadas" && (
-                <RouterValue style={{ color: "#f00" }}>{results.status}</RouterValue>
+                <RouterValue style={{ color: "#e02040" }}>{results.status}</RouterValue>
               )}
 
               <RouteProperty>Dias Restantes:</RouteProperty>

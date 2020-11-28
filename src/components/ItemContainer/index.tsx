@@ -10,14 +10,6 @@ import api from '../../services'
 interface clientDetailRouteParams {
   id: number;
 }
-interface clientDetail {
-  address: string;
-  city: string;
-  full_name: string;
-  number_address: string;
-  phone: string;
-  preferred_price: string;
-}
 
 export default function ItemContainer() {
 
@@ -25,15 +17,9 @@ export default function ItemContainer() {
   const navigation = useNavigation();
 
   const params = route.params as clientDetailRouteParams;
-  const [client, setClient] = useState<clientDetail>();
 
-  useEffect(() => {
-    api.get(`/clients/${params.id}/`).then((response) => {
-      setClient({ ...client, ...response.data });
-    });
-  }, [params.id]);
 
-  const message = `olá ${client?.full_name}, estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`;
+  const message = `olá , estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`;
 
   const [isKeyBoardVisible, setBoardVisible] =useState(false);
   function NavigationToClientDetail(id: number) {
@@ -79,7 +65,7 @@ export default function ItemContainer() {
   })
   }
   function sendWhatsapp() {
-    Linking.openURL(`whatsapp://send?phone=+55${client?.phone}&text=${message}`)
+    Linking.openURL(`whatsapp://send?phone=+55&text=${message}`)
       }
 useEffect (()=> {
   const KeyboardDidShowListener = Keyboard.addListener(
