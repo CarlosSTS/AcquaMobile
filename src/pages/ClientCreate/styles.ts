@@ -9,8 +9,8 @@ export const Container = styled.View`
 `;
 
 export const ErrorValue = styled.Text`
-background-color: #e02040;
 color: #fff;
+background-color: #e02041;
 font-size: 16px;
 width: 100%;
 

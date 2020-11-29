@@ -11,6 +11,7 @@ interface InputProps {
  autoCorrect?:boolean;
  autoCapitalize?:any;
  returnKeyType?: any;
+ style?:any;
 }
 
 const InputText : React.FC<InputProps> =({ icon, ...rest}) =>(

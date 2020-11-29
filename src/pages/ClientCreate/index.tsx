@@ -125,6 +125,7 @@ const ClientCreate: React.FC = () => {
                     <ErrorValue>{errors.preferred_price}</ErrorValue>
                   )}
 
+
                   <Button onPress={handleSubmit}>
                     Cadastrar
               </Button>

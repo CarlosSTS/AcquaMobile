@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 import api from '../../services/index';
 import Button from '../../components/Button';
 import DateInput from '../../components/DateInput';
@@ -23,11 +23,16 @@ export default function ReportsProfit() {
   const [profit, setProfit] = useState<ProfitFormData>();
 
   async function loadProfit() {
+    try {
+
     const response = await api.get('/moves/report/', {
       params: { initial_date, end_date },
     });
+
     setProfit(response.data);
-  }
+  } catch {
+    Alert.alert('Erro', 'Data não encontrada ')
+  }}
 
   return (
     <>
