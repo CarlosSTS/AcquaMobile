@@ -38,7 +38,7 @@ const initialValues: any = {
 
 const schema = Yup.object().shape({
   quantity: Yup.number().required('Informe uma quantidade').min(1),
-  client: Yup.number().required(' Informe um cliente'),
+  client: Yup.number().required(' Selecione um cliente'),
   obs: Yup.string(),
   order_date: Yup.string().required('Informe uma data'),
 });

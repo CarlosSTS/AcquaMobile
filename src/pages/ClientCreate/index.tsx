@@ -45,10 +45,10 @@ const ClientCreate: React.FC = () => {
   };
 
   const schema = Yup.object().shape({
-    full_name: Yup.string().required(' Informe um Nome'),
+    full_name: Yup.string().required(' Informe um nome'),
     phone: Yup.string().required(' Informe um telefone'),
-    city: Yup.string().required('Informe uma Cidade'),
-    preferred_price: Yup.number().required('Informe um Preço'),
+    city: Yup.string().required('Informe uma cidade'),
+    preferred_price: Yup.number().required('Informe um preço'),
   });
 
   return (

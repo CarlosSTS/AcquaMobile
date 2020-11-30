@@ -36,7 +36,7 @@ const initialValues: any = {
 
 const schema = Yup.object().shape({
   value: Yup.number().required("Informe um valor unitàrio").min(0.1),
-  status: Yup.number().required("Informe um tipo de movimento"),
+  status: Yup.number().required("Selecione um tipo de movimento"),
   obs: Yup.string(),
   order_date: Yup.string().required("Informe uma data"),
 });

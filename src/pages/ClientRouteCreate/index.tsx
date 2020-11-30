@@ -41,7 +41,7 @@ const initialValues: any = {
 const schema = Yup.object().shape({
   step_days: Yup.number().required("Informe um periodo de entrga").min(1),
   warning_sub_days: Yup.number().required("Informe uma antecedência de dias").min(0),
-  client: Yup.number().required("Informe um Cliente"),
+  client: Yup.number().required("Selecione um Cliente"),
   quantity: Yup.number().required("Informe uma quantidade").min(1),
   value: Yup.number().required("Informe um valor unitàrio").min(0.1),
   last_ship_date: Yup.string().required("Informe uma data"),
