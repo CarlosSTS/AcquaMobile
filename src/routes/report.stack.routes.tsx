@@ -30,6 +30,9 @@ const ReportStackRoutes: React.FC = () => (
 
     <ReportStack.Screen
       options={{
+        cardStyle: {
+          backgroundColor: '#fafafa',
+        },
         title: 'Relatório de Lucros 📶',
         headerBackTitleVisible: false,
       }}
