@@ -34,11 +34,11 @@ const initialValues: any = {
 };
 
 const schema = Yup.object().shape({
-  quantity: Yup.number().required('Campo obrigatório').min(1),
-  value: Yup.number().required('Campo obrigatório').min(0.1),
-  client: Yup.number().required('Cliente é obrigatório'),
+  quantity: Yup.number().required('Informe uma quantidade').min(1),
+  value: Yup.number().required('Informe um valor unitàrio').min(0.1),
+  client: Yup.number().required('Informe um cliente'),
   obs: Yup.string(),
-  submit_date: Yup.string().required('obrigatório definir data'),
+  submit_date: Yup.string().required('Informe uma data'),
 });
 
 const SaleCreate: React.FC = () => {

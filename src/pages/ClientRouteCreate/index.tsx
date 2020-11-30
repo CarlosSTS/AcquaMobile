@@ -39,12 +39,12 @@ const initialValues: any = {
 };
 
 const schema = Yup.object().shape({
-  step_days: Yup.number().required("Campo obrigatório").min(1),
-  warning_sub_days: Yup.number().required("Campo obrigatório").min(0),
-  client: Yup.number().required("Cliente obrigatório"),
-  quantity: Yup.number().required("Campo obrigatório").min(1),
-  value: Yup.number().required("Campo obrigatório").min(0.1),
-  last_ship_date: Yup.string().required("Campo obrigatório"),
+  step_days: Yup.number().required("Informe um periodo de entrga").min(1),
+  warning_sub_days: Yup.number().required("Informe uma antecedência de dias").min(0),
+  client: Yup.number().required("Informe um Cliente"),
+  quantity: Yup.number().required("Informe uma quantidade").min(1),
+  value: Yup.number().required("Informe um valor unitàrio").min(0.1),
+  last_ship_date: Yup.string().required("Informe uma data"),
 });
 
 const ClientRouteCreate: React.FC = () => {

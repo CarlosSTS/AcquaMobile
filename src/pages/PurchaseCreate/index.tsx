@@ -39,10 +39,10 @@ const PurchaseCreate: React.FC = () => {
   };
 
   const schema = Yup.object().shape({
-    quantity: Yup.number().required("Campo obrigatório").min(1),
-    value: Yup.number().required("Campo obrigatório").min(0.1),
+    quantity: Yup.number().required("Informe uma quantidade").min(1),
+    value: Yup.number().required("Informe um valor unitàrio").min(0.1),
     obs: Yup.string(),
-    submit_date: Yup.string().required("obrigatório definir data"),
+    submit_date: Yup.string().required("Informe uma data"),
   });
 
   return (

@@ -35,7 +35,7 @@ const initialValues: ShoppingDetail = {
 };
 
 const schema = Yup.object().shape({
-  obs: Yup.string().required('Campo obrigatório'),
+  obs: Yup.string().required('Informe uma observação'),
 });
 
 export default function PurchaseDetail() {

@@ -33,7 +33,7 @@ const initialValues: loansDetail = {
 };
 
 const schema = Yup.object().shape({
-  obs: Yup.string().required('Campo obrigatório'),
+  obs: Yup.string().required('Informe uma orbservação'),
 });
 
 export default function CarboyLoanDetail() {

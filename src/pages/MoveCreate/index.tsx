@@ -35,10 +35,10 @@ const initialValues: any = {
 };
 
 const schema = Yup.object().shape({
-  value: Yup.number().required("Campo obrigatório").min(0.1),
-  status: Yup.number().required("Campo obrigatório"),
+  value: Yup.number().required("Informe um valor unitàrio").min(0.1),
+  status: Yup.number().required("Informe um tipo de movimento"),
   obs: Yup.string(),
-  order_date: Yup.string().required("obrigatório definir data"),
+  order_date: Yup.string().required("Informe uma data"),
 });
 
 const MoveCreate: React.FC = () => {

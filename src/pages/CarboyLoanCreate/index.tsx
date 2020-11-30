@@ -37,10 +37,10 @@ const initialValues: any = {
 };
 
 const schema = Yup.object().shape({
-  quantity: Yup.number().required('Campo obrigatório').min(1),
-  client: Yup.number().required('Cliente é obrigatório'),
+  quantity: Yup.number().required('Informe uma quantidade').min(1),
+  client: Yup.number().required(' Informe um cliente'),
   obs: Yup.string(),
-  order_date: Yup.string().required('obrigatório definir data'),
+  order_date: Yup.string().required('Informe uma data'),
 });
 
 const CarboyLoanCreate: React.FC = () => {

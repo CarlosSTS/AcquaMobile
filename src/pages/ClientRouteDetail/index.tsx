@@ -37,7 +37,7 @@ const initialValues: pathsDetail = {
 };
 
 const schema = Yup.object().shape({
-  client: Yup.string().required("Campo obrigatório"),
+  client: Yup.string().required("Informe um cliente"),
 });
 
 export default function ClientRouteDetail() {
