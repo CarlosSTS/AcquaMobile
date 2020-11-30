@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
+
 import {
+  ActivityIndicator,
   TextInput,
   ScrollView,
   View,
@@ -14,7 +16,7 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 
 import * as Yup from 'yup';
-import { useAuth } from '../../hooks/auth';
+import { useAuth, } from '../../hooks/auth';
 
 import logoImg from '../../assets/logo.png';
 
@@ -82,7 +84,7 @@ const SignIn: React.FC = () => {
     ]).start();
   }
 
-  const { signIn } = useAuth();
+  const { signIn,loading } = useAuth();
 
   const handleSignIn = useCallback(
     async (data: SignInFormaData) => {
@@ -101,11 +103,14 @@ const SignIn: React.FC = () => {
           username: data.username,
           password: data.password,
         });
-        Alert.alert(
-          'Cadastro realizado com sucesso!',
-          'Você já pode fazer login na aplicação',
-        );
-      } catch (err) {
+        if (loading) {
+          return (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <ActivityIndicator size="large" color="#999" />
+            </View>
+          );
+        }}
+         catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
 
@@ -114,7 +119,7 @@ const SignIn: React.FC = () => {
         }
         Alert.alert(
           'Error na autenticação',
-          'Ocorreu um erro ao fazer login, ',
+          'Ocorreu um erro ao fazer login',
         );
       }
     },

@@ -87,7 +87,7 @@ export default function ClientCreated() {
     <Container>
       <InputText
       keyboardType="default"
-      icon="user-check"
+      icon="search"
         placeholder="Buscar clientes por nome..."
         onChangeText={onFilterChange}
         value={filterValue}
