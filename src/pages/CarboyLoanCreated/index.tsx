@@ -160,7 +160,7 @@ export default function CarboyLoanCreated() {
             <LoanProperty>Obs:</LoanProperty>
             <LoanValue>{loan.obs}</LoanValue>
 
-            <DetailsButton onPress={() => navigateToDetail(loan.client.id, loan.client.full_name, loan.client.phone)}>
+            <DetailsButton onPress={() => navigateToDetail(loan.id, loan.client.full_name, loan.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

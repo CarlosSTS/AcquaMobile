@@ -160,7 +160,7 @@ export default function ClientRouteCreated() {
             <PathProperty>Valor Unitário:</PathProperty>
             <PathValue>{path.value}</PathValue>
 
-            <DetailsButton onPress={() => navigateToDetail(path.client.id, path.client.full_name, path.client.phone)}>
+            <DetailsButton onPress={() => navigateToDetail(path.id, path.client.full_name, path.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>
