@@ -163,7 +163,7 @@ export default function SaleCreated() {
             <SaleProperty>total:</SaleProperty>
             <SaleValue>{sales.quantity * sales.value}</SaleValue>
 
-            <DetailsButton onPress={() => navigateToDetail(sales.client.id, sales.client.full_name,sales.client.phone)}>
+            <DetailsButton onPress={() => navigateToDetail(sales.id, sales.client.full_name,sales.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

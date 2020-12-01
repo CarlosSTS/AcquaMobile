@@ -6,13 +6,16 @@ import {
   Input,
   Description,
   Paths,
+  Header,
+  HeaderText
 } from "./styles";
 import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import ItemContainer from '../../components/ItemContainer'
 import ButtonDetail from '../../components/ButtonDetail'
-
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
 interface pathsRouteParams {
   id: number;
   full_name: string;
@@ -64,12 +67,20 @@ export default function ClientRouteDetail() {
       Alert.alert("fracasso!", "contate o administrador do sistema")
     }
   };
-
+  function navigateToCreatedRouteClient(){
+    navigation.navigate('CreatedRouteClient')
+      }
   return (
     <>
+
+<Header style={{shadowColor: '#000', elevation: 8, }}>
+              <RectButton>
+                <FeatherIcon onPress={navigateToCreatedRouteClient} name="arrow-left" color="#fff" size={24}/>
+              </RectButton>
+              <HeaderText>Editar rota de cliente</HeaderText>
+            </Header>
+
       <Container>
-
-
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}

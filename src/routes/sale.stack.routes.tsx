@@ -33,9 +33,8 @@ const SaleStackRoutes: React.FC = () => (
     />
     <SaleStack.Screen name="SaleDetail" component={SaleDetail}
       options={{
-        headerBackTitleVisible: false,
-        title: "Editar Venda",
-        headerShown: true
+        headerShown: false,
+
       }}
     />
 

@@ -32,7 +32,7 @@ const CarboyLoanStackRoutes: React.FC = () => (
     />
     <CarboyLoanStack.Screen name="CarboyLoanDetail"
       component={CarboyLoanDetail}
-      options={{ title: "Editar empréstimo" }}
+      options={{ headerShown: false }}
     />
 
   </CarboyLoanStack.Navigator>

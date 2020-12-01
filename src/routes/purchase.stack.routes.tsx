@@ -41,9 +41,8 @@ const PurchaseStackRoutes: React.FC = () => (
       name="PurchaseDetail"
       component={PurchaseDetail}
       options={{
-        title: "Editar compra",
-        headerBackTitleVisible: false,
-        headerShown: true ,
+        title: "Editar compra"
+
       }}
       />
 

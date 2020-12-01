@@ -16,8 +16,6 @@ import moment from "moment";
 
 interface ClientData {
   id: number;
-  full_name: string;
-  phone: string;
 }
 interface MoveFormData {
   id: number;
@@ -54,8 +52,8 @@ export default function MoveCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number, full_name : string, phone: string) {
-    navigation.navigate("MoveDetail", { id, full_name, phone });
+  function navigateToDetail(id: number) {
+    navigation.navigate("MoveDetail", { id });
   }
 
   function loadMoves() {
@@ -132,7 +130,7 @@ export default function MoveCreated() {
             <MoveProperty>Tipo</MoveProperty>
             <MoveValue>{formatType(move.type)}</MoveValue>
 
-            <DetailsButton onPress={() => navigateToDetail(move.client.id, move.client.full_name, move.client.phone)}>
+            <DetailsButton onPress={() => navigateToDetail(move.id)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

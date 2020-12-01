@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import {  useRoute } from "@react-navigation/native";
-import { ScrollView, Alert,KeyboardAvoidingView,Platform} from "react-native";
+import {  useRoute,useNavigation } from "@react-navigation/native";
+import { ScrollView, Alert,KeyboardAvoidingView,Platform,} from "react-native";
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
+
 import {
   Container,
   Input,
   Description,
   Clients,
+  Header,
+  HeaderText
+
 } from "./styles";
 import api from "../../services";
 import { Formik } from "formik";
@@ -43,7 +49,7 @@ const schema = Yup.object().shape({
 
 export default function ClientDetail() {
   const route = useRoute();
-
+const navigation = useNavigation();
   const params = route.params as clientDetailRouteParams;
   const [client, setClient] = useState<clientDetail>(initialValues);
 
@@ -62,9 +68,19 @@ export default function ClientDetail() {
         Alert.alert("fracasso!", "contate o administrador do sistema")
       }
   };
-
+  function navigateToCarboyLoanCreated(){
+navigation.navigate('ClientCreated')
+  }
   return (
     <>
+
+            <Header style={{shadowColor: '#000', elevation: 8, }}>
+              <RectButton>
+                <FeatherIcon onPress={navigateToCarboyLoanCreated} name="arrow-left" color="#fff" size={24}/>
+              </RectButton>
+              <HeaderText>Editar cliente</HeaderText>
+              <FeatherIcon name="arrow-left" color="#3d9be9" size={24}/>
+            </Header>
 
       <Container>
 
@@ -75,7 +91,9 @@ export default function ClientDetail() {
       >
         <ScrollView showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
+
                       <Clients>
+
             <Formik
               initialValues={client}
               enableReinitialize={true}

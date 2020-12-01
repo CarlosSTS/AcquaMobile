@@ -4,8 +4,6 @@ import { FlatList, RectButton } from 'react-native-gesture-handler';
 
 interface ClientData {
   id: number;
-  full_name: string;
-  phone: string;
 }
 
 interface MoveFormData {

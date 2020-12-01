@@ -46,8 +46,7 @@ const ClientStackRoutes: React.FC = () => (
       name="ClientDetail"
       component={ClientDetail}
       options={{
-        title: 'Editar cliente',
-        headerBackTitleVisible: false,
+       headerShown: false
       }}
     />
 

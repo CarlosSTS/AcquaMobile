@@ -39,7 +39,7 @@ const ClientRouteStackRoutes: React.FC = () => (
       component={CreatedRouteClient}
     />
     <ClientRouteStack.Screen
-      options={{ title: 'Editar rota de cliente' }}
+      options={{ headerShown: false }}
       name="ClientRouteDetail"
       component={ClientRouteDetail}
     />

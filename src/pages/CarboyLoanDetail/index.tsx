@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ScrollView, Alert,Platform,KeyboardAvoidingView } from 'react-native';
 import { Formik } from 'formik';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
+
 import * as Yup from 'yup';
 import {
   Container,
   Input,
   Description,
   Loans,
+  Header,
+  HeaderText,
 } from './styles';
 import api from '../../services';
 import ItemContainer from '../../components/ItemContainer'
@@ -59,9 +64,20 @@ export default function CarboyLoanDetail() {
       Alert.alert('fracasso!', 'contate o administrador do sistema');
     }
   };
-
+ function navigateToClientCreated(){
+navigation.navigate('CarboyLoanCreated')
+  }
   return (
     <>
+
+<Header style={{shadowColor: '#000', elevation: 8, }}>
+              <RectButton>
+                <FeatherIcon onPress={navigateToClientCreated} name="arrow-left" color="#fff" size={24}/>
+              </RectButton>
+              <HeaderText>Editar empréstimo</HeaderText>
+              <FeatherIcon name="arrow-left" color="#3d9be9" size={24}/>
+            </Header>
+
       <Container>
 
       <KeyboardAvoidingView

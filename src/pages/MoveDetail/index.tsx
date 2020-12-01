@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useRoute } from "@react-navigation/native";
+import { useRoute,useNavigation } from "@react-navigation/native";
 import { ScrollView, Alert,KeyboardAvoidingView,Platform } from "react-native";
+
 import {
   Container,
   Input,
@@ -10,13 +11,10 @@ import {
 import api from "../../services";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import ItemContainer from '../../components/ItemContainer'
 import ButtonDetail from '../../components/ButtonDetail'
 
 interface moveRouteParams {
   id: number;
-  full_name: string;
-  phone: string;
 }
 interface moveDetail {
   obs: string;
@@ -39,6 +37,7 @@ const schema = Yup.object().shape({
 
 export default function MoveDetail() {
   const route = useRoute();
+  const navigation = useNavigation();
 
   const params = route.params as moveRouteParams;
   const [move, setMove] = useState<moveDetail>(initialValues);
@@ -61,6 +60,7 @@ export default function MoveDetail() {
 
   return (
     <>
+
       <Container>
 
       <KeyboardAvoidingView
@@ -139,7 +139,6 @@ export default function MoveDetail() {
         </ScrollView>
         </KeyboardAvoidingView>
       </Container>
-      <ItemContainer />
     </>
   );
 }

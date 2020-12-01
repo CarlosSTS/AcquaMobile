@@ -17,8 +17,6 @@ import InputText from '../../components/InputText'
 
 interface ClientData {
   id: number;
-  full_name: string;
-  phone: string;
 }
 
 interface PurchaseFormData {
@@ -54,8 +52,8 @@ export default function PurchaseCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number, full_name : string, phone: string) {
-    navigation.navigate("PurchaseDetail", { id, full_name, phone });
+  function navigateToDetail(id: number) {
+    navigation.navigate("PurchaseDetail", { id });
   }
 
   function loadShoppings() {
@@ -142,7 +140,7 @@ export default function PurchaseCreated() {
             <ShoppingProperty>total:</ShoppingProperty>
             <ShoppingValue>{purchase.quantity * purchase.value}</ShoppingValue>
 
-            <DetailsButton onPress={() => navigateToDetail(purchase.client.id, purchase.client.full_name, purchase.client.phone)}>
+            <DetailsButton onPress={() => navigateToDetail(purchase.id)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>
