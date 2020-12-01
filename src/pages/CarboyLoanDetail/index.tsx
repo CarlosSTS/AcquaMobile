@@ -15,6 +15,8 @@ import ButtonDetail from '../../components/ButtonDetail'
 
 interface loansRouteParams {
   id: number;
+  full_name: string;
+  phone: string;
 }
 interface loansDetail {
   // accept_date

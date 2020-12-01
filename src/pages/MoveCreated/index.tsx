@@ -14,12 +14,18 @@ import {
 import uniqBy from "lodash/uniqBy";
 import moment from "moment";
 
+interface ClientData {
+  id: number;
+  full_name: string;
+  phone: string;
+}
 interface MoveFormData {
   id: number;
   obs: string;
   submit_date: any;
   value: number;
   type: number;
+  client: ClientData;
 }
 
 interface DateProps {
@@ -48,8 +54,8 @@ export default function MoveCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number) {
-    navigation.navigate("MoveDetail", { id });
+  function navigateToDetail(id: number, full_name : string, phone: string) {
+    navigation.navigate("MoveDetail", { id, full_name, phone });
   }
 
   function loadMoves() {
@@ -126,7 +132,7 @@ export default function MoveCreated() {
             <MoveProperty>Tipo</MoveProperty>
             <MoveValue>{formatType(move.type)}</MoveValue>
 
-            <DetailsButton onPress={() => navigateToDetail(move.id)}>
+            <DetailsButton onPress={() => navigateToDetail(move.client.id, move.client.full_name, move.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

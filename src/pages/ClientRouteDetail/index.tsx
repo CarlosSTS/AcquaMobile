@@ -15,6 +15,8 @@ import ButtonDetail from '../../components/ButtonDetail'
 
 interface pathsRouteParams {
   id: number;
+  full_name: string;
+  phone: string;
 }
 interface pathsDetail {
   client: number;

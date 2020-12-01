@@ -9,77 +9,73 @@ import api from '../../services'
 
 interface clientDetailRouteParams {
   id: number;
-}
-
-interface clientDetail {
-  address: string;
-  city: string;
-  full_name: string;
-  number_address: string;
   phone: string;
-  preferred_price: string;
+  full_name: string;
 }
 
 export default function ItemContainer() {
 
-  const route = useRoute();
-  const navigation = useNavigation();
-
-  const params = route.params as clientDetailRouteParams;
-  const [client, setClient] = useState<clientDetail>();
-
-    api.get(`/clients/${params.id}/`).then((response) => {
-      setClient(response.data);
-    });
-   [params.id];
-
-  const message = `olá ${client?.full_name}, estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`;
-
   const [isKeyBoardVisible, setBoardVisible] =useState(false);
-  function NavigationToClientDetail(id: number) {
+  const navigation = useNavigation();
+  const route = useRoute();
+  const params = route.params as clientDetailRouteParams;
+  const message = `olá ${params.full_name}, estou estrando em contato pois gostaria de saber mais informações sobre seu pedido`;
+
+  function NavigationToClientDetail(id: number, phone: string, full_name:string) {
     navigation.navigate('ClientStackRoutes',{
       screen :'ClientDetail',
-    params: {id: id}
+          params: {id: id, phone: phone,full_name:full_name}
+
   })
   }
-  function NavigationToPurchaseDetail(id: number) {
+  function NavigationToPurchaseDetail(id: number, phone: string, full_name:string ) {
     navigation.navigate('PurchaseStackRoutes',{
       screen :'PurchaseDetail',
-    params: {id: id}
+        params: {id: id, phone: phone,full_name:full_name}
+
   })
   }
-  function NavigationToSaleDetail(id: number) {
+  function NavigationToSaleDetail(id: number, phone: string, full_name:string) {
     navigation.navigate('SaleStackRoutes',{
       screen :'SaleDetail',
-    params: {id: id}
+              params: {id: id, phone: phone,full_name:full_name}
+
+
   })
   }
-  function NavigationToCarboyLoanDetail(id: number) {
+  function NavigationToCarboyLoanDetail(id: number, phone: string, full_name:string) {
     navigation.navigate('CarboyLoanStackRoutes',{
       screen :'CarboyLoanDetail',
-    params: {id: id}
+              params: {id: id, phone: phone,full_name:full_name}
+
+
   })
   }
-  function NavigationToRepots(id: number) {
+  function NavigationToRepots(id: number, phone: string, full_name:string) {
     navigation.navigate('ReportStackRoutes',{
       screen :'HomeReports',//definir Rota a ser Detalhada
-    params: {id: id}
+              params: {id: id, phone: phone,full_name:full_name}
+
+
   })
   }//definir Rota a ser Detalhada
-  function NavigationToMoveDetail(id: number) {
+  function NavigationToMoveDetail(id: number, phone: string, full_name:string) {
     navigation.navigate('MoveStackRoutes',{
       screen :'MoveDetail',
-    params: {id: id}
+              params: {id: id, phone: phone,full_name:full_name}
+
+
   })
   }//trazer ID
-  function NavigationToClientRouteDetail(id: number) {
+  function NavigationToClientRouteDetail(id: number, phone: string, full_name:string) {
     navigation.navigate('ClientRouteStackRoutes',{
       screen :'ClientRouteDetail',
-    params: {id: id}
+        params: {id: id, phone: phone,full_name:full_name}
+
   })
   }
   function sendWhatsapp() {
-    Linking.openURL(`whatsapp://send?phone=+55${client?.phone}&text=${message}`)
+    Linking.openURL(`whatsapp://send?phone=+5585991286247&text=${message}`)
       }
 useEffect (()=> {
   const KeyboardDidShowListener = Keyboard.addListener(
@@ -111,37 +107,37 @@ return () => {
   <View style={styles.itemsContainer}>
   <ScrollView horizontal showsHorizontalScrollIndicator={false}>
 
-  <RectButton style={styles.item} onPress={() =>NavigationToClientDetail(params.id)}>
+  <RectButton style={styles.item} onPress={() =>NavigationToClientDetail(params.id,params.phone,params.full_name)}>
       <Feather color="#000" name="user" size={42} />
       <Text style={styles.itemTitle}>Ir para Clientes</Text>
     </RectButton>
 
-    <RectButton style={styles.item} onPress={() => NavigationToPurchaseDetail(params.id)}>
+    <RectButton style={styles.item} onPress={() => NavigationToPurchaseDetail(params.id,params.phone,params.full_name)}>
       <Feather color="#e82041" name="shopping-cart" size={42} />
       <Text style={styles.itemTitle}>Ir para Compras</Text>
     </RectButton>
 
-    <RectButton style={styles.item} onPress={() => NavigationToSaleDetail(params.id)}>
+    <RectButton style={styles.item} onPress={() => NavigationToSaleDetail(params.id,params.phone,params.full_name)}>
       <Feather color="orange" name="shopping-bag" size={42} />
       <Text style={styles.itemTitle}>Ir para vendas</Text>
     </RectButton>
 
-    <RectButton style={styles.item} onPress={() => NavigationToCarboyLoanDetail(params.id)}>
+    <RectButton style={styles.item} onPress={() => NavigationToCarboyLoanDetail(params.id,params.phone,params.full_name)}>
       <FontAwesome color="#000" name="handshake-o" size={42} />
       <Text style={styles.itemTitle}>Ir para Empréstimos</Text>
     </RectButton>
 
-    <RectButton style={styles.item} onPress={() =>NavigationToRepots(params.id)}>
+    <RectButton style={styles.item} onPress={() =>NavigationToRepots(params.id,params.phone,params.full_name)}>
       <FontAwesome color="brown" name="folder" size={42} />
       <Text style={styles.itemTitle}>Ir para Relatórios</Text>
     </RectButton>
 
-    <RectButton style={styles.item} onPress={() => NavigationToMoveDetail(params.id)}>
+    <RectButton style={styles.item} onPress={() => NavigationToMoveDetail(params.id,params.phone,params.full_name)}>
       <Feather color="#333666" name="repeat" size={42} />
       <Text style={styles.itemTitle}>Ir para Movimentos</Text>
     </RectButton>
 
-    <RectButton style={styles.item} onPress={() => NavigationToClientRouteDetail(params.id)}>
+    <RectButton style={styles.item} onPress={() => NavigationToClientRouteDetail(params.id,params.phone,params.full_name)}>
       <Feather color="black" name="truck" size={42} />
       <Text style={styles.itemTitle}>Ir para Rotas</Text>
     </RectButton>

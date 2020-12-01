@@ -20,6 +20,7 @@ import {
 interface ClientData {
   id: number;
   full_name: string;
+  phone: string;
 }
 
 interface SaleFormData {
@@ -57,8 +58,8 @@ export default function SaleCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number) {
-    navigation.navigate('SaleDetail', { id });
+  function navigateToDetail(id: number, full_name: string, phone: string) {
+    navigation.navigate('SaleDetail', { id, full_name, phone });
   }
 
   function loadSales() {
@@ -162,7 +163,7 @@ export default function SaleCreated() {
             <SaleProperty>total:</SaleProperty>
             <SaleValue>{sales.quantity * sales.value}</SaleValue>
 
-            <DetailsButton onPress={() => navigateToDetail(sales.id)}>
+            <DetailsButton onPress={() => navigateToDetail(sales.client.id, sales.client.full_name,sales.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

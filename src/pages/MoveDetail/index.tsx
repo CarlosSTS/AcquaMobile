@@ -15,6 +15,8 @@ import ButtonDetail from '../../components/ButtonDetail'
 
 interface moveRouteParams {
   id: number;
+  full_name: string;
+  phone: string;
 }
 interface moveDetail {
   obs: string;

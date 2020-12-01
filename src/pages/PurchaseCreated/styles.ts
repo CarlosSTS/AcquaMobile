@@ -2,12 +2,19 @@ import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 import { FlatList, RectButton } from 'react-native-gesture-handler';
 
+interface ClientData {
+  id: number;
+  full_name: string;
+  phone: string;
+}
+
 interface PurchaseData {
   id: number;
   quantity: number;
   value: number;
   obs: string;
   submit_date: any;
+  client: ClientData;
 }
 
 export const Container = styled.SafeAreaView`

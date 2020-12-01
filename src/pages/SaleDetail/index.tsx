@@ -16,6 +16,8 @@ import {
 
 interface saleRouteParams {
   id: number;
+  full_name: string;
+  phone: string;
 }
 interface SaleDetail {
   client: number;

@@ -31,8 +31,8 @@ export default function ClientCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number) {
-    navigation.navigate("ClientDetail", { id });
+  function navigateToDetail(id: number, phone: string,full_name: string) {
+    navigation.navigate("ClientDetail", { id, phone, full_name });
   }
 
   function loadClients() {
@@ -115,7 +115,7 @@ export default function ClientCreated() {
                 currency: 'BRL'
               }).format(clients.preferred_price)}</ClientValue>
 
-            <DetailsButton onPress={() => navigateToDetail(clients.id)}>
+            <DetailsButton onPress={() => navigateToDetail(clients.id, clients.phone, clients.full_name)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

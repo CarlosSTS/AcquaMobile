@@ -19,6 +19,7 @@ import RemoteSelect from '../../components/RemoteSelect';
 interface ClientData {
   id: number;
   full_name: string;
+  phone: string;
 }
 
 interface LoanFormData {
@@ -56,8 +57,8 @@ export default function CarboyLoanCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number) {
-    navigation.navigate('CarboyLoanDetail', { id });
+  function navigateToDetail(id: number, full_name: string, phone: string) {
+    navigation.navigate('CarboyLoanDetail', { id, full_name,phone });
   }
 
   function loadLoans() {
@@ -159,7 +160,7 @@ export default function CarboyLoanCreated() {
             <LoanProperty>Obs:</LoanProperty>
             <LoanValue>{loan.obs}</LoanValue>
 
-            <DetailsButton onPress={() => navigateToDetail(loan.id)}>
+            <DetailsButton onPress={() => navigateToDetail(loan.client.id, loan.client.full_name, loan.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>

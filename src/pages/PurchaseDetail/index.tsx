@@ -17,6 +17,8 @@ import {
 
 interface shoppingRouteParams {
   id: number;
+  full_name: string;
+  phone: string;
 }
 interface ShoppingDetail {
   quantity: number;

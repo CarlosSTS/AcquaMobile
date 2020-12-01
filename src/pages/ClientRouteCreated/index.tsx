@@ -19,6 +19,7 @@ import uniqBy from "lodash/uniqBy";
 interface ClientData {
   id: number;
   full_name: string;
+  phone: string;
 }
 
 interface PathFormData {
@@ -56,8 +57,8 @@ export default function ClientRouteCreated() {
 
   const navigation = useNavigation();
 
-  function navigateToDetail(id: number) {
-    navigation.navigate("ClientRouteDetail", { id });
+  function navigateToDetail(id: number, full_name: string, phone: string) {
+    navigation.navigate("ClientRouteDetail", { id, full_name, phone });
   }
 
   function loadPaths() {
@@ -159,7 +160,7 @@ export default function ClientRouteCreated() {
             <PathProperty>Valor Unitário:</PathProperty>
             <PathValue>{path.value}</PathValue>
 
-            <DetailsButton onPress={() => navigateToDetail(path.id)}>
+            <DetailsButton onPress={() => navigateToDetail(path.client.id, path.client.full_name, path.client.phone)}>
               <DetailsButtonText>Ver mais detalhes</DetailsButtonText>
               <Icon name="arrow-right" size={16} color="#E02041" />
             </DetailsButton>
