@@ -90,16 +90,6 @@ export default function ClientRouteCreated() {
       .catch((error) => Alert.alert("Fracasso"));
   };
 
-  const onSubmitFilter = (dates: DateProps) => {
-    setPaths([]);
-    setPage(1);
-    setFilterParams({
-      start_date: dates.startDate,
-      end_date: dates.endDate,
-      client: client,
-    });
-  };
-
   const onEndReached = () => {
     if (loading) {
       return;
@@ -148,13 +138,6 @@ export default function ClientRouteCreated() {
 
     <Container>
 
-      <RemoteSelect
-        onSelectChange={onClientChange}
-        data={clients}
-        labelField="full_name"
-        valueField="id"
-        initialLabel="Selecione um cliente"
-      />
       <PathList
         data={paths}
         keyExtractor={(path) => String(path.id)}

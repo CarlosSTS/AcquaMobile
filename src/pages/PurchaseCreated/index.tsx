@@ -69,15 +69,6 @@ export default function PurchaseCreated() {
       });
   }
 
-  const onSubmitFilter = (dates: DateProps) => {
-    setPurchaces([]);
-    setPage(1);
-    setFilterParams({
-      start_date: dates.startDate,
-      end_date: dates.endDate,
-    });
-  };
-
   const onEndReached = () => {
     if (loading) {
       return;
@@ -110,15 +101,6 @@ export default function PurchaseCreated() {
 
   return (
     <Container>
-
-      <InputText
-        icon="search"
-        keyboardType="default"
-        placeholder="Buscar compras por data..."
-        //onChangeText={onFilterChange}
-        //value={filterValue}
-        autoCorrect={false}
-      />
 
       <ShoppingList
         data={purchases}

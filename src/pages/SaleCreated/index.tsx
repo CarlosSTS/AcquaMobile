@@ -89,16 +89,6 @@ export default function SaleCreated() {
       .catch((error) => Alert.alert('Fracasso'));
   };
 
-  const onSubmitFilter = (dates: DateProps) => {
-    setSales([]);
-    setPage(1);
-    setFilterParams({
-      start_date: dates.startDate,
-      end_date: dates.endDate,
-      client,
-    });
-  };
-
   const onEndReached = () => {
     if (loading) {
       return;
@@ -150,14 +140,7 @@ export default function SaleCreated() {
       </Header>
 
     <Container>
-      <RemoteSelect
 
-        onSelectChange={onClientChange}
-        data={clients}
-        labelField="full_name"
-        valueField="id"
-        initialLabel="Selecione um cliente"
-      />
       <SaleList
         data={sales}
         keyExtractor={(sale) => String(sale.id)}

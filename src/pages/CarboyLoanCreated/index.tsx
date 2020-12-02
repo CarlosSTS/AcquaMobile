@@ -89,16 +89,6 @@ export default function CarboyLoanCreated() {
       .catch((error) => Alert.alert('Fracasso'));
   };
 
-  const onSubmitFilter = (dates: DateProps) => {
-    setLoans([]);
-    setPage(1);
-    setFilterParams({
-      start_date: dates.startDate,
-      end_date: dates.endDate,
-      client,
-    });
-  };
-
   const onEndReached = () => {
     if (loading) {
       return;
@@ -147,13 +137,7 @@ export default function CarboyLoanCreated() {
       </Header>
 
     <Container>
-      <RemoteSelect
-        onSelectChange={onClientChange}
-        data={clients}
-        labelField="full_name"
-        valueField="id"
-        initialLabel="Selecione um cliente"
-      />
+
       <LoanList
         data={loans}
         keyExtractor={(loan) => String(loan.id)}
