@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useRef} from "react";
 import {
   KeyboardAvoidingView,
   Platform,
   Alert,
   ScrollView,
+  TextInput
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import * as Yup from "yup";
@@ -26,6 +27,10 @@ const initialValues: any = {
 
 const PurchaseCreate: React.FC = () => {
   const navigation = useNavigation();
+
+  const valueRef = useRef<TextInput>(null)
+  const obsRef = useRef<TextInput>(null)
+const submitDateRef = useRef<TextInput>(null)
   const onSubmit = (values: any) => {
     try {
       api.post("/purchases/", values)
@@ -64,25 +69,32 @@ const PurchaseCreate: React.FC = () => {
               {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
                 <>
                   <InputText
-
                     keyboardType="numeric"
                     icon="shopping-cart"
                     onChangeText={handleChange("quantity")}
+                    returnKeyType="next"
                     onBlur={handleBlur("quantity")}
                     placeholder="quantidade"
                     value={String(values.quantity)}
+                    onSubmitEditing={()=>{
+                      valueRef.current?.focus()
+                    }}
                   />
-
                   {errors.quantity && (
                     <ErrorValue>{errors.quantity}</ErrorValue>
                   )}
 
                   <InputText
+                    ref={valueRef}
                     keyboardType="numeric"
+                    returnKeyType="next"
                     icon="dollar-sign"
                     onChangeText={handleChange("value")}
                     onBlur={handleBlur("value")}
                     placeholder="valor unitário"
+                    onSubmitEditing={()=>{
+                      obsRef.current?.focus();
+                    }}
                     value={String(values.value)}
                   />
 
@@ -91,18 +103,24 @@ const PurchaseCreate: React.FC = () => {
                   )}
 
                   <InputText
+                    ref={obsRef}
                     keyboardType="default"
                     icon="alert-circle"
+                    returnKeyType="send"
                     onChangeText={handleChange("obs")}
                     onBlur={handleBlur("obs")}
                     placeholder="Observação"
                     value={values.obs}
+                    onSubmitEditing={handleSubmit}
                   />
 
                   <DateInput
+                    //ref={submitDateRef}
                     icon="clock"
+                    returnKeyType="send"
                     value={values.submit_date}
                     handleChange={handleChange("submit_date")}
+                   // onSubmitEditing={handleSubmit}
                   />
 
                   <Button onPress={handleSubmit}>Acessar</Button>

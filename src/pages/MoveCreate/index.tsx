@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {useRef, useState, useEffect } from "react";
 import {
+  TextInput,
   KeyboardAvoidingView,
   Platform,
   Alert,
@@ -42,7 +43,9 @@ const schema = Yup.object().shape({
 });
 
 const MoveCreate: React.FC = () => {
-  const [clients, setClients] = useState([]);
+const obsRef= useRef<TextInput>(null);
+
+const [clients, setClients] = useState([]);
 const navigation = useNavigation();
   const onSubmit = (values: any) => {
     try {
@@ -99,7 +102,11 @@ const navigation = useNavigation();
                   <ErrorValue>{errors.status}</ErrorValue>
                 )}
                 <InputText
+                onSubmitEditing={() =>{
+                  obsRef.current?.focus();
+                }}
                   keyboardType="numeric"
+                  returnKeyType="next"
                   icon="dollar-sign"
                   onChangeText={handleChange("value")}
                   onBlur={handleBlur("value")}
@@ -112,7 +119,10 @@ const navigation = useNavigation();
                 )}
 
                 <InputText
+                ref={obsRef}
                   keyboardType="default"
+                  returnKeyType="send"
+                  onSubmitEditing={handleSubmit}
                   icon="alert-circle"
                   onChangeText={handleChange("obs")}
                   onBlur={handleBlur("obs")}

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
   Alert,
+  TextInput
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as Yup from 'yup';
@@ -45,6 +46,11 @@ const SaleCreate: React.FC = () => {
   const navigation = useNavigation();
   const [clients, setClients] = useState([]);
 
+  const quantityRef = useRef<TextInput>(null)
+  const valueRef = useRef<TextInput>(null)
+  const obsRef = useRef<TextInput>(null)
+  const submitDateRef = useRef<TextInput>(null)
+
   const onSubmit = (values: any) => {
     try {
       api.post('/sales/', values);
@@ -75,7 +81,7 @@ const SaleCreate: React.FC = () => {
       >
         <ScrollView showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
-                      <Container>
+          <Container>
 
             <Formik
               initialValues={initialValues}
@@ -99,6 +105,10 @@ const SaleCreate: React.FC = () => {
                     icon="shopping-cart"
                     onChangeText={handleChange('quantity')}
                     keyboardType="numeric"
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                      valueRef.current?.focus()
+                    }}
                     onBlur={handleBlur('quantity')}
                     placeholder="quantidade"
                     value={String(values.quantity)}
@@ -107,17 +117,26 @@ const SaleCreate: React.FC = () => {
                   {errors.quantity && <ErrorValue>{errors.quantity}</ErrorValue>}
 
                   <InputText
+                    ref={valueRef}
                     icon="dollar-sign"
+                    returnKeyType="next"
+
                     onChangeText={handleChange('value')}
                     keyboardType="numeric"
                     onBlur={handleBlur('value')}
                     placeholder="valor unitário"
                     value={String(values.value)}
+                    onSubmitEditing={() => {
+                      obsRef.current?.focus();
+                    }}
                   />
 
                   {errors.value && <ErrorValue>{errors.value}</ErrorValue>}
 
                   <InputText
+                    ref={obsRef}
+                    returnKeyType="send"
+                    onSubmitEditing={handleSubmit}
                     keyboardType="default"
                     icon="alert-circle"
                     onChangeText={handleChange('obs')}

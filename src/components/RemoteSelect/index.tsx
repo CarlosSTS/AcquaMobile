@@ -9,6 +9,7 @@ interface RemoteSelectProps {
   valueField: string;
   initialLabel: string;
   style?: any;
+  onSubmitEditing?: any;
 }
 
 const RemoteSelect = (props: RemoteSelectProps) => {

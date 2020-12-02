@@ -1,9 +1,10 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef } from 'react';
 import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
   Alert,
+  TextInput
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Formik } from "formik";
@@ -30,7 +31,9 @@ const initialValues: any = {
 }
 const ClientCreate: React.FC = () => {
   const navigation = useNavigation();
-
+  const phoneRef = useRef<TextInput>(null)
+  const cityRef = useRef<TextInput>(null)
+const preferredPriceRef= useRef<TextInput>(null)
   const onSubmit = (values: any) => {
     try {
       api.post('/clients/', values);
@@ -58,9 +61,9 @@ const ClientCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView showsVerticalScrollIndicator={false}
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }} showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
-                      <Container>
+          <Container>
 
             <Formik
               initialValues={initialValues}
@@ -77,6 +80,9 @@ const ClientCreate: React.FC = () => {
                     icon="user"
                     placeholder="Nome"
                     returnKeyType="next"
+                    onSubmitEditing={() => {
+                      cityRef.current?.focus();
+                    }}
                     onChangeText={handleChange("full_name")}
                     onBlur={handleBlur("full_name")}
                     value={String(values.full_name)}
@@ -84,13 +90,36 @@ const ClientCreate: React.FC = () => {
                   {errors.full_name && (
                     <ErrorValue>{errors.full_name}</ErrorValue>
                   )}
+
                   <InputText
+                    ref={cityRef}
+                    keyboardType="default"
                     autoCorrect={false}
-                    autoCapitalize="characters"
+                    autoCapitalize="words"
+                    icon="map-pin"
+                    placeholder="cidade"
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                      phoneRef.current?.focus();
+                    }}
+                    onChangeText={handleChange("city")}
+                    onBlur={handleBlur("city")}
+                    value={values.city}
+                  />
+                  {errors.city && (
+                    <ErrorValue>{errors.city}</ErrorValue>
+                  )}
+
+                  <InputText
+                    ref={phoneRef}
+                    autoCorrect={false}
                     icon="phone"
                     placeholder="telefone"
-                    keyboardType="phone-pad"
+                    keyboardType="numeric"
                     returnKeyType="next"
+                    onSubmitEditing={() => {
+                      preferredPriceRef.current?.focus();
+                    }}
                     onChangeText={handleChange("phone")}
                     onBlur={handleBlur("phone")}
                     value={String(values.phone)}
@@ -98,25 +127,15 @@ const ClientCreate: React.FC = () => {
                   {errors.phone && (
                     <ErrorValue>{errors.phone}</ErrorValue>
                   )}
+
                   <InputText
-                    keyboardType="default"
-                    autoCorrect={false}
-                    autoCapitalize="words"
-                    icon="map-pin"
-                    placeholder="cidade"
-                    returnKeyType="next"
-                    onChangeText={handleChange("city")}
-                    onBlur={handleBlur("city")}
-                    value={String(values.city)}
-                  />
-                  {errors.city && (
-                    <ErrorValue>{errors.city}</ErrorValue>
-                  )}
-                  <InputText
+                  ref={preferredPriceRef}
                     keyboardType="numeric"
                     icon="dollar-sign"
                     placeholder="preço padrão"
                     returnKeyType="send"
+                    onSubmitEditing={handleSubmit}
+
                     onChangeText={handleChange("preferred_price")}
                     onBlur={handleBlur("preferred_price")}
                     value={String(values.preferred_price)}

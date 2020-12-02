@@ -1,15 +1,27 @@
-﻿import React, { useState } from "react";
+﻿import React, { useState,useImperativeHandle,forwardRef,useRef } from "react";
 import TextInputMask from "react-native-text-input-mask";
+import {TextInputProps} from "react-native"
 import moment from "moment";
 import { Container, Icon, FontAwesomeIcon } from "./styles";
 
-interface DateInputProps {
+interface DateInputProps extends TextInputProps {
   handleChange: Function;
-  value: string;
   icon: string;
 }
 
-const DateInput: React.FC<DateInputProps> = (props) => {
+interface InputRef {
+  focus(): void;
+}
+
+const DateInput: React.RefForwardingComponent<InputRef,DateInputProps> = (props,ref,...rest) => {
+
+  const inputElementRef = useRef<any>(null);
+  useImperativeHandle(ref, () => ({
+    focus() {
+      inputElementRef.current.focus();
+    }
+  }));
+
   const [value, setValue] = useState(moment().format("DD/MM/YYYY"));
   const onChange = (formatted: string) => {
     const isoValue = moment(formatted, "DD/MM/YYYY").format("YYYY-MM-DD");
@@ -26,13 +38,15 @@ const DateInput: React.FC<DateInputProps> = (props) => {
         )}
 
       <TextInputMask
+      ref={inputElementRef}
       keyboardType="numeric"
         onChangeText={onChange}
         mask={"[00]/[00]/[0000]"}
         value={value}
+        {...rest}
       />
     </Container>
   );
 };
 
-export default DateInput;
+export default forwardRef(DateInput);

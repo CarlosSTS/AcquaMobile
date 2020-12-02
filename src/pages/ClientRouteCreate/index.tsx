@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
+  TextInput,
   KeyboardAvoidingView,
   Platform,
   Alert,
   ScrollView,
-
 } from "react-native";
 import * as Yup from "yup";
 import { Formik } from "formik";
@@ -39,7 +39,7 @@ const initialValues: any = {
 };
 
 const schema = Yup.object().shape({
-  step_days: Yup.number().required("Informe um periodo de entrga").min(1),
+  step_days: Yup.number().required("Informe um periodo de entrga em dias").min(1),
   warning_sub_days: Yup.number().required("Informe uma antecedência de dias").min(0),
   client: Yup.number().required("Selecione um Cliente"),
   quantity: Yup.number().required("Informe uma quantidade").min(1),
@@ -48,17 +48,22 @@ const schema = Yup.object().shape({
 });
 
 const ClientRouteCreate: React.FC = () => {
-const navigation = useNavigation();
+
+  const valueRef = useRef<TextInput>(null)
+  const stepDaysRef = useRef<TextInput>(null)
+  const warningSubDaysRef = useRef<TextInput>(null)
+
+  const navigation = useNavigation();
   const [clients, setClients] = useState([]);
 
   const onSubmit = (values: any) => {
-   try {
-    api.post("/paths/", values)
-       Alert.alert("Sucesso!", "rota de cliente cadastrada!")
-       navigation.navigate('CreatedRouteClient')
-   }catch {
-        Alert.alert("Fracasso!", "contate o administrador do sistema")
-   }
+    try {
+      api.post("/paths/", values)
+      Alert.alert("Sucesso!", "rota de cliente cadastrada!")
+      navigation.navigate('CreatedRouteClient')
+    } catch {
+      Alert.alert("Fracasso!", "contate o administrador do sistema")
+    }
   };
 
   const getClientData = () => {
@@ -79,17 +84,17 @@ const navigation = useNavigation();
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-   <ScrollView showsVerticalScrollIndicator={false}
+        <ScrollView showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
-                      <Container>
+          <Container>
 
-          <Formik
-            initialValues={initialValues}
-            onSubmit={onSubmit}
-            validationSchema={schema}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-              <>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={onSubmit}
+              validationSchema={schema}
+            >
+              {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+                <>
                   <RemoteSelect
                     onSelectChange={handleChange("client")}
                     data={clients}
@@ -97,83 +102,91 @@ const navigation = useNavigation();
                     valueField="id"
                     initialLabel="Selecione um cliente"
                   />
+                  {errors.client && (
+                    <ErrorValue>{errors.client}</ErrorValue>
+                  )}
 
+                  <InputText
+                    keyboardType="numeric"
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                      valueRef.current?.focus()
+                    }}
+                    icon="shopping-cart"
+                    onChangeText={handleChange("quantity")}
+                    onBlur={handleBlur("quantity")}
+                    placeholder="quantidade"
+                    value={String(values.quantity)}
+                  />
+                  {errors.quantity && (
+                    <ErrorValue>{errors.quantity}</ErrorValue>
+                  )}
 
-                {errors.client && (
-                  <ErrorValue>{errors.client}</ErrorValue>
-                )}
+                  <InputText
+                    ref={valueRef}
+                    keyboardType="numeric"
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                      stepDaysRef.current?.focus();
+                    }}
+                    icon="dollar-sign"
+                    onChangeText={handleChange("value")}
+                    onBlur={handleBlur("value")}
+                    placeholder="valor unitário"
+                    value={String(values.value)}
+                  />
+                  {errors.value && (
+                    <ErrorValue>{errors.value}</ErrorValue>
+                  )}
 
-                <InputText
-                  keyboardType="numeric"
+                  <InputText
+                    ref={stepDaysRef}
+                    keyboardType="numeric"
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                      warningSubDaysRef.current?.focus();
+                    }}
+                    icon="truck"
+                    onChangeText={handleChange("step_days")}
+                    onBlur={handleBlur("step_days")}
+                    placeholder="periodo de entrega (dias)"
+                    value={String(values.step_days)}
+                  />
+                  {errors.step_days && (
+                    <ErrorValue>{errors.step_days}</ErrorValue>
+                  )}
 
-                  icon="shopping-cart"
-                  onChangeText={handleChange("quantity")}
-                  onBlur={handleBlur("quantity")}
-                  placeholder="quantidade"
-                  value={String(values.quantity)}
-                />
+                  <InputText
+                    ref={warningSubDaysRef}
+                    keyboardType="numeric"
+                    returnKeyType="send"
+                    onSubmitEditing={handleSubmit}
+                    icon="zap"
+                    onChangeText={handleChange("warning_sub_days")}
+                    onBlur={handleBlur("warning_sub_days")}
+                    placeholder="antecedência de (dias)"
+                    value={String(values.warning_sub_days)}
+                  />
+                  {errors.warning_sub_days && (
+                    <ErrorValue>
+                      {errors.warning_sub_days}
+                    </ErrorValue>
+                  )}
 
-                {errors.quantity && (
-                  <ErrorValue>{errors.quantity}</ErrorValue>
-                )}
-
-                <InputText
-                  keyboardType="numeric"
-
-                  icon="dollar-sign"
-                  onChangeText={handleChange("value")}
-                  onBlur={handleBlur("value")}
-                  placeholder="valor unitário"
-                  value={String(values.value)}
-                />
-
-                {errors.value && (
-                  <ErrorValue>{errors.value}</ErrorValue>
-                )}
-                <InputText
-                  keyboardType="numeric"
-
-                  icon="truck"
-                  onChangeText={handleChange("step_days")}
-                  onBlur={handleBlur("step_days")}
-                  placeholder="periodo de entrega (dias)"
-                  value={String(values.step_days)}
-                />
-
-                {errors.step_days && (
-                  <ErrorValue>{errors.step_days}</ErrorValue>
-                )}
-                <InputText
-                  keyboardType="numeric"
-
-                  icon="zap"
-                  onChangeText={handleChange("warning_sub_days")}
-                  onBlur={handleBlur("warning_sub_days")}
-                  placeholder="antecedência de (dias)"
-                  value={String(values.warning_sub_days)}
-                />
-
-                {errors.warning_sub_days && (
-                  <ErrorValue>
-                    {errors.warning_sub_days}
-                  </ErrorValue>
-                )}
-
-                <DateInput
-                  icon="clock"
-                  handleChange={handleChange("last_ship_date")}
-                  value={values.step_days}
-                />
-
-                {errors.last_ship_date && (
-                  <ErrorValue>{errors.last_ship_date}</ErrorValue>
-                )}
+                  <DateInput
+                    icon="clock"
+                    handleChange={handleChange("last_ship_date")}
+                    value={values.step_days}
+                  />
+                  {errors.last_ship_date && (
+                    <ErrorValue>{errors.last_ship_date}</ErrorValue>
+                  )}
 
                   <Button onPress={handleSubmit}>Registrar</Button>
-              </>
-            )}
-          </Formik>
-        </Container>
+                </>
+              )}
+            </Formik>
+          </Container>
         </ScrollView>
       </KeyboardAvoidingView>
     </>

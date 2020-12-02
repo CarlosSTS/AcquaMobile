@@ -1,29 +1,34 @@
-import React from 'react';
-import {Container, Icon,TextInput} from './styles';
+import React, { useRef, useImperativeHandle, forwardRef } from 'react';
+import { TextInputProps } from 'react-native'
+import { Container, Icon, TextInput } from './styles';
 
-interface InputProps {
- icon: string;
- onChangeText?: any;
- onBlur?: any;
- placeholder: string;
- value?: string;
- keyboardType: any;
- autoCorrect?:boolean;
- autoCapitalize?:any;
- returnKeyType?: any;
- style?:any;
+interface InputProps extends TextInputProps {
+  icon: string;
+  onBlur?: any;
 }
+interface InputRef {
+  focus(): void;
+}
+const InputText: React.RefForwardingComponent<InputRef, InputProps> = ({ icon, ...rest }, ref) => {
 
-const InputText : React.FC<InputProps> =({ icon, ...rest}) =>(
- <Container>
-   <Icon name={icon} size={20} color="#666360" />
-<TextInput
+  const inputElementRef = useRef<any>(null);
+  useImperativeHandle(ref, () => ({
+    focus() {
+      inputElementRef.current.focus();
+    }
+  }));
+  return (
+    <Container>
+      <Icon name={icon} size={20} color="#666360" />
 
-keyboardAppearance="dark"
-placeholderTextColor="#666360"
-{...rest}
- />
+      <TextInput
+        ref={inputElementRef}
+        keyboardAppearance="dark"
+        placeholderTextColor="#666360"
+        {...rest}
+      />
 
- </Container>
-)
-export default InputText;
+    </Container>
+  )
+}
+export default forwardRef(InputText);

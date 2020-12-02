@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect } from 'react';
 import {
-  View,
+  TextInput,
   KeyboardAvoidingView,
   Platform,
   Alert,
@@ -44,6 +44,8 @@ const schema = Yup.object().shape({
 });
 
 const CarboyLoanCreate: React.FC = () => {
+  const obsRef= useRef<TextInput>(null)
+
   const [clients, setClients] = useState([]);
   const navigation = useNavigation();
   const onSubmit = (values: any) => {
@@ -97,6 +99,10 @@ const CarboyLoanCreate: React.FC = () => {
                 <InputText
                   keyboardType="numeric"
                   icon="shopping-cart"
+                  returnKeyType="next"
+                  onSubmitEditing={()=>{
+                    obsRef.current?.focus()
+                  }}
                   onChangeText={handleChange('quantity')}
                   onBlur={handleBlur('quantity')}
                   placeholder="quantidade"
@@ -106,8 +112,11 @@ const CarboyLoanCreate: React.FC = () => {
                 {errors.quantity && <ErrorValue>{errors.quantity}</ErrorValue>}
 
                 <InputText
+                ref={obsRef}
                   keyboardType="default"
                   icon="alert-circle"
+                  returnKeyType="send"
+                  onSubmitEditing={handleSubmit}
                   onChangeText={handleChange('obs')}
                   onBlur={handleBlur('obs')}
                   placeholder="Observação"
