@@ -75,7 +75,6 @@ navigation.navigate('CarboyLoanCreated')
                 <FeatherIcon onPress={navigateToClientCreated} name="arrow-left" color="#fff" size={24}/>
               </RectButton>
               <HeaderText>Editar empréstimo</HeaderText>
-              <FeatherIcon name="arrow-left" color="#3d9be9" size={24}/>
             </Header>
 
       <Container>

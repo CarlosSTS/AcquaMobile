@@ -3,6 +3,8 @@ import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/index";
 import InputText from '../../components/InputText';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
 import {
   Container,
   ClientList,
@@ -11,7 +13,8 @@ import {
   ClientValue,
   DetailsButton,
   DetailsButtonText,
-
+  Header,
+  HeaderText,
 } from "./styles";
 
 interface ClientFormData {
@@ -83,7 +86,17 @@ export default function ClientCreated() {
     loadClients();
   }, []);
 
+  function navigateToHomeClient(){
+    navigation.navigate('HomeClient')
+      }
   return (
+    <>
+      <Header style={{shadowColor: '#000', elevation: 8, }}>
+              <RectButton>
+                <FeatherIcon onPress={navigateToHomeClient} name="arrow-left" color="#fff" size={24}/>
+              </RectButton>
+              <HeaderText>Clientes Registrados</HeaderText>
+            </Header>
     <Container>
       <InputText
       keyboardType="default"
@@ -123,5 +136,6 @@ export default function ClientCreated() {
         )}
       />
     </Container>
+    </>
   );
 }

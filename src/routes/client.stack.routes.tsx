@@ -20,7 +20,7 @@ const ClientStackRoutes: React.FC = () => (
       },
     }}
   >
-    <ClientStack.Screen name="Clientes"  component={HomeClient} />
+    <ClientStack.Screen name="HomeClient" options={{title: 'Clientes'}} component={HomeClient} />
 
     <ClientStack.Screen
       name="ClientCreate"
@@ -36,10 +36,7 @@ const ClientStackRoutes: React.FC = () => (
     <ClientStack.Screen
       name="ClientCreated"
       component={ClientCreated}
-      options={{
-        title: 'Clientes Registrados',
-        headerBackTitleVisible: false,
-      }}
+      options={{headerShown: false}}
     />
 
     <ClientStack.Screen
