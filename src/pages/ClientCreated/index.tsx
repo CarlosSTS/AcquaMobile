@@ -96,6 +96,8 @@ export default function ClientCreated() {
                 <FeatherIcon onPress={navigateToHomeClient} name="arrow-left" color="#fff" size={24}/>
               </RectButton>
               <HeaderText>Clientes Registrados</HeaderText>
+              <FeatherIcon name="arrow-left" color="#3d9be9" size={24}/>
+
             </Header>
     <Container>
       <InputText

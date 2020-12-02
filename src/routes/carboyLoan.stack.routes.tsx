@@ -18,20 +18,19 @@ const CarboyLoanStackRoutes: React.FC = () => (
       },
     }}
   >
-    <CarboyLoanStack.Screen name="Empréstimos" component={HomeCarboyLoan} />
+    <CarboyLoanStack.Screen name="HomeCarboyLoan" component={HomeCarboyLoan}
+     options={{title: "Empréstimos"}}
+     />
     <CarboyLoanStack.Screen name="CarboyLoanCreate" component={CarboyLoanCreate}
-
       options={{
         cardStyle: { backgroundColor: '#3d9be9' },
         title: "Cadastrar empréstimo"
       }}
     />
     <CarboyLoanStack.Screen name="CarboyLoanCreated" component={CarboyLoanCreated}
-      options={{  title: 'Empréstimos Registrados'}}
-
+      options={{  headerShown:false}}
     />
-    <CarboyLoanStack.Screen name="CarboyLoanDetail"
-      component={CarboyLoanDetail}
+    <CarboyLoanStack.Screen name="CarboyLoanDetail" component={CarboyLoanDetail}
       options={{ headerShown: false }}
     />
 

@@ -5,6 +5,8 @@ import moment from 'moment';
 import { Alert } from 'react-native';
 import uniqBy from 'lodash/uniqBy';
 import api from '../../services/index';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
 import {
   Container,
   LoanList,
@@ -13,6 +15,8 @@ import {
   LoanValue,
   DetailsButton,
   DetailsButtonText,
+  Header,
+  HeaderText,
 } from './styles';
 import RemoteSelect from '../../components/RemoteSelect';
 
@@ -129,7 +133,19 @@ export default function CarboyLoanCreated() {
     getClientData();
   }, []);
 
+  function navigateToHomeCarboyLoan() {
+    navigation.navigate('HomeCarboyLoan')
+  }
   return (
+    <>
+     <Header style={{ shadowColor: '#000', elevation: 8, }}>
+        <RectButton>
+          <FeatherIcon onPress={navigateToHomeCarboyLoan} name="arrow-left" color="#fff" size={24} />
+        </RectButton>
+        <HeaderText>Empréstimos registrados</HeaderText>
+        <FeatherIcon name="arrow-left" color="#3d9be9" size={24} />
+      </Header>
+
     <Container>
       <RemoteSelect
         onSelectChange={onClientChange}
@@ -168,5 +184,6 @@ export default function CarboyLoanCreated() {
         )}
       />
     </Container>
+    </>
   );
 }

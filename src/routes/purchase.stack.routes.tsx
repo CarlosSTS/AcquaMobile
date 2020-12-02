@@ -20,7 +20,7 @@ const PurchaseStackRoutes: React.FC = () => (
       },
     }}
   >
-    <PurchaseStack.Screen name="Compras" component={HomePurchase} />
+    <PurchaseStack.Screen name="HomePurchase" options={{title: "Compras"}} component={HomePurchase} />
 
     <PurchaseStack.Screen
       name="PurchaseCreate"

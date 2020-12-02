@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 import api from "../../services/index";
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
+
 import {
   Container,
   PathList,
@@ -10,6 +13,8 @@ import {
   PathValue,
   DetailsButton,
   DetailsButtonText,
+  Header,
+  HeaderText
 } from "./styles";
 import RemoteSelect from "../../components/RemoteSelect";
 import moment from "moment";
@@ -128,9 +133,21 @@ export default function ClientRouteCreated() {
   useEffect(() => {
     getClientData();
   }, []);
-
+  function navigateToHomeCarboyLoan(){
+    navigation.navigate('HomeClientRoute')
+      }
   return (
+    <>
+      <Header style={{ shadowColor: '#000', elevation: 8, }}>
+        <RectButton>
+          <FeatherIcon onPress={navigateToHomeCarboyLoan} name="arrow-left" color="#fff" size={24} />
+        </RectButton>
+        <HeaderText>Editar rota de cliente</HeaderText>
+        <FeatherIcon name="arrow-left" color="#3d9be9" size={24} />
+      </Header>
+
     <Container>
+
       <RemoteSelect
         onSelectChange={onClientChange}
         data={clients}
@@ -168,5 +185,6 @@ export default function ClientRouteCreated() {
         )}
       />
     </Container>
+    </>
   );
 }

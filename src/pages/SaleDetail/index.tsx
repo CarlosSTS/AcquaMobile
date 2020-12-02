@@ -76,14 +76,13 @@ export default function SaleDetail() {
 
   return (
     <>
-
-
-
       <Header style={{ shadowColor: '#000', elevation: 8, }}>
         <RectButton>
           <FeatherIcon onPress={navigateToSaleCreated} name="arrow-left" color="#fff" size={24} />
         </RectButton>
         <HeaderText>Editar venda</HeaderText>
+        <FeatherIcon  name="arrow-left" color="#3d9be9" size={24} />
+
       </Header>
 
       <Container>

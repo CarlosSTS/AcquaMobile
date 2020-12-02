@@ -5,7 +5,8 @@ import moment from 'moment';
 import { Alert } from 'react-native';
 import uniqBy from 'lodash/uniqBy';
 import api from '../../services/index';
-
+import FeatherIcon from 'react-native-vector-icons/Feather';
+import { RectButton } from "react-native-gesture-handler";
 import RemoteSelect from '../../components/RemoteSelect';
 import {
   Container,
@@ -15,6 +16,8 @@ import {
   SaleValue,
   DetailsButton,
   DetailsButtonText,
+  Header,
+  HeaderText,
 } from './styles';
 
 interface ClientData {
@@ -130,7 +133,22 @@ export default function SaleCreated() {
     getClientData();
   }, []);
 
+  function navigateToHomeSale() {
+    navigation.navigate('HomeSale')
+  }
+
   return (
+    <>
+
+<Header style={{ shadowColor: '#000', elevation: 8, }}>
+        <RectButton>
+          <FeatherIcon onPress={navigateToHomeSale} name="arrow-left" color="#fff" size={24} />
+        </RectButton>
+        <HeaderText>Vendas registradas</HeaderText>
+        <FeatherIcon name="arrow-left" color="#3d9be9" size={24} />
+
+      </Header>
+
     <Container>
       <RemoteSelect
 
@@ -171,5 +189,6 @@ export default function SaleCreated() {
         )}
       />
     </Container>
+    </>
   );
 }

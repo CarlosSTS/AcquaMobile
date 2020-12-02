@@ -61,3 +61,21 @@ export const DetailsButtonText = styled.Text`
   font-size: 15px;
   font-weight: bold;
 `;
+
+export const Header = styled.View`
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+height: 55px;
+
+color: #fff;
+background-color: #3d9be9;
+`;
+export const HeaderText = styled.Text`
+font-size: 20px;
+font-weight:bold;
+align-items:center;
+justify-content:center;
+color: #fff;
+`;

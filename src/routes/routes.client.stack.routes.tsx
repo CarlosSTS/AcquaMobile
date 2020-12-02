@@ -20,11 +20,7 @@ const ClientRouteStackRoutes: React.FC = () => (
       },
     }}
   >
-    <ClientRouteStack.Screen
-
-      name="Rota de Clientes"
-      component={HomeClientRoute}
-    />
+    <ClientRouteStack.Screen name="HomeClientRoute" component={HomeClientRoute} options={{title:"Rota de Clientes" }} />
     <ClientRouteStack.Screen
       options={{
          title: 'Registrar rota de cliente',
@@ -33,16 +29,8 @@ const ClientRouteStackRoutes: React.FC = () => (
       name="CreateRouteClient"
       component={CreateRouteClient}
     />
-    <ClientRouteStack.Screen
-      options={{ title: 'Rotas Registradas' }}
-      name="CreatedRouteClient"
-      component={CreatedRouteClient}
-    />
-    <ClientRouteStack.Screen
-      options={{ headerShown: false }}
-      name="ClientRouteDetail"
-      component={ClientRouteDetail}
-    />
+    <ClientRouteStack.Screen name="CreatedRouteClient" component={CreatedRouteClient} options={{ headerShown:false}} />
+    <ClientRouteStack.Screen name="ClientRouteDetail"  component={ClientRouteDetail} options={{ headerShown: false }} />
 
   </ClientRouteStack.Navigator>
 );

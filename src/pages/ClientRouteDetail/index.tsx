@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { ScrollView, Alert,KeyboardAvoidingView,Platform } from "react-native";
+import { ScrollView, Alert, KeyboardAvoidingView, Platform } from "react-native";
 import {
   Container,
   Input,
@@ -67,127 +67,127 @@ export default function ClientRouteDetail() {
       Alert.alert("fracasso!", "contate o administrador do sistema")
     }
   };
-  function navigateToCreatedRouteClient(){
+  function navigateToCreatedRouteClient() {
     navigation.navigate('CreatedRouteClient')
-      }
+  }
   return (
     <>
-
-<Header style={{shadowColor: '#000', elevation: 8, }}>
-              <RectButton>
-                <FeatherIcon onPress={navigateToCreatedRouteClient} name="arrow-left" color="#fff" size={24}/>
-              </RectButton>
-              <HeaderText>Editar rota de cliente</HeaderText>
-            </Header>
+      <Header style={{ shadowColor: '#000', elevation: 8, }}>
+        <RectButton>
+          <FeatherIcon onPress={navigateToCreatedRouteClient} name="arrow-left" color="#fff" size={24} />
+        </RectButton>
+        <HeaderText>Editar rota de cliente</HeaderText>
+        <FeatherIcon name="arrow-left" color="#3d9be9" size={24} />
+      </Header>
 
       <Container>
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled
-      >
-        <ScrollView showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps="handled">
-                           <Paths>
-            <Formik
-              initialValues={paths}
-              enableReinitialize={true}
-              onSubmit={updatepaths}
-              validationSchema={schema}
-            >
-              {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
-                return (
-                  <>
+        <KeyboardAvoidingView
+          style={{ flex: 1 }}
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          enabled
+        >
+          <ScrollView showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled">
+            <Paths>
+              <Formik
+                initialValues={paths}
+                enableReinitialize={true}
+                onSubmit={updatepaths}
+                validationSchema={schema}
+              >
+                {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
+                  return (
+                    <>
 
-                    <Description>Cliente: </Description>
-                    <Input
-                      autoCorrect={false}
-                      placeholder="Cliente"
-                      keyboardType="numeric"
-                      onChangeText={handleChange("client")}
-                      onBlur={handleBlur("client")}
-                      value={String(values.client)}
-                      returnKeyType="next"
-                    />
+                      <Description>Cliente: </Description>
+                      <Input
+                        autoCorrect={false}
+                        placeholder="Cliente"
+                        keyboardType="numeric"
+                        onChangeText={handleChange("client")}
+                        onBlur={handleBlur("client")}
+                        value={String(values.client)}
+                        returnKeyType="next"
+                      />
 
-                    <Description>Quantidade: </Description>
-                    <Input
-                      autoCorrect={false}
-                      placeholder="Quantidade"
-                      keyboardType="numeric"
-                      onChangeText={handleChange("quantity")}
-                      onBlur={handleBlur("quantity")}
-                      value={String(values.quantity)}
-                      returnKeyType="next"
-                    />
+                      <Description>Quantidade: </Description>
+                      <Input
+                        autoCorrect={false}
+                        placeholder="Quantidade"
+                        keyboardType="numeric"
+                        onChangeText={handleChange("quantity")}
+                        onBlur={handleBlur("quantity")}
+                        value={String(values.quantity)}
+                        returnKeyType="next"
+                      />
 
-                    <Description>Dias de parada: </Description>
-                    <Input
-                      autoCorrect={false}
-                      placeholder="Dias de parada"
-                      keyboardType="numeric"
-                      onChangeText={handleChange("step_days")}
-                      onBlur={handleBlur("step_days")}
-                      value={String(values.step_days)}
-                      returnKeyType="next"
-                    />
+                      <Description>Dias de parada: </Description>
+                      <Input
+                        autoCorrect={false}
+                        placeholder="Dias de parada"
+                        keyboardType="numeric"
+                        onChangeText={handleChange("step_days")}
+                        onBlur={handleBlur("step_days")}
+                        value={String(values.step_days)}
+                        returnKeyType="next"
+                      />
 
-                    <Description>Total: </Description>
-                    <Input
-                      autoCorrect={false}
-                      autoCapitalize="characters"
-                      placeholder="Total"
-                      onChangeText={handleChange("total")}
-                      onBlur={handleBlur("total")}
-                      value={String(values.total)}
-                      keyboardType="numeric"
-                      returnKeyType="next"
-                    />
+                      <Description>Total: </Description>
+                      <Input
+                        autoCorrect={false}
+                        autoCapitalize="characters"
+                        placeholder="Total"
+                        onChangeText={handleChange("total")}
+                        onBlur={handleBlur("total")}
+                        value={String(values.total)}
+                        keyboardType="numeric"
+                        returnKeyType="next"
+                      />
 
-                    <Description>Usuário: </Description>
-                    <Input
-                      autoCorrect={false}
-                      autoCapitalize="characters"
-                      placeholder="Usuário"
-                      onChangeText={handleChange("user")}
-                      onBlur={handleBlur("user")}
-                      value={String(values.user)}
-                      keyboardType="numeric"
-                      returnKeyType="next"
-                    />
+                      <Description>Usuário: </Description>
+                      <Input
+                        autoCorrect={false}
+                        autoCapitalize="characters"
+                        placeholder="Usuário"
+                        onChangeText={handleChange("user")}
+                        onBlur={handleBlur("user")}
+                        value={String(values.user)}
+                        keyboardType="numeric"
+                        returnKeyType="next"
+                      />
 
-                    <Description>Valor: </Description>
-                    <Input
-                      autoCorrect={false}
-                      autoCapitalize="characters"
-                      placeholder="Valor"
-                      onChangeText={handleChange("value")}
-                      onBlur={handleBlur("value")}
-                      value={String(values.value)}
-                      keyboardType="numeric"
-                      returnKeyType="next"
-                    />
+                      <Description>Valor: </Description>
+                      <Input
+                        autoCorrect={false}
+                        autoCapitalize="characters"
+                        placeholder="Valor"
+                        onChangeText={handleChange("value")}
+                        onBlur={handleBlur("value")}
+                        value={String(values.value)}
+                        keyboardType="numeric"
+                        returnKeyType="next"
+                      />
 
-                    <Description>Aviso Sobre o dia: </Description>
-                    <Input
-                      autoCorrect={false}
-                      autoCapitalize="words"
-                      placeholder="Aviso Sobre o dia"
-                      onChangeText={handleChange("warning_sub_day")}
-                      onBlur={handleBlur("warning_sub_day")}
-                      value={String(values.warning_sub_day)}
-                      returnKeyType="next"
-                    />
+                      <Description>Aviso Sobre o dia: </Description>
+                      <Input
+                        autoCorrect={false}
+                        autoCapitalize="words"
+                        placeholder="Aviso Sobre o dia"
+                        onChangeText={handleChange("warning_sub_day")}
+                        onBlur={handleBlur("warning_sub_day")}
+                        value={String(values.warning_sub_day)}
+                        returnKeyType="next"
+                      />
 
-<ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
+                      <ButtonDetail onPress={handleSubmit}>Salva Edições</ButtonDetail>
 
-                  </>
-                );
-              }}
-            </Formik>
-          </Paths>
+                    </>
+                  );
+                }}
+              </Formik>
+            </Paths>
 
-        </ScrollView>
+          </ScrollView>
         </KeyboardAvoidingView>
       </Container>
       <ItemContainer />

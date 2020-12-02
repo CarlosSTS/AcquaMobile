@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { ScrollView, Alert,Platform,KeyboardAvoidingView } from 'react-native';
+import { ScrollView, Alert, Platform, KeyboardAvoidingView } from 'react-native';
 import { Formik } from 'formik';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import { RectButton } from "react-native-gesture-handler";
@@ -64,92 +64,93 @@ export default function CarboyLoanDetail() {
       Alert.alert('fracasso!', 'contate o administrador do sistema');
     }
   };
- function navigateToClientCreated(){
-navigation.navigate('CarboyLoanCreated')
+  function navigateToClientCreated() {
+    navigation.navigate('CarboyLoanCreated')
   }
   return (
     <>
 
-<Header style={{shadowColor: '#000', elevation: 8, }}>
-              <RectButton>
-                <FeatherIcon onPress={navigateToClientCreated} name="arrow-left" color="#fff" size={24}/>
-              </RectButton>
-              <HeaderText>Editar empréstimo</HeaderText>
-            </Header>
+      <Header style={{ shadowColor: '#000', elevation: 8, }}>
+        <RectButton>
+          <FeatherIcon onPress={navigateToClientCreated} name="arrow-left" color="#fff" size={24} />
+        </RectButton>
+        <HeaderText>Editar empréstimo</HeaderText>
+        <FeatherIcon name="arrow-left" color="#3d9be9" size={24} />
+      </Header>
 
       <Container>
 
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled
-      >
-        <ScrollView showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps="handled">
-                            <Loans>
-            <Formik
-              initialValues={loans}
-              enableReinitialize
-              onSubmit={updateloans}
-              validationSchema={schema}
-            >
-              {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
-                return (
-                  <>
-                    <Description>Cliente: </Description>
-                    <Input
-                      autoCorrect={false}
-                      placeholder="Cliente"
-                      keyboardType="numeric"
-                      onChangeText={handleChange('client')}
-                      onBlur={handleBlur('client')}
-                      value={String(values.client)}
-                      returnKeyType="next"
-                    />
+        <KeyboardAvoidingView
+          style={{ flex: 1 }}
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          enabled
+        >
+          <ScrollView showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled">
+            <Loans>
+              <Formik
+                initialValues={loans}
+                enableReinitialize
+                onSubmit={updateloans}
+                validationSchema={schema}
+              >
+                {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
+                  return (
+                    <>
+                      <Description>Cliente: </Description>
+                      <Input
+                        autoCorrect={false}
+                        placeholder="Cliente"
+                        keyboardType="numeric"
+                        onChangeText={handleChange('client')}
+                        onBlur={handleBlur('client')}
+                        value={String(values.client)}
+                        returnKeyType="next"
+                      />
 
-                    <Description>Quantidade: </Description>
-                    <Input
-                      autoCorrect={false}
-                      placeholder="Quantidade"
-                      keyboardType="numeric"
-                      onChangeText={handleChange('quantity')}
-                      onBlur={handleBlur('quantity')}
-                      value={String(values.quantity)}
-                      returnKeyType="next"
-                    />
+                      <Description>Quantidade: </Description>
+                      <Input
+                        autoCorrect={false}
+                        placeholder="Quantidade"
+                        keyboardType="numeric"
+                        onChangeText={handleChange('quantity')}
+                        onBlur={handleBlur('quantity')}
+                        value={String(values.quantity)}
+                        returnKeyType="next"
+                      />
 
-                    <Description>Usuário: </Description>
-                    <Input
-                      autoCorrect={false}
-                      autoCapitalize="characters"
-                      placeholder="Usuário"
-                      onChangeText={handleChange('user')}
-                      onBlur={handleBlur('user')}
-                      value={String(values.user)}
-                      keyboardType="numeric"
-                      returnKeyType="next"
-                    />
+                      <Description>Usuário: </Description>
+                      <Input
+                        autoCorrect={false}
+                        autoCapitalize="characters"
+                        placeholder="Usuário"
+                        onChangeText={handleChange('user')}
+                        onBlur={handleBlur('user')}
+                        value={String(values.user)}
+                        keyboardType="numeric"
+                        returnKeyType="next"
+                      />
 
-                    <Description>Observação: </Description>
+                      <Description>Observação: </Description>
 
-                    <Input
-                      autoCorrect={false}
-                      autoCapitalize="words"
-                      placeholder="Observação"
-                      onChangeText={handleChange('obs')}
-                      onBlur={handleBlur('obs')}
-                      value={values.obs}
-                      returnKeyType="next"
-                    />
-          <ButtonDetail onPress={handleSubmit}>Salvar Edições</ButtonDetail>
+                      <Input
+                        autoCorrect={false}
+                        autoCapitalize="words"
+                        placeholder="Observação"
+                        onChangeText={handleChange('obs')}
+                        onBlur={handleBlur('obs')}
+                        value={values.obs}
+                        returnKeyType="next"
+                      />
+                      <ButtonDetail onPress={handleSubmit}>Salvar Edições</ButtonDetail>
 
-                  </>
-                );
-              }}
-            </Formik>
-          </Loans>
+                    </>
+                  );
+                }}
+              </Formik>
+            </Loans>
 
-        </ScrollView>
+          </ScrollView>
         </KeyboardAvoidingView>
       </Container>
       <ItemContainer />

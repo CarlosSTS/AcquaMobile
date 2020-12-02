@@ -5,6 +5,7 @@ import HomeSale from '../pages/HomeSale'
 import SaleCreate from '../pages/SaleCreate'
 import SaleCreated from '../pages/SaleCreated';
 import SaleDetail from '../pages/SaleDetail';
+import { Title } from '../pages/SignIn/styles';
 const SaleStack = createStackNavigator();
 
 const SaleStackRoutes: React.FC = () => (
@@ -18,7 +19,7 @@ const SaleStackRoutes: React.FC = () => (
       },
     }}
   >
-    <SaleStack.Screen name="Vendas" component={HomeSale} />
+    <SaleStack.Screen name="HomeSale"  options={{title: 'Vendas'}} component={HomeSale} />
     <SaleStack.Screen name="SaleCreate" component={SaleCreate}
       options={{
         cardStyle: { backgroundColor: '#3d9be9' },
@@ -27,15 +28,10 @@ const SaleStackRoutes: React.FC = () => (
       }}
     />
     <SaleStack.Screen name="SaleCreated" component={SaleCreated}
-      options={{
-        title: "Vendas Registradas"
-      }}
+      options={{headerShown: false }}
     />
     <SaleStack.Screen name="SaleDetail" component={SaleDetail}
-      options={{
-        headerShown: false,
-
-      }}
+      options={{headerShown: false }}
     />
 
   </SaleStack.Navigator>

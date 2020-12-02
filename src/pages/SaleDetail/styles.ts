@@ -29,7 +29,6 @@ margin-top: 20px;
 `;
 
 export const Header = styled.View`
-padding-left: 16px;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
@@ -40,7 +39,6 @@ color: #fff;
 background-color: #3d9be9;
 `;
 export const HeaderText = styled.Text`
-padding-right: 33%;
 font-size: 20px;
 font-weight:bold;
 align-items:center;
