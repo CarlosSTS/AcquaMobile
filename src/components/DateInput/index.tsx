@@ -1,4 +1,4 @@
-﻿import React, { useState,useImperativeHandle,forwardRef,useRef } from "react";
+﻿import React, {useState, useRef, useImperativeHandle, forwardRef } from 'react';
 import TextInputMask from "react-native-text-input-mask";
 import {TextInputProps} from "react-native"
 import moment from "moment";
