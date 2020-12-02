@@ -19,7 +19,9 @@ const SaleStackRoutes: React.FC = () => (
       },
     }}
   >
-    <SaleStack.Screen name="HomeSale"  options={{title: 'Vendas'}} component={HomeSale} />
+    <SaleStack.Screen name="HomeSale" component={HomeSale}
+     options={{title: 'Vendas'}}
+      />
     <SaleStack.Screen name="SaleCreate" component={SaleCreate}
       options={{
         cardStyle: { backgroundColor: '#3d9be9' },

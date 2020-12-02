@@ -16,35 +16,29 @@ const ClientStackRoutes: React.FC = () => (
       headerBackTitleVisible: false,
       headerStyle: {
         backgroundColor: '#3d9be9',
-
       },
     }}
   >
-    <ClientStack.Screen name="HomeClient" options={{title: 'Clientes'}} component={HomeClient} />
+    <ClientStack.Screen name="HomeClient" component={HomeClient}
+      options={{ title: 'Clientes' }}
+    />
 
     <ClientStack.Screen
       name="ClientCreate"
       component={ClientCreate}
       options={{
-        cardStyle:{ backgroundColor: '#3d9be9' },
-
+        cardStyle: { backgroundColor: '#3d9be9' },
         title: 'Cadastrar cliente',
         headerBackTitleVisible: false,
       }}
     />
 
-    <ClientStack.Screen
-      name="ClientCreated"
-      component={ClientCreated}
-      options={{headerShown: false}}
+    <ClientStack.Screen name="ClientCreated" component={ClientCreated}
+      options={{ headerShown: false }}
     />
 
-    <ClientStack.Screen
-      name="ClientDetail"
-      component={ClientDetail}
-      options={{
-       headerShown: false
-      }}
+    <ClientStack.Screen name="ClientDetail" component={ClientDetail}
+      options={{ headerShown: false }}
     />
 
   </ClientStack.Navigator>

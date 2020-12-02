@@ -28,7 +28,7 @@ const ReportStackRoutes: React.FC = () => (
       component={ReportsRoutes}
     />
 
-    <ReportStack.Screen
+    <ReportStack.Screen name="ReportsProfit" component={ReportsProfit}
       options={{
         cardStyle: {
           backgroundColor: '#fafafa',
@@ -36,8 +36,6 @@ const ReportStackRoutes: React.FC = () => (
         title: 'Relatório de Lucros 📶',
         headerBackTitleVisible: false,
       }}
-      name="ReportsProfit"
-      component={ReportsProfit}
     />
 
   </ReportStack.Navigator>

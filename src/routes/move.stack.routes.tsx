@@ -20,23 +20,17 @@ const MoveStackRoutes: React.FC = () => (
     }}
   >
     <MoveStack.Screen name="Movimentos" component={HomeMove} />
-    <MoveStack.Screen name="MoveCreate"
-      component={MoveCreate}
+    <MoveStack.Screen name="MoveCreate" component={MoveCreate}
       options={{
-        cardStyle:{ backgroundColor: '#3d9be9' },
-      title: "Cadastrar movimento"
-     }}
-
+        cardStyle: { backgroundColor: '#3d9be9' },
+        title: "Cadastrar movimento"
+      }}
     />
-    <MoveStack.Screen
+    <MoveStack.Screen name="MoveCreated" component={MoveCreated}
       options={{ title: 'Movimentos Registrados' }}
-      name="MoveCreated"
-      component={MoveCreated}
     />
-    <MoveStack.Screen
+    <MoveStack.Screen name="MoveDetail" component={MoveDetail}
       options={{ title: "Editar movimento" }}
-      name="MoveDetail"
-      component={MoveDetail}
     />
 
   </MoveStack.Navigator>

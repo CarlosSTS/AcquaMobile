@@ -14,23 +14,25 @@ const ClientRouteStackRoutes: React.FC = () => (
       headerShown: true,
       headerTintColor: '#fff',
       headerBackTitleVisible: false,
-
       headerStyle: {
         backgroundColor: '#3d9be9',
       },
     }}
   >
-    <ClientRouteStack.Screen name="HomeClientRoute" component={HomeClientRoute} options={{title:"Rota de Clientes" }} />
-    <ClientRouteStack.Screen
-      options={{
-         title: 'Registrar rota de cliente',
-          cardStyle:{ backgroundColor: '#3d9be9' },
- }}
-      name="CreateRouteClient"
-      component={CreateRouteClient}
+    <ClientRouteStack.Screen name="HomeClientRoute" component={HomeClientRoute}
+      options={{ title: "Rota de Clientes" }}
     />
-    <ClientRouteStack.Screen name="CreatedRouteClient" component={CreatedRouteClient} options={{ headerShown:false}} />
-    <ClientRouteStack.Screen name="ClientRouteDetail"  component={ClientRouteDetail} options={{ headerShown: false }} />
+    <ClientRouteStack.Screen name="CreateRouteClient" component={CreateRouteClient}
+      options={{
+        title: 'Registrar rota de cliente',
+        cardStyle: { backgroundColor: '#3d9be9' },
+      }}
+    />
+    <ClientRouteStack.Screen name="CreatedRouteClient" component={CreatedRouteClient}
+      options={{ headerShown: false }}
+    />
+    <ClientRouteStack.Screen name="ClientRouteDetail" component={ClientRouteDetail}
+      options={{ headerShown: false }} />
 
   </ClientRouteStack.Navigator>
 );
