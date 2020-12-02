@@ -28,8 +28,6 @@ import Button from '../../components/Button';
 import {
   Container,
   Title,
-  ForgotPassword,
-  ForgotPasswordText
 } from './styles';
 
 interface SignInFormaData {
@@ -184,9 +182,6 @@ const SignIn: React.FC = () => {
               </View>
             </Form>
 
-            <ForgotPassword onPress={() => { }}>
-              <ForgotPasswordText>Esqueci minha Senha</ForgotPasswordText>
-            </ForgotPassword>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>

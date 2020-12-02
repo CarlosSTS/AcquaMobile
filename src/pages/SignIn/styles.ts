@@ -15,13 +15,3 @@ export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
   margin: 0px 0 20px;
 `;
-
-export const ForgotPassword = styled(RectButton)`
-  margin-top: 20px;
-`;
-
-export const ForgotPasswordText = styled.Text`
-  color: #f4ede8;
-  font-size: 16px;
-  font-family: 'RobotoSlab-Regular';
-`;
