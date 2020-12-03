@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
-import { Platform, Animated } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { Platform } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;

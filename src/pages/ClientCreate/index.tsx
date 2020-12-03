@@ -33,7 +33,8 @@ const ClientCreate: React.FC = () => {
   const navigation = useNavigation();
   const phoneRef = useRef<TextInput>(null)
   const cityRef = useRef<TextInput>(null)
-const preferredPriceRef= useRef<TextInput>(null)
+  const preferredPriceRef= useRef<TextInput>(null)
+
   const onSubmit = (values: any) => {
     try {
       api.post('/clients/', values);
