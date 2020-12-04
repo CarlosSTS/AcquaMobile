@@ -66,7 +66,7 @@ export default function SaleDetail() {
       api.patch(`/sales/${params.id}/`, values);
       Alert.alert('sucesso!', 'venda atualizada');
     } catch {
-      Alert.alert('fracasso!', 'contate o administrador do sistema');
+      Alert.alert('fracasso!', 'contate o administrador do sistema.');
     }
   };
 

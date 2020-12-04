@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React, { useRef } from "react";
 import {
   KeyboardAvoidingView,
   Platform,
@@ -30,7 +30,7 @@ const PurchaseCreate: React.FC = () => {
 
   const valueRef = useRef<TextInput>(null)
   const obsRef = useRef<TextInput>(null)
-const submitDateRef = useRef<TextInput>(null)
+  const submitDateRef = useRef<TextInput>(null)
   const onSubmit = (values: any) => {
     try {
       api.post("/purchases/", values)
@@ -57,9 +57,10 @@ const submitDateRef = useRef<TextInput>(null)
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-        <ScrollView showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled">
-                    <Container>
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled">
+          <Container>
 
             <Formik
               initialValues={initialValues}
@@ -76,7 +77,7 @@ const submitDateRef = useRef<TextInput>(null)
                     onBlur={handleBlur("quantity")}
                     placeholder="quantidade"
                     value={String(values.quantity)}
-                    onSubmitEditing={()=>{
+                    onSubmitEditing={() => {
                       valueRef.current?.focus()
                     }}
                   />
@@ -92,7 +93,7 @@ const submitDateRef = useRef<TextInput>(null)
                     onChangeText={handleChange("value")}
                     onBlur={handleBlur("value")}
                     placeholder="valor unitário"
-                    onSubmitEditing={()=>{
+                    onSubmitEditing={() => {
                       obsRef.current?.focus();
                     }}
                     value={String(values.value)}
@@ -120,7 +121,7 @@ const submitDateRef = useRef<TextInput>(null)
                     returnKeyType="send"
                     value={values.submit_date}
                     handleChange={handleChange("submit_date")}
-                   // onSubmitEditing={handleSubmit}
+                  // onSubmitEditing={handleSubmit}
                   />
 
                   <Button onPress={handleSubmit}>Acessar</Button>

@@ -57,7 +57,7 @@ const SaleCreate: React.FC = () => {
       Alert.alert('Sucesso!', 'venda registrada!');
       navigation.navigate('SaleCreated');
     } catch {
-      Alert.alert('Fracasso!', 'contate o administrador do sistema');
+      Alert.alert('Fracasso!', 'contate o administrador do sistema.');
     }
   };
 
@@ -65,7 +65,7 @@ const SaleCreate: React.FC = () => {
     api
       .get('/clients/', { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch(() => Alert.alert('Fracasso'));
+      .catch(() => Alert.alert('Fracasso','Contate o administrador do sistema.'));
   };
 
   useEffect(() => {
@@ -79,7 +79,8 @@ const SaleCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView showsVerticalScrollIndicator={false}
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }}
+          showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
           <Container>
 

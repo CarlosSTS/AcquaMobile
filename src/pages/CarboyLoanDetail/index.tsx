@@ -61,7 +61,7 @@ export default function CarboyLoanDetail() {
       api.patch(`/loans/${params.id}/`, values);
       Alert.alert('sucesso!', 'empréstimo atualizado');
     } catch {
-      Alert.alert('fracasso!', 'contate o administrador do sistema');
+      Alert.alert('fracasso!', 'contate o administrador do sistema.');
     }
   };
   function navigateToClientCreated() {

@@ -55,7 +55,7 @@ export default function PurchaseDetail() {
       api.patch(`/purchases/${params.id}/`, values);
       Alert.alert('sucesso!', 'Compra atualizada');
     } catch {
-      Alert.alert('fracasso!', 'contate o administrador do sistema');
+      Alert.alert('fracasso!', 'contate o administrador do sistema.');
     }
   };
 

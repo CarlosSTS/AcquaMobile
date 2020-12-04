@@ -60,7 +60,7 @@ const navigation = useNavigation();
     api
       .get("/clients/", { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch(() => Alert.alert("Fracasso"));
+      .catch(() => Alert.alert("Fracasso",'Contate o administrador do sistema.'));
   };
 
   useEffect(() => {

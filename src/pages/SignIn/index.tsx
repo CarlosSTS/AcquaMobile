@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from 'react';
 
 import {
-  ActivityIndicator,
   TextInput,
   ScrollView,
   View,
@@ -82,7 +81,7 @@ const SignIn: React.FC = () => {
     ]).start();
   }
 
-  const { signIn,loading } = useAuth();
+  const { signIn } = useAuth();
 
   const handleSignIn = useCallback(
     async (data: SignInFormaData) => {
@@ -101,13 +100,11 @@ const SignIn: React.FC = () => {
           username: data.username,
           password: data.password,
         });
-        if (loading) {
-          return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <ActivityIndicator size="large" color="#999" />
-            </View>
-          );
-        }}
+        Alert.alert(
+          'Bem-Vindo',
+          'Você fez login na aplicação',
+        );
+     }
          catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);

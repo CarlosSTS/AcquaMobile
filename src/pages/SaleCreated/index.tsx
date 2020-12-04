@@ -86,7 +86,7 @@ export default function SaleCreated() {
     api
       .get('/clients/', { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch((error) => Alert.alert('Fracasso'));
+      .catch((error) => Alert.alert('Fracasso','Contate o administrador do sistema.'));
   };
 
   const onEndReached = () => {

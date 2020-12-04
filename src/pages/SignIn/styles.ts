@@ -14,3 +14,4 @@ export const Title = styled.Text`
   font-family: 'RobotoSlab-Medium';
   margin: 0px 0 20px;
 `;
+

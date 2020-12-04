@@ -54,7 +54,7 @@ const CarboyLoanCreate: React.FC = () => {
       Alert.alert('Sucesso!', 'empréstimo registrado!');
       navigation.navigate('CarboyLoanCreated');
     } catch {
-      Alert.alert('Fracasso!', 'contate o administrador do sistema');
+      Alert.alert('Fracasso!', 'contate o administrador do sistema.');
     }
   };
 
@@ -62,7 +62,7 @@ const CarboyLoanCreate: React.FC = () => {
     api
       .get('/clients/', { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch(() => Alert.alert('Fracasso'));
+      .catch(() => Alert.alert('Fracasso','Contate o administrador do sistema.'));
   };
 
   useEffect(() => {

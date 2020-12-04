@@ -62,7 +62,8 @@ const ClientCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView contentContainerStyle={{ paddingTop: 20 }} showsVerticalScrollIndicator={false}
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }}
+         showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
           <Container>
 
