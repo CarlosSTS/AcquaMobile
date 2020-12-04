@@ -50,11 +50,13 @@ export default function ReportsProfit() {
           <Container>
 
             <DateInput
+            placeholder="Data inicial"
               icon="clock"
               value={initial_date}
               handleChange={setInitial_date}
             />
             <DateInput
+            placeholder="Data final"
               icon="clock-o"
               value={end_date}
               handleChange={setEnd_date}

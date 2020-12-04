@@ -8,6 +8,7 @@ import {
   Platform,
   Alert,
   Animated,
+  ActivityIndicator,
   Keyboard,
 } from 'react-native';
 
@@ -81,7 +82,7 @@ const SignIn: React.FC = () => {
     ]).start();
   }
 
-  const { signIn } = useAuth();
+  const { signIn ,loading} = useAuth();
 
   const handleSignIn = useCallback(
     async (data: SignInFormaData) => {
@@ -100,10 +101,13 @@ const SignIn: React.FC = () => {
           username: data.username,
           password: data.password,
         });
-        Alert.alert(
-          'Bem-Vindo',
-          'Você fez login na aplicação',
+        if (loading) {
+          return (
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <ActivityIndicator size="large" color="#999" />
+          </View>
         );
+        }
      }
          catch (err) {
         if (err instanceof Yup.ValidationError) {
