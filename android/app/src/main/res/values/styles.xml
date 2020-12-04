@@ -9,7 +9,7 @@
         @color/primary
         </item>
         <item name="android:windowBackground">
-        @color/second
+        @color/primary
         </item>
     </style>
 
