@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   TextInput,
   KeyboardAvoidingView,
@@ -44,7 +44,7 @@ const schema = Yup.object().shape({
 });
 
 const CarboyLoanCreate: React.FC = () => {
-  const obsRef= useRef<TextInput>(null)
+  const obsRef = useRef<TextInput>(null)
 
   const [clients, setClients] = useState([]);
   const navigation = useNavigation();
@@ -62,7 +62,7 @@ const CarboyLoanCreate: React.FC = () => {
     api
       .get('/clients/', { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch(() => Alert.alert('Fracasso','Contate o administrador do sistema.'));
+      .catch(() => Alert.alert('Fracasso', 'Contate o administrador do sistema.'));
   };
 
   useEffect(() => {
@@ -76,17 +76,18 @@ const CarboyLoanCreate: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-        <ScrollView showsVerticalScrollIndicator={false}
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }}
+          showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
-                        <Container>
+          <Container>
 
-          <Formik
-            initialValues={initialValues}
-            onSubmit={onSubmit}
-            validationSchema={schema}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-              <>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={onSubmit}
+              validationSchema={schema}
+            >
+              {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+                <>
                   <RemoteSelect
                     onSelectChange={handleChange('client')}
                     data={clients}
@@ -95,50 +96,49 @@ const CarboyLoanCreate: React.FC = () => {
                     initialLabel="Selecione um cliente"
                   />
 
-                {errors.client && <ErrorValue>{errors.client}</ErrorValue>}
-                <InputText
-                  keyboardType="numeric"
-                  icon="shopping-cart"
-                  returnKeyType="next"
-                  onSubmitEditing={()=>{
-                    obsRef.current?.focus()
-                  }}
-                  onChangeText={handleChange('quantity')}
-                  onBlur={handleBlur('quantity')}
-                  placeholder="quantidade"
-                  value={String(values.quantity)}
-                />
+                  {errors.client && <ErrorValue>{errors.client}</ErrorValue>}
+                  <InputText
+                    keyboardType="numeric"
+                    icon="shopping-cart"
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                      obsRef.current?.focus()
+                    }}
+                    onChangeText={handleChange('quantity')}
+                    onBlur={handleBlur('quantity')}
+                    placeholder="quantidade"
+                    value={String(values.quantity)}
+                  />
 
-                {errors.quantity && <ErrorValue>{errors.quantity}</ErrorValue>}
+                  {errors.quantity && <ErrorValue>{errors.quantity}</ErrorValue>}
 
-                <InputText
-                ref={obsRef}
-                  keyboardType="default"
-                  icon="alert-circle"
-                  returnKeyType="send"
-                  onSubmitEditing={handleSubmit}
-                  onChangeText={handleChange('obs')}
-                  onBlur={handleBlur('obs')}
-                  placeholder="Observação"
-                  value={values.obs}
-                />
+                  <InputText
+                    ref={obsRef}
+                    keyboardType="default"
+                    icon="alert-circle"
+                    returnKeyType="send"
+                    onSubmitEditing={handleSubmit}
+                    onChangeText={handleChange('obs')}
+                    onBlur={handleBlur('obs')}
+                    placeholder="Observação"
+                    value={values.obs}
+                  />
 
-                <DateInput
-                  icon="clock"
-                  value={values.order_date}
-                  handleChange={handleChange('order_date')}
-                />
+                  <DateInput
+                    icon="clock"
+                    value={values.order_date}
+                    handleChange={handleChange('order_date')}
+                  />
 
-                  <Button  onPress={handleSubmit}>Registrar</Button>
-              </>
-            )}
-          </Formik>
-        </Container>
+                  <Button onPress={handleSubmit}>Registrar</Button>
+                </>
+              )}
+            </Formik>
+          </Container>
         </ScrollView>
       </KeyboardAvoidingView>
     </>
   );
 };
-
 
 export default CarboyLoanCreate;

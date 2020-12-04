@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   TextInput,
   KeyboardAvoidingView,
@@ -17,7 +17,7 @@ import InputText from '../../components/InputText'
 import DateInput from "../../components/DateInput";
 import RemoteSelect from "../../components/RemoteSelect";
 import Button from '../../components/Button'
-import { Container,ErrorValue } from "./styles";
+import { Container, ErrorValue } from "./styles";
 
 /*
 interface CreateMoveFormData {
@@ -43,24 +43,25 @@ const schema = Yup.object().shape({
 });
 
 const MoveCreate: React.FC = () => {
-const obsRef= useRef<TextInput>(null);
+  const obsRef = useRef<TextInput>(null);
 
-const [clients, setClients] = useState([]);
-const navigation = useNavigation();
+  const [clients, setClients] = useState([]);
+  const navigation = useNavigation();
   const onSubmit = (values: any) => {
     try {
-    api.post("/moves/", values)
+      api.post("/moves/", values)
       Alert.alert("Sucesso!", "movimento registrado!")
       navigation.navigate('MoveCreated')
-    } catch { Alert.alert("Fracasso!", "contate o administrador do sistema")
-  }
+    } catch {
+      Alert.alert("Fracasso!", "contate o administrador do sistema")
+    }
   };
 
   const getClientData = () => {
     api
       .get("/clients/", { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch(() => Alert.alert("Fracasso",'Contate o administrador do sistema.'));
+      .catch(() => Alert.alert("Fracasso", 'Contate o administrador do sistema.'));
   };
 
   useEffect(() => {
@@ -74,79 +75,78 @@ const navigation = useNavigation();
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-        <ScrollView showsVerticalScrollIndicator={false}
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }}
+          showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
-                    <Container>
+          <Container>
 
 
-          <Formik
-            initialValues={initialValues}
-            onSubmit={onSubmit}
-            validationSchema={schema}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-              <>
-                <RemoteSelect
-                  onSelectChange={handleChange("status")}
-                  data={[
-                    { value: 0, label: "ENTRADA" },
-                    { value: 1, label: "SAIDA" },
-                  ]}
-                  labelField="label"
-                  valueField="value"
-                  initialLabel="Selecione um tipo de movimento"
-                />
+            <Formik
+              initialValues={initialValues}
+              onSubmit={onSubmit}
+              validationSchema={schema}
+            >
+              {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+                <>
+                  <RemoteSelect
+                    onSelectChange={handleChange("status")}
+                    data={[
+                      { value: 0, label: "ENTRADA" },
+                      { value: 1, label: "SAIDA" },
+                    ]}
+                    labelField="label"
+                    valueField="value"
+                    initialLabel="Selecione um tipo de movimento"
+                  />
 
 
-                {errors.status && (
-                  <ErrorValue>{errors.status}</ErrorValue>
-                )}
-                <InputText
-                onSubmitEditing={() =>{
-                  obsRef.current?.focus();
-                }}
-                  keyboardType="numeric"
-                  returnKeyType="next"
-                  icon="dollar-sign"
-                  onChangeText={handleChange("value")}
-                  onBlur={handleBlur("value")}
-                  placeholder="valor"
-                  value={String(values.value)}
-                />
+                  {errors.status && (
+                    <ErrorValue>{errors.status}</ErrorValue>
+                  )}
+                  <InputText
+                    onSubmitEditing={() => {
+                      obsRef.current?.focus();
+                    }}
+                    keyboardType="numeric"
+                    returnKeyType="next"
+                    icon="dollar-sign"
+                    onChangeText={handleChange("value")}
+                    onBlur={handleBlur("value")}
+                    placeholder="valor"
+                    value={String(values.value)}
+                  />
 
-                {errors.value && (
-                  <ErrorValue>{errors.value}</ErrorValue>
-                )}
+                  {errors.value && (
+                    <ErrorValue>{errors.value}</ErrorValue>
+                  )}
 
-                <InputText
-                ref={obsRef}
-                  keyboardType="default"
-                  returnKeyType="send"
-                  onSubmitEditing={handleSubmit}
-                  icon="alert-circle"
-                  onChangeText={handleChange("obs")}
-                  onBlur={handleBlur("obs")}
-                  placeholder="Observação"
-                  value={values.obs}
-                />
+                  <InputText
+                    ref={obsRef}
+                    keyboardType="default"
+                    returnKeyType="send"
+                    onSubmitEditing={handleSubmit}
+                    icon="alert-circle"
+                    onChangeText={handleChange("obs")}
+                    onBlur={handleBlur("obs")}
+                    placeholder="Observação"
+                    value={values.obs}
+                  />
 
-                <DateInput
-                icon="clock"
-                  value={values.order_date}
-                  handleChange={handleChange("order_date")}
-                />
+                  <DateInput
+                    icon="clock"
+                    value={values.order_date}
+                    handleChange={handleChange("order_date")}
+                  />
 
-                  <Button   onPress={handleSubmit}>Registrar</Button>
-              </>
-            )}
-          </Formik>
+                  <Button onPress={handleSubmit}>Registrar</Button>
+                </>
+              )}
+            </Formik>
           </Container>
-          </ScrollView>
+        </ScrollView>
       </KeyboardAvoidingView>
     </>
   );
 };
-
-
 
 export default MoveCreate;

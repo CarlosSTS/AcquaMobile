@@ -70,7 +70,7 @@ const ClientRouteCreate: React.FC = () => {
     api
       .get("/clients/", { params: { limit: 1000 } })
       .then((response) => setClients(response.data))
-      .catch(() => Alert.alert("Fracasso",'Contate o administrador do sistema.'));
+      .catch(() => Alert.alert("Fracasso", 'Contate o administrador do sistema.'));
   };
 
   useEffect(() => {
@@ -84,7 +84,8 @@ const ClientRouteCreate: React.FC = () => {
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         enabled
       >
-        <ScrollView showsVerticalScrollIndicator={false}
+        <ScrollView contentContainerStyle={{ paddingTop: 20 }}
+          showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
           <Container>
 
@@ -192,6 +193,5 @@ const ClientRouteCreate: React.FC = () => {
     </>
   );
 };
-
 
 export default ClientRouteCreate;
