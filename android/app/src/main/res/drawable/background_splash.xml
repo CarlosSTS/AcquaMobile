@@ -3,10 +3,9 @@
 
 <item android:drawable="@color/primary" />
 
-<item
-android:width="200dp"
-android:height="200dp"
-android:drawable="@drawable/icon"
-android:gravity="center"
-/>
+<item android:width="200dp" />
+<item android:height="200dp" />
+<item android:drawable="@drawable/icon2" />
+<item android:gravity="center" />
+
 </layer-list>
