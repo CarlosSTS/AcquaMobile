@@ -76,9 +76,9 @@ navigation.navigate('ClientCreated')
 
             <Header style={{shadowColor: '#000', elevation: 8, }}>
               <RectButton>
-                <FeatherIcon onPress={navigateToCarboyLoanCreated} name="arrow-left" color="#fff" size={24}/>
+                <FeatherIcon style={{paddingLeft: 12}} onPress={navigateToCarboyLoanCreated} name="arrow-left" color="#fff" size={24}/>
               </RectButton>
-              <HeaderText>Editar cliente</HeaderText>
+              <HeaderText style={{paddingRight: 20}}>Editar cliente</HeaderText>
               <FeatherIcon name="arrow-left" color="#3d9be9" size={24}/>
 
             </Header>
