@@ -132,9 +132,9 @@ export default function SaleCreated() {
 
 <Header style={{ shadowColor: '#000', elevation: 8, }}>
         <RectButton>
-          <FeatherIcon onPress={navigateToHomeSale} name="arrow-left" color="#fff" size={24} />
+          <FeatherIcon  style={{paddingLeft: 12}} onPress={navigateToHomeSale} name="arrow-left" color="#fff" size={24} />
         </RectButton>
-        <HeaderText>Vendas registradas</HeaderText>
+        <HeaderText style={{paddingRight:12}}>Vendas registradas</HeaderText>
         <FeatherIcon name="arrow-left" color="#3d9be9" size={24} />
 
       </Header>

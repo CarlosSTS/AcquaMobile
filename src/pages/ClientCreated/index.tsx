@@ -93,9 +93,9 @@ export default function ClientCreated() {
     <>
       <Header style={{shadowColor: '#000', elevation: 8, }}>
               <RectButton>
-                <FeatherIcon onPress={navigateToHomeClient} name="arrow-left" color="#fff" size={24}/>
+                <FeatherIcon style={{paddingLeft: 12}}  onPress={navigateToHomeClient} name="arrow-left" color="#fff" size={24}/>
               </RectButton>
-              <HeaderText>Clientes Registrados</HeaderText>
+              <HeaderText style={{paddingRight:12}}>Clientes Registrados</HeaderText>
               <FeatherIcon name="arrow-left" color="#3d9be9" size={24}/>
 
             </Header>
