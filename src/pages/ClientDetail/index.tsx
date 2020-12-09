@@ -146,7 +146,7 @@ navigation.navigate('ClientCreated')
                       placeholder="Preço padrão"
                       onChangeText={handleChange("preferred_price")}
                       onBlur={handleBlur("preferred_price")}
-                      value={String('R$ '+values.preferred_price +',00' )}
+                      value={String(values.preferred_price )}
                       returnKeyType="send"
                     />
           <ButtonDetail onPress={handleSubmit}>Salvar Edições</ButtonDetail>
