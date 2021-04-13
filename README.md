@@ -16,7 +16,7 @@ O app contém os seguintes módulos
 * relatórios
 
 ## páginas
-![Foto do App](https://github.com/flavioVitoriano/acquaMobile/blob/master/images/gitCriado.gif)
+![Foto do App](https://github.com/CarlosSTS/acquaMobile/blob/master/images/gitCriado.gif)
 
 ## Testando
 RODANDO O PROJETO
