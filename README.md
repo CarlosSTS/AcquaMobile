@@ -15,6 +15,9 @@ O app contém os seguintes módulos
 * gerenciamento de rotas
 * relatórios
 
+## Explicação do sistema no LinkedIn
+* [Explicação do sistema](https://www.linkedin.com/posts/carlos-ferreira-4b2ba219a_version-20-of-the-aquaapp-project-developed-activity-6743291222619627520-5sJl)
+
 ## páginas
 ![Foto do App](https://github.com/CarlosSTS/acquaMobile/blob/master/images/gitCriado.gif)
 
@@ -25,8 +28,6 @@ RODANDO O PROJETO
 * yarn android => para executar o projeto no emulador android
 * yarn ios => Para executar no emulador iOS
 
-****
-
 ## Feito por
 Carlos Ferreira
 * [github](https://www.github.com/CarlosSTS)
@@ -35,4 +36,3 @@ Carlos Ferreira
 Flávio Vitoriano
 * [github](https://www.github.com/flavioVitoriano)
 * [email](mailto://flavio.vitorianodev@gmail.com)
-
