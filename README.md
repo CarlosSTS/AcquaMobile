@@ -1,6 +1,6 @@
 # Aqua-mobile-app
 
-APP para comércios de água feito em React-Native. Foi desenvolvido para facilitar o fluxo de lucro e gestão de rotas de comerciantes de água e afins.
+Aplicativo para comércios de água feito em React-Native. Foi desenvolvido para facilitar o fluxo de lucro e gestão de rotas de comerciantes de água e afins.
 
 OBS: para rodar esse projeto, você deve instalar primeiro a API do projeto, [clique aqui](https://github.com/flavioVitoriano//) para mais detalhes.
 
