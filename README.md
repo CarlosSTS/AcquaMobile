@@ -1,4 +1,4 @@
-# Acqua Mobile
+# Aqua-mobile-app
 
 APP para comércios de água feito em React-Native. Foi desenvolvido para facilitar o fluxo de lucro e gestão de rotas de comerciantes de água e afins.
 
