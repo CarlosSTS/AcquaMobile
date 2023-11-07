@@ -22,7 +22,7 @@ O app contém os seguintes módulos
 ![Foto do logo](https://github.com/CarlosSTS/acquaMobile/blob/master/images/logo.jpeg)
 ![Foto do login](https://github.com/CarlosSTS/acquaMobile/blob/master/images/login.jpeg)
 ![Foto do drawer](https://github.com/CarlosSTS/acquaMobile/blob/master/images/drawer.jpeg)
-![Foto do list](https://github.com/CarlosSTS/acquaMobile/blob/master/images/logo.jpeg)
+![Foto do list](https://github.com/CarlosSTS/acquaMobile/blob/master/images/list.jpeg)
 ![Foto do create](https://github.com/CarlosSTS/acquaMobile/blob/master/images/create.jpeg)
 
 ## MOBILE
