@@ -19,8 +19,8 @@ O app contém os seguintes módulos
 * [Explicação do sistema](https://www.linkedin.com/posts/carlos-ferreira-4b2ba219a_version-20-of-the-aquaapp-project-developed-activity-6743291222619627520-5sJl)
 
 ## páginas
-![Foto do logo](https://github.com/CarlosSTS/acquaMobile/blob/master/images/logo.jpeg)
-![Foto do login](https://github.com/CarlosSTS/acquaMobile/blob/master/images/login.jpeg)
+![Foto do logo](https://github.com/CarlosSTS/acquaMobile/blob/master/images/logo.png)
+![Foto do login](https://github.com/CarlosSTS/acquaMobile/blob/master/images/login.png)
 ![Foto do drawer](https://github.com/CarlosSTS/acquaMobile/blob/master/images/drawer.jpeg)
 ![Foto do list](https://github.com/CarlosSTS/acquaMobile/blob/master/images/list.jpeg)
 ![Foto do create](https://github.com/CarlosSTS/acquaMobile/blob/master/images/create.jpeg)
