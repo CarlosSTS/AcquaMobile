@@ -25,17 +25,16 @@ O app contém os seguintes módulos
   <tr>
 <td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/logo.png" alt="Foto do logo" width="360" /></td>
 <td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/login.png" alt="Foto do login" width="360" /></td>
+<td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/drawer.png" alt="Foto do drawer" width="360" /></td>
 </tr>
 </table>
 
 <table>
   <tr>
-<td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/logo.png" alt="Foto do drawer" width="360" /></td>
-<td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/login.png" alt="Foto da listagem" width="360" /></td>
+<td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/list.png" alt="Foto da listagem" width="360" /></td>
+<td><img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/create.png" alt="Foto do cadastro" width="360" /></td>
 </tr>
 </table>
-
-<img src="https://github.com/CarlosSTS/acquaMobile/blob/master/images/create.png" alt="Foto do cadastro"
 
 ## MOBILE
 
